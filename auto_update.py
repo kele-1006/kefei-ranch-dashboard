@@ -319,16 +319,16 @@ def build_html(d):
         if not items:
             return '<div class="fate-empty">本期「缘起性空」内容整理中，敬请期待。</div>'
         out = []
-        for it in items:
+        for i, it in enumerate(items, 1):
             if isinstance(it, dict):
                 h = it.get("h", "")
-                p = it.get("p", "")
-                if h:
-                    out.append(f'<div class="fate-block"><div class="fate-h">{esc(h)}</div><div class="fate-p">{esc(p)}</div></div>')
-                else:
-                    out.append(f'<div class="fate-p">{esc(p)}</div>')
+                p = esc(it.get("p", "")).replace("\n", "<br>")
+                out.append(
+                    f'<div class="fate-block"><div class="fate-quote">❝</div>'
+                    f'<div class="fate-h"><span class="fate-idx">{i:02d}</span>{esc(h)}</div>'
+                    f'<div class="fate-p">{p}</div></div>')
             else:
-                out.append(f'<div class="fate-p">{esc(it)}</div>')
+                out.append(f'<div class="fate-block"><div class="fate-quote">❝</div><div class="fate-p">{esc(it)}</div></div>')
         return "".join(out)
 
     # 持仓环形图
@@ -449,7 +449,8 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
 .risk-list li{list-style:none;padding:9px 0;border-bottom:1px dashed var(--line2);font-size:13px;color:var(--txt2);display:flex;gap:10px;align-items:center}.risk-list li:last-child{border:none}.risk-list li::before{content:"✦";color:var(--gold);font-size:11px}
 .rv-item{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line2)}.rv-dot{width:8px;height:8px;border-radius:50%;margin-top:6px;flex-shrink:0}.rv-text{font-size:13.5px;line-height:1.65;flex:1}.rv-item .tag{flex-shrink:0;margin-top:2px}
 .hist-box{margin-top:2px}.hist-toggle{list-style:none;cursor:pointer;user-select:none;display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--accent);padding:10px 0;font-weight:500}.hist-toggle::-webkit-details-marker{display:none}.hist-toggle::after{content:"▾";transition:transform .2s;font-size:12px}.hist-box[open] .hist-toggle::after{transform:rotate(180deg)}.hist-scroll{max-height:460px;overflow:auto;margin-top:6px;padding-right:4px}
-.fate-block{margin-bottom:20px}.fate-h{font-size:15px;font-weight:600;color:var(--gold);margin-bottom:10px;padding-left:12px;border-left:3px solid var(--gold)}.fate-p{font-size:14px;color:var(--txt2);line-height:1.9;text-align:justify}.fate-empty{font-size:13px;color:var(--txt3);line-height:1.8}
+.fate-block{margin-bottom:26px;padding:20px 22px 22px;background:rgba(255,255,255,.025);border:1px solid var(--line2);border-radius:16px;position:relative;overflow:hidden}.fate-quote{position:absolute;top:10px;right:18px;font-size:38px;line-height:1;color:var(--gold);opacity:.18;font-family:Georgia,serif}.fate-h{font-size:15px;font-weight:600;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px;padding-left:12px;border-left:3px solid var(--gold);line-height:1.4}.fate-idx{font-size:11px;color:var(--txt3);font-weight:500;letter-spacing:.1em;opacity:.8}.fate-p{font-size:14px;color:var(--txt2);line-height:2;text-align:justify}.fate-p:last-child{margin-bottom:0}.fate-empty{font-size:13px;color:var(--txt3);line-height:1.8}
+@media(max-width:640px){.fate-block{padding:16px 15px 16px;margin-bottom:16px;border-radius:13px}.fate-h{font-size:14px;margin-bottom:9px;gap:8px;padding-left:9px}.fate-p{font-size:13.5px;line-height:1.95}.fate-quote{font-size:30px;top:8px;right:13px}}
 .footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--txt3);text-align:center}.footer b{color:var(--gold)}.footer .ver{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:20px;background:rgba(79,140,255,.12);color:#7ca7ff;font-size:11.5px;letter-spacing:.05em}
 """
 
