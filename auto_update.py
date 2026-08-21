@@ -428,7 +428,9 @@ body{font-family:"Inter","PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",sys
 .idx-name{font-size:12.5px;color:var(--txt2);margin-bottom:8px}.idx-value{font-size:20px;font-weight:600}.idx-change{font-size:13px;margin-top:5px}
 .arr{font-size:10px;margin-right:3px}.up{color:var(--up)}.down{color:var(--down)}
 table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;color:var(--txt3);font-weight:500;font-size:12px;padding:10px 12px;border-bottom:1px solid var(--line)}td{padding:12px;border-bottom:1px solid var(--line2);vertical-align:middle}
-.num{font-variant-numeric:tabular-nums}.bold{font-weight:700}.p-name{font-weight:600}.p-code{font-size:11px;color:var(--txt3)}.p-sect{font-size:12px;color:var(--txt2)}.p-strat{font-size:11px;color:var(--txt3)}
+.num{font-variant-numeric:tabular-nums}.bold{font-weight:700}.p-name{font-weight:600;white-space:nowrap}.p-code{font-size:11px;color:var(--txt3);white-space:nowrap}.p-sect{font-size:12px;color:var(--txt2);white-space:nowrap}.p-strat{font-size:11px;color:var(--txt3);white-space:nowrap}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -16px;padding:0 16px}.table-scroll table{width:auto;min-width:100%;table-layout:auto}.pos-table,.hist-table{min-width:680px}.pos-table th,.pos-table td,.hist-table th,.hist-table td{white-space:nowrap}
+@media(max-width:640px){.pos-table,.hist-table{font-size:12px}.pos-table td,.pos-table th,.hist-table td,.hist-table th{padding:10px 8px}.p-name{font-size:13px}.p-sect,.p-strat{font-size:11px}}
 .wbar{display:flex;align-items:center;gap:7px}.wfill{height:7px;border-radius:4px;background:var(--grad);max-width:60px}.p-status{font-size:11.5px;padding:4px 9px;border-radius:8px;background:rgba(79,140,255,.12)}
 .tag-strat{font-size:11px;padding:3px 9px;border-radius:7px;background:rgba(245,196,81,.12);color:var(--gold)}
 .tag{font-size:11px;padding:2.5px 8px;border-radius:7px;display:inline-block}.tag-up{background:rgba(255,84,112,.14);color:var(--up)}.tag-down{background:rgba(47,212,166,.14);color:var(--down)}.tag-neutral{background:rgba(154,166,201,.14);color:var(--txt2)}
@@ -552,15 +554,15 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
     </div>
     <div class="grid g2" style="margin-bottom:18px">
       <div class="card"><div class="card-title">当前持仓明细</div>
-        <table><thead><tr><th>名称</th><th>行业/策略</th><th>现价</th><th>成本</th><th>浮盈</th><th>仓位</th><th>状态</th></tr></thead>
-        <tbody>{positions_rows(positions)}</tbody></table></div>
+        <div class="table-scroll"><table class="pos-table"><thead><tr><th>名称</th><th>行业/策略</th><th>现价</th><th>成本</th><th>浮盈</th><th>仓位</th><th>状态</th></tr></thead>
+        <tbody>{positions_rows(positions)}</tbody></table></div></div>
       <div class="card"><div class="card-title">操作告警</div>{alerts_list(alerts)}
         <div class="card-title" style="margin-top:20px">风险纪律</div><ul class="risk-list">{("".join(f'<li>{esc(r)}</li>' for r in riskRules))}</ul></div>
     </div>
     <div class="card"><div class="card-title">历史交易记录 <span class="sub">全部 {len(histList)} 笔 · 点击展开</span></div>
       <details class="hist-box">
         <summary class="hist-toggle">展开全部 {len(histList)} 笔历史持仓</summary>
-        <div class="hist-scroll"><table><thead><tr><th>名称</th><th>板块</th><th>买入</th><th>卖出</th><th>成交价</th><th>收益</th><th>战法</th></tr></thead>
+        <div class="hist-scroll table-scroll"><table class="hist-table"><thead><tr><th>名称</th><th>板块</th><th>买入</th><th>卖出</th><th>成交价</th><th>收益</th><th>战法</th></tr></thead>
         <tbody>{history_rows(histList[::-1])}</tbody></table></div>
       </details>
     </div>
