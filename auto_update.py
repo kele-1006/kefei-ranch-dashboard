@@ -18,9 +18,13 @@ auto_update.py — 自包含网页更新器（可飞牧场）
 
   <本次更新的JSON> 可为空字符串。格式示例：
   '{"indices":[{"name":"上证指数","value":"3xxx","change":"+x.xx","direction":"up"}],
+    "globalMarkets":[{"name":"纳斯达克","value":"x","change":"-x.xx","direction":"down"},
+                     {"name":"富时A50","value":"x","change":"+x.xx","direction":"up"},
+                     {"name":"伦敦金现","value":"x","change":"+x.xx","direction":"up"},
+                     {"name":"布伦特原油","value":"x","change":"+x.xx","direction":"up"}],
     "hotSectorsToday":[...],"mainFlow":{...},"news":[...],"review":{...},
     "positions":[{"name":"铜陵有色","code":"000630","price":"x","cost":"x","pnl":"+x%","weight":"x%","sector":"...","strategy":"...","status":"..."}],
-    "posSummary":{...},"lastUpdate":"2026-08-21 19:10 · 盘后复盘"}'
+    "posSummary":{...},"fate":[{"h":"小标题","p":"正文"}],"lastUpdate":"2026-08-21 19:10 · 盘后复盘"}'
 
   token 也可通过环境变量 GITHUB_TOKEN 传入。
 """
@@ -106,10 +110,12 @@ def build_html(d):
     stock = d.get("stock", {})
     journal = d.get("journal", {})
     review = d.get("review", {})
+    fate = d.get("fate", [])
     lastUpdate = d.get("lastUpdate", "")
 
     indices = hotspot.get("indices", [])
-    usMarkets = hotspot.get("usMarkets", [])
+    # 隔夜外盘：优先用 globalMarkets（纳斯达克+富时A50+伦敦金现+布伦特原油），兼容旧 usMarkets
+    globalMarkets = hotspot.get("globalMarkets") or hotspot.get("usMarkets", [])
     news = hotspot.get("news", [])
     macro = hotspot.get("macro", [])
     margin = hotspot.get("marginBalance", {})
@@ -137,8 +143,9 @@ def build_html(d):
         out = []
         for it in items:
             ud = updown(it.get("direction", ""))
+            disp = it.get("short") or it.get("name", "")
             out.append(
-                f'<div class="idx-card"><div class="idx-name">{esc(it.get("name",""))}</div>'
+                f'<div class="idx-card"><div class="idx-name">{esc(disp)}</div>'
                 f'<div class="idx-value {ud}">{esc(it.get("value",""))}</div>'
                 f'<div class="idx-change {ud}"><span class="arr">{"▲" if ud=="up" else "▼"}</span>{fmt_change(it.get("change",""))}</div></div>')
         return "".join(out)
@@ -211,8 +218,9 @@ def build_html(d):
         return "".join(rows)
 
     def history_rows(items):
+        # 全量历史（调用方已按 newest-first 传入）
         rows = []
-        for p in items[-10:][::-1]:
+        for p in items:
             try:
                 rn = float(p.get("returnNum", 0))
             except Exception:
@@ -307,6 +315,22 @@ def build_html(d):
                 f'<span class="rv-text">{esc(it.get("text",""))}</span></div>')
         return "".join(out)
 
+    def fate_html(items):
+        if not items:
+            return '<div class="fate-empty">本期「缘起性空」内容整理中，敬请期待。</div>'
+        out = []
+        for it in items:
+            if isinstance(it, dict):
+                h = it.get("h", "")
+                p = it.get("p", "")
+                if h:
+                    out.append(f'<div class="fate-block"><div class="fate-h">{esc(h)}</div><div class="fate-p">{esc(p)}</div></div>')
+                else:
+                    out.append(f'<div class="fate-p">{esc(p)}</div>')
+            else:
+                out.append(f'<div class="fate-p">{esc(it)}</div>')
+        return "".join(out)
+
     # 持仓环形图
     try:
         pos_weights = [weight_val(p["weight"]) for p in positions]
@@ -359,8 +383,10 @@ body{font-family:"Inter","PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",sys
 .wrap{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:28px 26px 60px}
 .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
 .brand{display:flex;align-items:center;gap:14px}
-.logo{width:44px;height:44px;border-radius:13px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff}
-.brand-t{font-size:22px;font-weight:700;letter-spacing:.06em}.brand-s{font-size:12px;color:var(--txt3);margin-top:2px}
+.logo{width:44px;height:44px;border-radius:13px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.35)}
+.brand-t{font-size:22px;font-weight:700;letter-spacing:.06em;display:flex;align-items:center}
+.brand-en{font-size:13px;color:var(--txt3);margin-left:9px;font-weight:500;letter-spacing:.04em;opacity:.85}
+.brand-s{font-size:12px;color:var(--txt3);margin-top:2px}
 .update{font-size:12px;color:var(--txt3);display:flex;align-items:center;gap:8px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--down);box-shadow:0 0 10px var(--down)}
 .nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px}
@@ -404,7 +430,9 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
 .alert-item{padding:13px 16px;border-radius:12px;margin-bottom:10px;background:rgba(255,255,255,.03);border:1px solid var(--line2)}.alert-head{display:flex;gap:10px;align-items:center;margin-bottom:5px}.alert-type{font-size:12px;font-weight:600}.alert-name{font-size:13px;font-weight:600}.alert-detail{font-size:12.5px;color:var(--txt2);line-height:1.6}.al-up .alert-type{color:var(--down)}.al-up{border-left:3px solid var(--down)}.al-down .alert-type{color:var(--up)}.al-down{border-left:3px solid var(--up)}.al-mid .alert-type{color:var(--gold)}.al-mid{border-left:3px solid var(--gold)}
 .risk-list li{list-style:none;padding:9px 0;border-bottom:1px dashed var(--line2);font-size:13px;color:var(--txt2);display:flex;gap:10px;align-items:center}.risk-list li:last-child{border:none}.risk-list li::before{content:"✦";color:var(--gold);font-size:11px}
 .rv-item{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line2)}.rv-dot{width:8px;height:8px;border-radius:50%;margin-top:6px;flex-shrink:0}.rv-text{font-size:13.5px;line-height:1.65;flex:1}.rv-item .tag{flex-shrink:0;margin-top:2px}
-.footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--txt3);text-align:center}.footer b{color:var(--gold)}
+.hist-box{margin-top:2px}.hist-toggle{list-style:none;cursor:pointer;user-select:none;display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--accent);padding:10px 0;font-weight:500}.hist-toggle::-webkit-details-marker{display:none}.hist-toggle::after{content:"▾";transition:transform .2s;font-size:12px}.hist-box[open] .hist-toggle::after{transform:rotate(180deg)}.hist-scroll{max-height:460px;overflow:auto;margin-top:6px;padding-right:4px}
+.fate-block{margin-bottom:20px}.fate-h{font-size:15px;font-weight:600;color:var(--gold);margin-bottom:10px;padding-left:12px;border-left:3px solid var(--gold)}.fate-p{font-size:14px;color:var(--txt2);line-height:1.9;text-align:justify}.fate-empty{font-size:13px;color:var(--txt3);line-height:1.8}
+.footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--txt3);text-align:center}.footer b{color:var(--gold)}.footer .ver{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:20px;background:rgba(79,140,255,.12);color:#7ca7ff;font-size:11.5px;letter-spacing:.05em}
 """
 
     # 自动检测服务端新数据并提示/刷新（解决浏览器缓存导致看不到更新的问题）
@@ -423,6 +451,15 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
         "})();"
     )
 
+    kpi_block = (
+        '<div class="kpi-grid">'
+        + kpi_card("总仓位", posSum.get("total", "0"), "现金 " + str(posSum.get("cash", "0")))
+        + kpi_card("今日盈亏", posSum.get("dailyPnl", "0"), "当日账户净值变化", "up" if str(posSum.get("dailyPnl", "0")).startswith("+") else "down")
+        + kpi_card("历史交易", str(histStats.get("totalTrades", 0)) + " 笔", "胜 " + str(histStats.get("wins", 0)) + " · 负 " + str(histStats.get("losses", 0)) + " · 平 " + str(histStats.get("evens", 0)))
+        + kpi_card("交易胜率", str(histStats.get("winRate", 0)) + "%", "盈亏比 " + str(histStats.get("profitLossRatio", 0)))
+        + '</div>'
+    )
+
     html_doc = f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -438,25 +475,20 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
 <div id="update-toast" style="display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:linear-gradient(90deg,#4f8cff,#8b5cf6);color:#fff;text-align:center;padding:11px;font-size:13px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.4)">🔄 检测到云端已更新数据，点击此处或稍候自动刷新…</div>
 <div class="wrap">
   <div class="topbar">
-    <div class="brand"><div class="logo">牧</div><div><div class="brand-t">可飞牧场</div><div class="brand-s">A股个人投资工作台 · 云端协同版</div></div></div>
+    <div class="brand"><div class="logo">涨</div><div><div class="brand-t">可飞牧场<span class="brand-en">cofiranch</span></div><div class="brand-s">A股个人投资工作台 · 云端协同版</div></div></div>
     <div class="update"><span class="dot"></span>{esc(lastUpdate)}</div>
   </div>
   <div class="nav">
     <button class="nav-btn active" data-tab="hotspot">● 市场热点</button>
     <button class="nav-btn" data-tab="stock">● 选股中心</button>
-    <button class="nav-btn" data-tab="journal">● 持仓与日志</button>
-    <button class="nav-btn" data-tab="review">● 盘后复盘</button>
-  </div>
-  <div class="kpi-grid">
-    {kpi_card("总仓位", posSum.get("total","0"), f'现金 {posSum.get("cash","0")}')}
-    {kpi_card("今日盈亏", posSum.get("dailyPnl","0"), "当日账户净值变化", "up" if str(posSum.get("dailyPnl","0")).startswith("+") else "down")}
-    {kpi_card("历史交易", f'{histStats.get("totalTrades",0)} 笔', f'胜 {histStats.get("wins",0)} · 负 {histStats.get("losses",0)} · 平 {histStats.get("evens",0)}')}
-    {kpi_card("交易胜率", f'{histStats.get("winRate",0)}%', f'盈亏比 {histStats.get("profitLossRatio",0)}')}
+    <button class="nav-btn" data-tab="journal">● 持仓日志</button>
+    <button class="nav-btn" data-tab="review">● 复盘笔记</button>
+    <button class="nav-btn" data-tab="fate">● 缘起性空</button>
   </div>
   <div class="section active" id="hotspot">
     <div class="grid g-pos" style="margin-bottom:18px">
       <div class="card"><div class="card-title">A股指数 <span class="sub">今日收盘</span></div><div class="idx-grid">{index_cards(indices)}</div></div>
-      <div class="card"><div class="card-title">隔夜外盘 <span class="sub">美股</span></div><div class="idx-grid">{index_cards(usMarkets)}</div></div>
+      <div class="card"><div class="card-title">隔夜外盘 <span class="sub">全球 · 期货/现货</span></div><div class="idx-grid">{index_cards(globalMarkets)}</div></div>
     </div>
     <div class="grid g2" style="margin-bottom:18px">
       <div class="card"><div class="card-title">今日热门板块 <span class="sub">涨跌幅</span></div>{sector_bars(hotToday, True)}</div>
@@ -483,6 +515,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
     </div>
   </div>
   <div class="section" id="journal">
+    {kpi_block}
     <div class="grid g-pos" style="margin-bottom:18px">
       <div class="card"><div class="card-title">持仓分布 <span class="sub">{len(positions)} 只 · 总仓位 {esc(posSum.get("total","0"))}</span></div>
         <div class="donut-wrap">{donut_svg}<div class="legend">{legend}</div></div></div>
@@ -505,15 +538,22 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
       <div class="card"><div class="card-title">操作告警</div>{alerts_list(alerts)}
         <div class="card-title" style="margin-top:20px">风险纪律</div><ul class="risk-list">{("".join(f'<li>{esc(r)}</li>' for r in riskRules))}</ul></div>
     </div>
-    <div class="card"><div class="card-title">历史交易记录 <span class="sub">近10笔</span></div>
-      <table><thead><tr><th>名称</th><th>板块</th><th>买入</th><th>卖出</th><th>成交价</th><th>收益</th><th>战法</th></tr></thead>
-      <tbody>{history_rows(histList)}</tbody></table></div>
+    <div class="card"><div class="card-title">历史交易记录 <span class="sub">全部 {len(histList)} 笔 · 点击展开</span></div>
+      <details class="hist-box">
+        <summary class="hist-toggle">展开全部 {len(histList)} 笔历史持仓</summary>
+        <div class="hist-scroll"><table><thead><tr><th>名称</th><th>板块</th><th>买入</th><th>卖出</th><th>成交价</th><th>收益</th><th>战法</th></tr></thead>
+        <tbody>{history_rows(histList[::-1])}</tbody></table></div>
+      </details>
+    </div>
   </div>
   <div class="section" id="review">
     <div class="card" style="margin-bottom:18px"><div class="card-title">复盘概览 <span class="sub">{esc(review.get("date",""))}</span></div><div style="font-size:14px;color:var(--txt2);line-height:1.8">{esc(review.get("summary",""))}</div></div>
     <div class="card"><div class="card-title">要点归纳</div>{review_points(reviewPoints)}</div>
   </div>
-  <div class="footer"><b>可飞牧场 · 投资工作台</b> — 数据自动同步云端看板 · 仅供参考，不构成投资建议</div>
+  <div class="section" id="fate">
+    <div class="card"><div class="card-title">缘起性空 <span class="sub">投资心法与纪律</span></div>{fate_html(fate)}</div>
+  </div>
+  <div class="footer"><b>可飞牧场 · 投资工作台</b> — 数据自动同步云端看板 · 仅供参考，不构成投资建议<br><span class="ver">V1.0体验版</span></div>
 </div>
 <script>
 document.querySelectorAll('.nav-btn').forEach(function(b){{
@@ -540,7 +580,7 @@ def merge_update(d, update):
     if not update:
         return d
     if not d:
-        d = {"hotspot": {}, "stock": {}, "journal": {}, "review": {}, "lastUpdate": ""}
+        d = {"hotspot": {}, "stock": {}, "journal": {}, "review": {}, "fate": [], "lastUpdate": ""}
     # 顶层字段
     for k in ("lastUpdate",):
         if k in update:
@@ -548,17 +588,19 @@ def merge_update(d, update):
     # hotspot 部分
     hotspot = d.setdefault("hotspot", {})
     hotspot_update = update.get("hotspot", update)
-    for k in ("indices", "usMarkets", "news", "macro", "marginBalance", "mainFlow",
+    for k in ("indices", "usMarkets", "globalMarkets", "news", "macro", "marginBalance", "mainFlow",
               "hotScoresToday", "hotSectorsToday", "hotScores5d", "hotSectors5d"):
         if k in hotspot_update:
             hotspot[k] = hotspot_update[k]
-    # stock / journal / review
+    # stock / journal / review / fate
     if "stock" in update:
         d["stock"] = update["stock"]
     if "journal" in update:
         d["journal"] = update["journal"]
     if "review" in update:
         d["review"] = update["review"]
+    if "fate" in update:
+        d["fate"] = update["fate"]
     return d
 
 
