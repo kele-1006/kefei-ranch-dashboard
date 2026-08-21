@@ -407,15 +407,35 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
 .footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--txt3);text-align:center}.footer b{color:var(--gold)}
 """
 
+    # 自动检测服务端新数据并提示/刷新（解决浏览器缓存导致看不到更新的问题）
+    auto_refresh_js = (
+        "(function(){"
+        "  function checkUpdate(){"
+        "    fetch('data.json?_='+Date.now(),{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){"
+        "      var latest=d.lastUpdate||'';"
+        "      if(latest && latest!==__CURRENT_UPDATE__){"
+        "        var t=document.getElementById('update-toast');"
+        "        if(t){t.style.display='block';t.onclick=function(){location.reload(true);};setTimeout(function(){location.reload(true);},4000);}"
+        "      }"
+        "    }).catch(function(e){});"
+        "  }"
+        "  checkUpdate();setInterval(checkUpdate,60000);"
+        "})();"
+    )
+
     html_doc = f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>可飞牧场 · 投资工作台</title>
 <style>{CSS}</style>
 </head>
 <body>
+<div id="update-toast" style="display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:linear-gradient(90deg,#4f8cff,#8b5cf6);color:#fff;text-align:center;padding:11px;font-size:13px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.4)">🔄 检测到云端已更新数据，点击此处或稍候自动刷新…</div>
 <div class="wrap">
   <div class="topbar">
     <div class="brand"><div class="logo">牧</div><div><div class="brand-t">可飞牧场</div><div class="brand-s">A股个人投资工作台 · 云端协同版</div></div></div>
@@ -505,6 +525,8 @@ document.querySelectorAll('.nav-btn').forEach(function(b){{
     window.scrollTo({{top:0,behavior:'smooth'}});
   }});
 }});
+  var __CURRENT_UPDATE__ = {json.dumps(lastUpdate)};
+  {auto_refresh_js}
 </script>
 </body>
 </html>
