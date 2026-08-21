@@ -381,21 +381,39 @@ def build_html(d):
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:"Inter","PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",system-ui,sans-serif;color:var(--txt);background:radial-gradient(1200px 600px at 15% -10%,#12234d 0%,transparent 60%),radial-gradient(1000px 500px at 110% 10%,#1b1a3a 0%,transparent 55%),radial-gradient(800px 600px at 50% 120%,#0f1f4a 0%,transparent 60%),linear-gradient(160deg,var(--bg0) 0%,var(--bg1) 45%,var(--bg2) 100%);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 .wrap{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:28px 26px 60px}
-.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
-.brand{display:flex;align-items:center;gap:14px}
-.logo{width:44px;height:44px;border-radius:13px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.35)}
-.brand-t{font-size:22px;font-weight:700;letter-spacing:.06em;display:flex;align-items:center}
-.brand-en{font-size:13px;color:var(--txt3);margin-left:9px;font-weight:500;letter-spacing:.04em;opacity:.85}
-.brand-s{font-size:12px;color:var(--txt3);margin-top:2px}
-.update{font-size:12px;color:var(--txt3);display:flex;align-items:center;gap:8px}
+.topbar{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:26px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.logo{width:46px;height:46px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:25px;font-weight:800;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.35);flex-shrink:0}
+.brand-t{font-size:22px;font-weight:700;letter-spacing:.04em;line-height:1.25;white-space:nowrap}
+.brand-en{font-size:12px;color:var(--txt3);margin-left:8px;font-weight:500;letter-spacing:.02em;opacity:.8;vertical-align:middle}
+.brand-s{font-size:12px;color:var(--txt3);margin-top:3px}
+.update{font-size:12px;color:var(--txt3);display:flex;align-items:center;gap:8px;flex-shrink:0;margin-top:6px}
+@media(max-width:640px){
+.topbar{flex-direction:column;align-items:flex-start;margin-bottom:20px}
+.brand{gap:11px;width:100%}
+.logo{width:42px;height:42px;font-size:23px}
+.brand-t{font-size:20px;display:block;white-space:normal}
+.brand-en{display:inline-block;margin-left:7px;font-size:11.5px;transform:translateY(-1px)}
+.brand-s{font-size:11.5px}
+.update{margin-top:8px;font-size:11px}
+}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--down);box-shadow:0 0 10px var(--down)}
 .nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px}
-.nav-btn{padding:9px 20px;border-radius:11px;background:rgba(255,255,255,.04);border:1px solid var(--line2);color:var(--txt2);cursor:pointer;font-size:14px;font-family:inherit}
+.nav-btn{padding:9px 18px;border-radius:11px;background:rgba(255,255,255,.04);border:1px solid var(--line2);color:var(--txt2);cursor:pointer;font-size:14px;font-family:inherit;white-space:nowrap}
 .nav-btn.active{background:var(--grad);color:#fff;border-color:transparent;font-weight:500}
+@media(max-width:640px){
+.nav{gap:5px;margin-bottom:16px}
+.nav-btn{padding:8px 13px;font-size:13px;border-radius:9px}
+}
 .section{display:none}.section.active{display:block}
 .grid{display:grid;gap:18px}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g-pos{grid-template-columns:1.1fr 1fr}
 @media(max-width:900px){.g2,.g3,.g4,.g-pos{grid-template-columns:1fr}}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;backdrop-filter:blur(18px);position:relative;overflow:hidden}
+@media(max-width:640px){
+.card{padding:16px;border-radius:14px}
+.card-title{font-size:14px;margin-bottom:12px}
+.wrap{padding:18px 14px 40px}
+}
 .card-title{font-size:15px;font-weight:600;color:var(--txt);margin-bottom:16px;display:flex;align-items:center;gap:9px}
 .card-title::before{content:"";width:4px;height:16px;border-radius:3px;background:var(--grad)}
 .card-title .sub{font-size:12px;color:var(--txt3);font-weight:400;margin-left:auto}
