@@ -30,6 +30,7 @@ auto_update.py — 自包含网页更新器（可飞牧场）
 """
 import base64
 import json
+import math
 import os
 import sys
 import urllib.request
@@ -331,7 +332,7 @@ def build_html(d):
                 out.append(f'<div class="fate-block"><div class="fate-quote">❝</div><div class="fate-p">{esc(it)}</div></div>')
         return "".join(out)
 
-    # 持仓环形图
+    # 持仓环形图（SVG path arc 精确绘制，首尾强制闭合）
     try:
         pos_weights = [weight_val(p["weight"]) for p in positions]
     except Exception:
@@ -339,18 +340,39 @@ def build_html(d):
     cash_weight = max(0, 100 - sum(pos_weights))
     segments = []
     colors = ["#4f8cff", "#38d9c2", "#f5a623", "#ff6b81", "#a78bfa", "#f472b6"]
-    angle = -90
+    angle = 0.0
     for i, p in enumerate(positions):
         pct = weight_val(p["weight"])
         color = colors[i % len(colors)]
         segments.append({"name": p["name"], "pct": pct, "color": color, "start": angle, "end": angle + pct*3.6})
         angle += pct*3.6
-    cash_seg = {"name": "现金", "pct": cash_weight, "color": "#2a2f45", "start": angle, "end": angle + cash_weight*3.6}
-    r = 80; c = 2*3.14159*r
+    # 现金段强制延伸到 360°，保证环形闭合无缺口
+    cash_seg = {"name": "现金", "pct": cash_weight, "color": "#2a2f45", "start": angle, "end": 360.0}
+    r = 80
+
+    def _pt(deg):
+        rad = math.radians(deg)
+        return 100 + r*math.sin(rad), 100 - r*math.cos(rad)
+
     donut_parts = []
     for s in segments + [cash_seg]:
-        frac = (s["end"]-s["start"])/360
-        donut_parts.append(f'<circle cx="100" cy="100" r="{r}" fill="none" stroke="{s["color"]}" stroke-width="20" stroke-dasharray="{frac*c:.2f} {c:.2f}" stroke-dashoffset="{-s["start"]/360*c:.2f}"/>')
+        a, b = s["start"], s["end"]
+        if b <= a + 0.01:
+            continue
+        b = min(b, 360.0)
+        if a >= 359.99:
+            continue
+        x1, y1 = _pt(a)
+        if (b - a) >= 359.9:
+            # 整圆：拆两段半圆弧
+            xm, ym = _pt(a + 180)
+            x2, y2 = _pt(b)
+            donut_parts.append(f'<path d="M {x1:.2f} {y1:.2f} A {r} {r} 0 1 1 {xm:.2f} {ym:.2f}" fill="none" stroke="{s["color"]}" stroke-width="20"/>')
+            donut_parts.append(f'<path d="M {xm:.2f} {ym:.2f} A {r} {r} 0 1 1 {x2:.2f} {y2:.2f}" fill="none" stroke="{s["color"]}" stroke-width="20"/>')
+        else:
+            x2, y2 = _pt(b)
+            large = 1 if (b - a) > 180 else 0
+            donut_parts.append(f'<path d="M {x1:.2f} {y1:.2f} A {r} {r} 0 {large} 1 {x2:.2f} {y2:.2f}" fill="none" stroke="{s["color"]}" stroke-width="20"/>')
     donut_svg = ('<svg viewBox="0 0 200 200" class="donut">' + "".join(donut_parts) +
                  f'<text x="100" y="94" text-anchor="middle" class="donut-num">{esc(posSum.get("total","0"))}</text>'
                  f'<text x="100" y="116" text-anchor="middle" class="donut-label">总仓位</text></svg>')
@@ -383,9 +405,11 @@ body{font-family:"Inter","PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",sys
 .wrap{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:28px 26px 60px}
 .topbar{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:26px;gap:16px}
 .brand{display:flex;align-items:center;gap:12px;min-width:0;flex:1}
-.logo{width:46px;height:46px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:25px;font-weight:800;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.35);flex-shrink:0}
+.logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(160deg,#ff5470 0%,#e8557d 55%,#8b5cf6 100%);display:flex;align-items:center;justify-content:center;font-size:25px;font-weight:800;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.35);flex-shrink:0;box-shadow:0 4px 16px rgba(232,85,125,.35)}
 .brand-t{font-size:22px;font-weight:700;letter-spacing:.04em;line-height:1.25;white-space:nowrap}
-.brand-en{font-size:12px;color:var(--txt3);margin-left:8px;font-weight:500;letter-spacing:.02em;opacity:.8;white-space:nowrap}
+.brand-cn{background:linear-gradient(110deg,#e9eefb 0%,#e9eefb 38%,#ffffff 50%,#e9eefb 62%,#e9eefb 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:brandShine 3.2s linear infinite}
+@keyframes brandShine{0%{background-position:135% 0}100%{background-position:-135% 0}}
+.brand-en{font-size:13.5px;color:var(--txt3);margin-left:8px;font-weight:600;letter-spacing:.03em;opacity:.85;white-space:nowrap}
 .brand-s{font-size:12px;color:var(--txt3);margin-top:3px}
 .update{font-size:12px;color:var(--txt3);display:flex;align-items:center;gap:8px;flex-shrink:0;margin-top:6px;white-space:nowrap}
 @media(max-width:640px){
@@ -393,7 +417,7 @@ body{font-family:"Inter","PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",sys
 .brand{gap:11px;width:100%}
 .logo{width:42px;height:42px;font-size:23px}
 .brand-t{font-size:19px;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;white-space:nowrap}
-.brand-en{font-size:11px;margin-left:0;opacity:.75}
+.brand-en{font-size:12px;margin-left:0;opacity:.8}
 .brand-s{font-size:11.5px}
 .update{margin-top:6px;font-size:11px;white-space:normal;align-self:flex-start}
 }
@@ -496,7 +520,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
 <div id="update-toast" style="display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:linear-gradient(90deg,#4f8cff,#8b5cf6);color:#fff;text-align:center;padding:11px;font-size:13px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.4)">🔄 检测到云端已更新数据，点击此处或稍候自动刷新…</div>
 <div class="wrap">
   <div class="topbar">
-    <div class="brand"><div class="logo">涨</div><div><div class="brand-t">可飞牧场<span class="brand-en">cofiranch</span></div><div class="brand-s">A股个人投资工作台 · 云端协同版</div></div></div>
+    <div class="brand"><div class="logo">涨</div><div><div class="brand-t"><span class="brand-cn">可飞牧场</span><span class="brand-en">CofiRanch</span></div><div class="brand-s">A股个人投资工作台 · 云端协同版</div></div></div>
     <div class="update"><span class="dot"></span>{esc(lastUpdate)}</div>
   </div>
   <div class="nav">
@@ -554,9 +578,9 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
     </div>
     <div class="grid g-pos-wide" style="margin-bottom:18px">
       <div class="card"><div class="card-title">当前持仓明细</div>
-        <div class="table-scroll"><table class="pos-table"><thead><tr><th>名称</th><th>行业/策略</th><th>现价</th><th>成本</th><th>浮盈</th><th>仓位</th><th>状态</th></tr></thead>
+        <div class="table-scroll"><table class="pos-table"><thead><tr><th>名称</th><th>行业/战法</th><th>现价</th><th>成本</th><th>浮盈</th><th>仓位</th><th>状态</th></tr></thead>
         <tbody>{positions_rows(positions)}</tbody></table></div></div>
-      <div class="card"><div class="card-title">操作告警</div>{alerts_list(alerts)}
+      <div class="card"><div class="card-title">操作预警</div>{alerts_list(alerts)}
         <div class="card-title" style="margin-top:20px">风险纪律</div><ul class="risk-list">{("".join(f'<li>{esc(r)}</li>' for r in riskRules))}</ul></div>
     </div>
     <div class="card"><div class="card-title">历史交易记录 <span class="sub">全部 {len(histList)} 笔 · 点击展开</span></div>
