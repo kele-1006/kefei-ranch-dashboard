@@ -192,6 +192,32 @@
         "change": 7.55,
         "inflow": "5日强势"
       }
+    ],
+    "globalMarkets": [
+      {
+        "name": "纳斯达克",
+        "value": "26331.09",
+        "change": "-1.46%",
+        "direction": "down"
+      },
+      {
+        "name": "富时A50",
+        "value": "14821.60",
+        "change": "+1.12%",
+        "direction": "up"
+      },
+      {
+        "name": "伦敦金现",
+        "value": "4597.84",
+        "change": "+1.75%",
+        "direction": "up"
+      },
+      {
+        "name": "布伦特原油",
+        "value": "91.57",
+        "change": "+0.32%",
+        "direction": "up"
+      }
     ]
   },
   "stock": {
@@ -1111,5 +1137,6 @@
         "type": "up"
       }
     ]
-  }
+  },
+  "fate": []
 }
