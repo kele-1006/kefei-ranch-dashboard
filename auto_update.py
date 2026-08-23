@@ -177,7 +177,7 @@ def build_html(d):
             title = esc(it.get("title", ""))
             link = it.get("url", "")
             if link:
-                title = f'<a href="{esc(link)}" target="_blank">{title}</a>'
+                title = f'<a href="{esc(link)}" target="_blank">{title}<span class="ext-arrow">↗</span></a>'
             out.append(
                 f'<div class="news-item"><div class="news-meta"><span class="time">{esc(it.get("time",""))}</span>'
                 f'<span class="phase {phase_cls}">{esc(phase)}</span>'
@@ -407,7 +407,7 @@ body{font-family:"Inter","PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",sys
 .brand{display:flex;align-items:center;gap:12px;min-width:0;flex:1}
 .logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(160deg,#ff5470 0%,#e8557d 55%,#8b5cf6 100%);display:flex;align-items:center;justify-content:center;font-size:25px;font-weight:800;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.35);flex-shrink:0;box-shadow:0 4px 16px rgba(232,85,125,.35)}
 .brand-t{font-size:22px;font-weight:700;letter-spacing:.04em;line-height:1.25;white-space:nowrap}
-.brand-cn{background:linear-gradient(110deg,#b9c7ee 0%,#b9c7ee 30%,#ffffff 42%,#fff3c4 50%,#ffffff 58%,#b9c7ee 70%,#b9c7ee 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:brandShine 6s linear infinite}
+.brand-cn{background:linear-gradient(110deg,#b9c7ee 0%,#b9c7ee 30%,#ffffff 42%,#ffffff 50%,#ffffff 58%,#b9c7ee 70%,#b9c7ee 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:brandShine 6s linear infinite}
 @keyframes brandShine{0%{background-position:150% 0}100%{background-position:0% 0}}
 .brand-en{font-size:13.5px;color:var(--txt3);margin-left:8px;font-weight:600;letter-spacing:.03em;opacity:.85;white-space:nowrap}
 .brand-s{font-size:12px;color:var(--txt3);margin-top:3px}
@@ -464,7 +464,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
 .ring{width:170px;height:170px}.ring-num{fill:var(--txt);font-size:28px;font-weight:700}.ring-label{fill:var(--txt3);font-size:12px}
 .stats-side{display:flex;flex-direction:column;gap:12px;justify-content:center}.stat-line{display:flex;justify-content:space-between;font-size:13px;padding:8px 0;border-bottom:1px dashed var(--line2)}.stat-line .k{color:var(--txt2)}.stat-line .v{font-weight:600}.stat-line .v.good{color:var(--down)}.stat-line .v.bad{color:var(--up)}
 .sector-row{display:grid;grid-template-columns:100px 1fr 70px 70px;align-items:center;gap:12px;padding:8px 0}.sector-name{font-size:13px}.sector-track{height:10px;border-radius:6px;background:rgba(255,255,255,.06);overflow:hidden}.sector-fill{height:100%}.sector-fill.pos{background:linear-gradient(90deg,#ff5470,#ff7d94)}.sector-fill.neg{background:linear-gradient(90deg,#2fd4a6,#2fe6c0)}.sector-val{font-size:12.5px;font-weight:600;text-align:right}.sector-inflow{font-size:11px;color:var(--txt3);text-align:right}
-.news-item{padding:12px 0;border-bottom:1px solid var(--line2)}.news-meta{display:flex;gap:8px;align-items:center;margin-bottom:5px}.time{font-size:11.5px;color:var(--txt3)}.news-title{font-size:13.5px;line-height:1.55}.news-title a{color:var(--txt);text-decoration:none}.news-title a:hover{color:#7ca7ff}.news-rel{font-size:11.5px;color:var(--txt3);margin-top:4px}
+.news-item{padding:12px 0;border-bottom:1px solid var(--line2)}.news-meta{display:flex;gap:8px;align-items:center;margin-bottom:5px}.time{font-size:11.5px;color:var(--txt3)}.news-title{font-size:13.5px;line-height:1.55}.news-title a{color:var(--txt);text-decoration:none}.news-title a:hover{color:#7ca7ff}.news-rel{font-size:11.5px;color:var(--txt3);margin-top:4px}.ext-arrow{color:var(--accent);font-size:12px;font-weight:700;margin-left:4px;display:inline-block;transition:transform .2s;vertical-align:1px}.news-title a:hover .ext-arrow{transform:translate(2px,-2px)}
 .macro-item{padding:11px 0;border-bottom:1px solid var(--line2)}.macro-tag{display:flex;gap:8px;align-items:center;margin-bottom:5px}.macro-key{font-size:12px;color:var(--accent)}.macro-text{font-size:13px;color:var(--txt2);line-height:1.6}
 .flow-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.flow-card{background:rgba(255,255,255,.03);border:1px solid var(--line2);border-radius:14px;padding:16px}.flow-label{font-size:12px;color:var(--txt3);margin-bottom:6px}.flow-value{font-size:20px;font-weight:700}.flow-sub{font-size:12px;color:var(--txt2);margin-top:4px}
 .strat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.strat-card{background:rgba(255,255,255,.03);border:1px solid var(--line2);border-radius:14px;padding:16px;border-top:3px solid var(--sc)}.strat-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.strat-name{font-weight:600}.strat-trades{font-size:12px;color:var(--txt3)}.strat-nums{font-size:13px;margin-bottom:10px}.strat-nums .win{color:var(--up)}.strat-nums .loss{color:var(--down)}.strat-nums .even{color:var(--txt3)}.strat-nums span{margin-right:12px}.strat-bar{height:8px;border-radius:5px;background:rgba(255,255,255,.06);overflow:hidden}.strat-fill{height:100%}.strat-wr{font-size:13px;font-weight:600;margin-top:8px}
@@ -476,6 +476,8 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
 .rv-item{display:flex;gap:10px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line2)}.rv-dot{width:8px;height:8px;border-radius:50%;margin-top:6px;flex-shrink:0}.rv-text{font-size:13.5px;line-height:1.65;flex:1}.rv-item .tag{flex-shrink:0;margin-top:2px}
 .hist-box{margin-top:2px}.hist-toggle{list-style:none;cursor:pointer;user-select:none;display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--accent);padding:10px 0;font-weight:500}.hist-toggle::-webkit-details-marker{display:none}.hist-toggle::after{content:"▾";transition:transform .2s;font-size:12px}.hist-box[open] .hist-toggle::after{transform:rotate(180deg)}.hist-scroll{max-height:460px;overflow:auto;margin-top:6px;padding-right:4px;scrollbar-width:none;-ms-overflow-style:none}.hist-scroll::-webkit-scrollbar{display:none}
 .fate-block{margin-bottom:26px;padding:20px 22px 22px;background:rgba(255,255,255,.025);border:1px solid var(--line2);border-radius:16px;position:relative;overflow:hidden}.fate-quote{position:absolute;top:10px;right:18px;font-size:38px;line-height:1;color:var(--gold);opacity:.18;font-family:Georgia,serif}.fate-h{font-size:15px;font-weight:600;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:10px;padding-left:12px;border-left:3px solid var(--gold);line-height:1.4}.fate-idx{font-size:11px;color:var(--txt3);font-weight:500;letter-spacing:.1em;opacity:.8}.fate-p{font-size:14px;color:var(--txt2);line-height:2;text-align:justify}.fate-p:last-child{margin-bottom:0}.fate-empty{font-size:13px;color:var(--txt3);line-height:1.8}
+.sys-empty{padding:56px 20px;text-align:center}.sys-empty-icon{font-size:44px;line-height:1;margin-bottom:18px;opacity:.9}.sys-empty-title{font-size:16px;font-weight:600;color:var(--txt2);letter-spacing:.06em;margin-bottom:10px}.sys-empty-sub{font-size:12.5px;color:var(--txt3);letter-spacing:.04em}
+@media(max-width:640px){.sys-empty{padding:40px 14px}.sys-empty-icon{font-size:36px;margin-bottom:14px}.sys-empty-title{font-size:14.5px}}
 @media(max-width:640px){.fate-block{padding:16px 15px 16px;margin-bottom:16px;border-radius:13px}.fate-h{font-size:14px;margin-bottom:9px;gap:8px;padding-left:9px}.fate-p{font-size:13.5px;line-height:1.95}.fate-quote{font-size:30px;top:8px;right:13px}}
 .footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--txt3);text-align:center}.footer b{color:var(--gold)}.footer .ver{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:20px;background:rgba(79,140,255,.12);color:#7ca7ff;font-size:11.5px;letter-spacing:.05em}
 """
@@ -520,7 +522,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
 <div id="update-toast" style="display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:linear-gradient(90deg,#4f8cff,#8b5cf6);color:#fff;text-align:center;padding:11px;font-size:13px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.4)">🔄 检测到云端已更新数据，点击此处或稍候自动刷新…</div>
 <div class="wrap">
   <div class="topbar">
-    <div class="brand"><div class="logo">涨</div><div><div class="brand-t"><span class="brand-cn">可飞牧场</span><span class="brand-en">CofiRanch</span></div><div class="brand-s">A股个人投资工作台 · 云端协同版</div></div></div>
+    <div class="brand"><div class="logo">涨</div><div><div class="brand-t"><span class="brand-cn">可飞牧场</span><span class="brand-en">CofiRanch</span></div><div class="brand-s">流水不争先·争的是滔滔不绝</div></div></div>
     <div class="update"><span class="dot"></span>{esc(lastUpdate)}</div>
   </div>
   <div class="nav">
@@ -528,6 +530,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
     <button class="nav-btn" data-tab="stock">● 选股中心</button>
     <button class="nav-btn" data-tab="journal">● 持仓日志</button>
     <button class="nav-btn" data-tab="review">● 复盘笔记</button>
+    <button class="nav-btn" data-tab="system">● 交易体系</button>
     <button class="nav-btn" data-tab="fate">● 缘起性空</button>
   </div>
   <div class="section active" id="hotspot">
@@ -594,6 +597,11 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
   <div class="section" id="review">
     <div class="card" style="margin-bottom:18px"><div class="card-title">复盘概览 <span class="sub">{esc(review.get("date",""))}</span></div><div style="font-size:14px;color:var(--txt2);line-height:1.8">{esc(review.get("summary",""))}</div></div>
     <div class="card"><div class="card-title">要点归纳</div>{review_points(reviewPoints)}</div>
+  </div>
+  <div class="section" id="system">
+    <div class="card"><div class="card-title">交易体系 <span class="sub">战法规则 · 建设中</span></div>
+      <div class="sys-empty"><div class="sys-empty-icon">🏗️</div><div class="sys-empty-title">栏目建设中，敬请期待</div><div class="sys-empty-sub">规划：战法定义 · 买卖点规则 · 仓位管理 · 执行纪律</div></div>
+    </div>
   </div>
   <div class="section" id="fate">
     <div class="card"><div class="card-title">缘起性空 <span class="sub">投资心法与纪律</span></div>{fate_html(fate)}</div>
