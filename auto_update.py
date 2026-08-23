@@ -145,8 +145,14 @@ def build_html(d):
         for it in items:
             ud = updown(it.get("direction", ""))
             disp = it.get("short") or it.get("name", "")
+            kcode = it.get("kcode", "")
+            bk = it.get("bk", "")
+            attrs = (f' data-src="{esc(it.get("ksrc","tx"))}" data-code="{esc(kcode)}"'
+                     f' data-ref="{esc(it.get("ref",""))}" data-name="{esc(it.get("name",""))}"'
+                     + (f' data-bk="{esc(bk)}"' if bk else "")) if kcode else ""
+            cls = "idx-card klk" if kcode else "idx-card"
             out.append(
-                f'<div class="idx-card"><div class="idx-name">{esc(disp)}</div>'
+                f'<div class="{cls}"{attrs}><div class="idx-name">{esc(disp)}</div>'
                 f'<div class="idx-value {ud}">{esc(it.get("value",""))}</div>'
                 f'<div class="idx-change {ud}"><span class="arr">{"▲" if ud=="up" else "▼"}</span>{fmt_change(it.get("change",""))}</div></div>')
         return "".join(out)
@@ -159,8 +165,14 @@ def build_html(d):
         for it in items:
             w = max(8, it["change"] / max_c * 100)
             pos = it["change"] >= 0
+            kcode = it.get("kcode", "")
+            bk = it.get("bk", "")
+            attrs = (f' data-src="{esc(it.get("ksrc","tx"))}" data-code="{esc(kcode)}"'
+                     f' data-ref="{esc(it.get("ref",""))}" data-name="{esc(it.get("name",""))}"'
+                     + (f' data-bk="{esc(bk)}"' if bk else "")) if kcode else ""
+            cls = "sector-row klk-row" if kcode else "sector-row"
             bars.append(
-                f'<div class="sector-row"><div class="sector-name">{esc(it.get("name",""))}</div>'
+                f'<div class="{cls}"{attrs}><div class="sector-name">{esc(it.get("name",""))}</div>'
                 f'<div class="sector-track"><div class="sector-fill {"pos" if pos else "neg"}" style="width:{w}%"></div></div>'
                 f'<div class="sector-val {"pos" if pos else "neg"}">{it["change"]:+.2f}%</div>'
                 f'<div class="sector-inflow">{esc(it.get("inflow",""))}</div></div>')
@@ -410,7 +422,7 @@ body{font-family:"Inter","PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",sys
 .brand-cn{background:linear-gradient(110deg,#b9c7ee 0%,#b9c7ee 30%,#ffffff 42%,#ffffff 50%,#ffffff 58%,#b9c7ee 70%,#b9c7ee 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:brandShine 6s linear infinite}
 @keyframes brandShine{0%{background-position:150% 0}100%{background-position:0% 0}}
 .brand-en{font-size:13.5px;color:var(--txt3);margin-left:8px;font-weight:600;letter-spacing:.03em;opacity:.85;white-space:nowrap}
-.brand-s{font-size:12px;color:var(--txt3);margin-top:3px}
+.brand-s{font-size:12px;color:var(--txt3);margin-top:3px;letter-spacing:.12em}
 .update{font-size:12px;color:var(--txt3);display:flex;align-items:center;gap:8px;flex-shrink:0;margin-top:6px;white-space:nowrap}
 @media(max-width:640px){
 .topbar{flex-direction:column;align-items:flex-start;margin-bottom:18px}
@@ -466,7 +478,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
 .sector-row{display:grid;grid-template-columns:100px 1fr 70px 70px;align-items:center;gap:12px;padding:8px 0}.sector-name{font-size:13px}.sector-track{height:10px;border-radius:6px;background:rgba(255,255,255,.06);overflow:hidden}.sector-fill{height:100%}.sector-fill.pos{background:linear-gradient(90deg,#ff5470,#ff7d94)}.sector-fill.neg{background:linear-gradient(90deg,#2fd4a6,#2fe6c0)}.sector-val{font-size:12.5px;font-weight:600;text-align:right}.sector-inflow{font-size:11px;color:var(--txt3);text-align:right}
 .news-item{padding:12px 0;border-bottom:1px solid var(--line2)}.news-meta{display:flex;gap:8px;align-items:center;margin-bottom:5px}.time{font-size:11.5px;color:var(--txt3)}.news-title{font-size:13.5px;line-height:1.55}.news-title a{color:var(--txt);text-decoration:none}.news-title a:hover{color:#7ca7ff}.news-rel{font-size:11.5px;color:var(--txt3);margin-top:4px}.ext-arrow{color:var(--accent);font-size:12px;font-weight:700;margin-left:4px;display:inline-block;transition:transform .2s;vertical-align:1px}.news-title a:hover .ext-arrow{transform:translate(2px,-2px)}
 .macro-item{padding:11px 0;border-bottom:1px solid var(--line2)}.macro-tag{display:flex;gap:8px;align-items:center;margin-bottom:5px}.macro-key{font-size:12px;color:var(--accent)}.macro-text{font-size:13px;color:var(--txt2);line-height:1.6}
-.flow-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.flow-card{background:rgba(255,255,255,.03);border:1px solid var(--line2);border-radius:14px;padding:16px}.flow-label{font-size:12px;color:var(--txt3);margin-bottom:6px}.flow-value{font-size:20px;font-weight:700}.flow-sub{font-size:12px;color:var(--txt2);margin-top:4px}
+.flow-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.flow-card{background:rgba(255,255,255,.03);border:1px solid var(--line2);border-radius:14px;padding:16px}.flow-label{font-size:12px;color:var(--txt3);margin-bottom:6px}.flow-value{font-size:20px;font-weight:700}.flow-sub{font-size:11.5px;color:var(--txt3);margin-top:8px}.flow-sub2{font-size:12px;color:var(--txt2);margin-top:10px;white-space:nowrap}
 .strat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.strat-card{background:rgba(255,255,255,.03);border:1px solid var(--line2);border-radius:14px;padding:16px;border-top:3px solid var(--sc)}.strat-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.strat-name{font-weight:600}.strat-trades{font-size:12px;color:var(--txt3)}.strat-nums{font-size:13px;margin-bottom:10px}.strat-nums .win{color:var(--up)}.strat-nums .loss{color:var(--down)}.strat-nums .even{color:var(--txt3)}.strat-nums span{margin-right:12px}.strat-bar{height:8px;border-radius:5px;background:rgba(255,255,255,.06);overflow:hidden}.strat-fill{height:100%}.strat-wr{font-size:13px;font-weight:600;margin-top:8px}
 .funnel-row{display:grid;grid-template-columns:70px 1fr 46px;align-items:center;gap:12px;padding:7px 0}.funnel-label{font-size:13px}.funnel-track{height:34px;border-radius:9px;background:rgba(255,255,255,.04);overflow:hidden}.funnel-fill{height:100%;display:flex;align-items:center;padding-left:10px;position:relative}.funnel-count{font-size:12px;font-weight:600;color:#fff}.funnel-pct{font-size:12px;color:var(--txt2);text-align:right}.pool-note{font-size:12px;color:var(--txt3);margin-top:12px;line-height:1.7}.pool-note b{color:var(--gold)}
 .diag-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}@media(max-width:900px){.diag-grid{grid-template-columns:1fr}}.diag-card{background:rgba(255,255,255,.03);border:1px solid var(--line2);border-radius:14px;padding:16px}.diag-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.diag-name{font-weight:600}.diag-code{font-size:11px;color:var(--txt3)}.diag-pool{font-size:11px;padding:3px 9px;border-radius:7px}.diag-core{background:rgba(245,196,81,.15);color:var(--gold)}.diag-watch{background:rgba(79,140,255,.14);color:#7ca7ff}.diag-score{display:flex;align-items:baseline;gap:4px;margin-bottom:6px}.score-num{font-size:32px;font-weight:700;color:var(--accent)}.score-total{font-size:13px;color:var(--txt3)}.score-track{height:7px;border-radius:4px;background:rgba(255,255,255,.06);overflow:hidden;margin-bottom:12px}.score-fill{height:100%;background:var(--grad)}.diag-strat{margin-bottom:8px}.diag-risk{font-size:12px;color:var(--txt3);line-height:1.5}
@@ -480,6 +492,23 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
 @media(max-width:640px){.sys-empty{padding:40px 14px}.sys-empty-icon{font-size:36px;margin-bottom:14px}.sys-empty-title{font-size:14.5px}}
 @media(max-width:640px){.fate-block{padding:16px 15px 16px;margin-bottom:16px;border-radius:13px}.fate-h{font-size:14px;margin-bottom:9px;gap:8px;padding-left:9px}.fate-p{font-size:13.5px;line-height:1.95}.fate-quote{font-size:30px;top:8px;right:13px}}
 .footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--txt3);text-align:center}.footer b{color:var(--gold)}.footer .ver{display:inline-block;margin-top:10px;padding:4px 14px;border-radius:20px;background:rgba(79,140,255,.12);color:#7ca7ff;font-size:11.5px;letter-spacing:.05em}
+.rzrq-line{display:flex;align-items:baseline;gap:6px;margin-top:8px;font-size:11.5px;white-space:nowrap;flex-wrap:nowrap;overflow:hidden}.rzrq-k{color:var(--txt3);font-size:11px;flex-shrink:0}.rzrq-v{color:var(--txt2);font-weight:600;white-space:nowrap}.rzrq-c{margin-left:auto;font-weight:700;font-size:11px;flex-shrink:0;white-space:nowrap}.flow-sub2{font-size:12px;color:var(--txt2);margin-top:10px;white-space:nowrap}.flow-sub2 b{font-weight:700;color:var(--txt)}
+.klk{cursor:pointer;position:relative;transition:border-color .2s,background .2s,transform .15s}.klk:hover{border-color:rgba(124,167,255,.45);background:rgba(79,140,255,.07)}.klk::after{content:"K";position:absolute;top:5px;right:7px;font-size:9px;font-weight:800;color:#7ca7ff;opacity:.55;background:rgba(79,140,255,.15);border-radius:4px;padding:1px 4px;line-height:1}.klk:hover::after{opacity:1;background:rgba(79,140,255,.25)}
+.klk-row{cursor:pointer;transition:background .2s;border-radius:8px;padding-left:4px;padding-right:4px;margin-left:-4px;margin-right:-4px}.klk-row:hover{background:rgba(79,140,255,.08)}.klk-row:hover .sector-name::after{content:" 📈";font-size:10px;opacity:.7}
+#kmask{display:none;position:fixed;inset:0;z-index:10000;background:rgba(4,8,18,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px}
+#kmask.show{display:flex}
+.kmodal{width:min(760px,96vw);max-height:92vh;overflow:auto;background:linear-gradient(165deg,#0e1730 0%,#0a1226 100%);border:1px solid rgba(90,130,255,.25);border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.6);padding:20px 22px 16px;position:relative;animation:kpop .18s ease-out}
+@keyframes kpop{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+.khead{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px}
+.ktitle{font-size:16px;font-weight:700;color:var(--txt)}
+.kref{font-size:11.5px;color:var(--txt3);margin-top:3px}.kref b{color:#7ca7ff;font-weight:500}
+.kclose{background:rgba(255,255,255,.06);border:1px solid var(--line2);color:var(--txt2);width:30px;height:30px;border-radius:9px;cursor:pointer;font-size:15px;line-height:1;flex-shrink:0;transition:all .2s}.kclose:hover{background:rgba(255,84,112,.15);color:#ff5470;border-color:rgba(255,84,112,.35)}
+.kbody{margin-top:6px}.kbody svg{display:block;width:100%;height:auto}
+.kloading,.kfail{padding:70px 20px;text-align:center;color:var(--txt3);font-size:13.5px;letter-spacing:.05em}
+.kfail{color:#ff8fa3}
+.kspin{display:inline-block;width:26px;height:26px;border:3px solid rgba(124,167,255,.2);border-top-color:#7ca7ff;border-radius:50%;animation:krot .8s linear infinite;margin-bottom:14px}
+@keyframes krot{to{transform:rotate(360deg)}}
+@media(max-width:640px){.kmodal{padding:14px 12px 10px;border-radius:14px}.ktitle{font-size:15px}.rzrq-c{font-size:11.5px}}
 """
 
     # 自动检测服务端新数据并提示/刷新（解决浏览器缓存导致看不到更新的问题）
@@ -497,6 +526,141 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
         "  checkUpdate();setInterval(checkUpdate,60000);"
         "})();"
     )
+
+    # K线弹窗（点击指数/板块卡片 → 弹窗展示近60日日K，腾讯/新浪公开接口 JSONP，无跨域问题）
+    KLINE_JS = r"""
+(function(){
+  var UP='#ff5470', DOWN='#2fd4a6', GRID='rgba(154,166,201,.14)', TXT='#6b7aa6';
+  var EM_KLINE='https://push2his.eastmoney.com/api/qt/stock/kline/get?ut=fa5fd1943c7b386f172d6893dbfba10b&klt=101&fqt=1&lmt=60&end=20500101&fields1=f1,f2,f3&fields2=f51,f52,f53,f54,f55,f56,f57&secid=',
+      EM_FFLOW='https://push2.eastmoney.com/api/qt/stock/fflow/daykline/get?ut=b2884a393a59ad64002292a3e90d46a5&lmt=25&klt=101&secid=1.000001&secid2=0.399001&fields1=f1,f2,f3,f7&fields2=f51,f52&cb=__CB__';
+  var mask=document.createElement('div'); mask.id='kmask';
+  mask.innerHTML='<div class="kmodal"><div class="khead"><div><div class="ktitle"></div><div class="kref"></div></div><button class="kclose" title="关闭">✕</button></div><div class="kbody"></div></div>';
+  document.body.appendChild(mask);
+  var mTitle=mask.querySelector('.ktitle'), mRef=mask.querySelector('.kref'), mBody=mask.querySelector('.kbody');
+  function closeModal(){ mask.classList.remove('show'); document.body.style.overflow=''; }
+  mask.addEventListener('click', function(e){ if(e.target===mask) closeModal(); });
+  mask.querySelector('.kclose').addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+
+  function loadScript(url, vn, cb, timeout){
+    var done=false, s=document.createElement('script');
+    var timer=setTimeout(function(){ if(!done){ done=true; fin(); cb(null); } }, timeout||9000);
+    function fin(){ clearTimeout(timer); try{ delete window[vn]; }catch(e){ window[vn]=undefined; } if(s.parentNode) s.parentNode.removeChild(s); }
+    s.onload=function(){ if(done) return; done=true; var raw=window[vn]; fin(); cb(raw); };
+    s.onerror=function(){ if(!done) return; done=true; fin(); cb(null); };
+    s.src=url; document.head.appendChild(s);
+  }
+  function loadEM(url, cb, timeout){
+    var fn='emcb'+Date.now()+Math.floor(Math.random()*1e5);
+    var done=false, s=document.createElement('script');
+    var timer=setTimeout(function(){ if(!done){ done=true; fin(); cb(null); } }, timeout||4000);
+    function fin(){ clearTimeout(timer); try{ delete window[fn]; }catch(e){ window[fn]=undefined; } if(s.parentNode) s.parentNode.removeChild(s); }
+    window[fn]=function(d){ if(done) return; done=true; fin(); cb(d); };
+    s.onerror=function(){ if(!done) return; done=true; fin(); cb(null); };
+    s.src=url.replace('__CB__', fn); document.head.appendChild(s);
+  }
+  function parseTx(raw, code){
+    if(!raw || raw.code!==0 || !raw.data) return null;
+    var node=raw.data[code]; if(!node) return null;
+    var days=node.day || node.qfqday; if(!days || !days.length) return null;
+    return days.slice(-60).map(function(a){ return {d:a[0],o:+a[1],c:+a[2],h:+a[3],l:+a[4],v:+a[5]||0}; });
+  }
+  function parseSina(raw){
+    if(!raw || !raw.length) return null;
+    return raw.slice(-60).map(function(a){ return {d:a.date,o:+a.open,c:+a.close,h:+a.high,l:+a.low,v:+a.volume||0}; });
+  }
+  function parseEM(raw){
+    if(!raw || !raw.data || !raw.data.klines || !raw.data.klines.length) return null;
+    return raw.data.klines.slice(-60).map(function(s){ var a=s.split(','); return {d:a[0],o:+a[1],c:+a[2],h:+a[3],l:+a[4],v:+a[5]||0}; });
+  }
+
+  function drawK(bars){
+    var n=bars.length, W=680, H=400, padL=12, padR=58, top=44, kBot=288, volT=308, volB=384, bot=398;
+    var iw=W-padL-padR, cw=iw/n, bw=Math.max(2, cw*0.62);
+    var pmin=Infinity, pmax=-Infinity, vmax=0, i, b;
+    for(i=0;i<n;i++){ b=bars[i]; if(b.l<pmin) pmin=b.l; if(b.h>pmax) pmax=b.h; if(b.v>vmax) vmax=b.v; }
+    var padP=(pmax-pmin)*0.04||1; pmin-=padP; pmax+=padP;
+    function Y(p){ return top+(pmax-p)/(pmax-pmin)*(kBot-top); }
+    function ma(k){ var out=[]; for(i=0;i<n;i++){ if(i<k-1){ out.push(null); continue; } var s=0; for(var j=i-k+1;j<=i;j++) s+=bars[j].c; out.push(s/k); } return out; }
+    var ma5=ma(5), ma10=ma(10);
+    var last=bars[n-1].c, first=bars[0].c, chg=(last/first-1)*100, ccol=chg>=0?UP:DOWN;
+    var g='';
+    for(i=0;i<=4;i++){ var py=top+(kBot-top)*i/4, pv=pmax-(pmax-pmin)*i/4;
+      g+='<line x1="'+padL+'" y1="'+py+'" x2="'+(W-padR)+'" y2="'+py+'" stroke="'+GRID+'" stroke-width="1"/>';
+      g+='<text x="'+(W-padR+6)+'" y="'+(py+3.5)+'" fill="'+TXT+'" font-size="10.5" text-anchor="start">'+pv.toFixed(pv>1000?0:2)+'</text>';
+    }
+    for(i=0;i<n;i++){ b=bars[i]; var cx=padL+cw*(i+0.5), up=b.c>=b.o, col=up?UP:DOWN;
+      g+='<line x1="'+cx+'" y1="'+Y(b.h)+'" x2="'+cx+'" y2="'+Y(b.l)+'" stroke="'+col+'" stroke-width="1"/>';
+      var yo=Y(b.o), yc=Y(b.c), rh=Math.max(1,Math.abs(yc-yo));
+      g+='<rect x="'+(cx-bw/2)+'" y="'+Math.min(yo,yc)+'" width="'+bw+'" height="'+rh+'" fill="'+col+'" fill-opacity="1"/>';
+      var vh=vmax>0?b.v/vmax*(volB-volT):0;
+      g+='<rect x="'+(cx-bw/2)+'" y="'+(volB-vh)+'" width="'+bw+'" height="'+Math.max(1,vh)+'" fill="'+col+'" fill-opacity="0.42"/>';
+    }
+    function maPath(arr, col){
+      var d='', k;
+      for(k=0;k<n;k++){ if(arr[k]==null) continue; var x=padL+cw*(k+0.5), y=Y(arr[k]); d+=(d?' L':'M')+x.toFixed(1)+' '+y.toFixed(1); }
+      return d?'<path d="'+d+'" fill="none" stroke="'+col+'" stroke-width="1.3" stroke-opacity="0.9"/>':'';
+    }
+    g+=maPath(ma5,'#f5c451'); g+=maPath(ma10,'#a78bfa');
+    g+='<text x="'+padL+'" y="'+(bot-2)+'" fill="'+TXT+'" font-size="10.5">'+bars[0].d+'</text>';
+    g+='<text x="'+(W-padR)+'" y="'+(bot-2)+'" fill="'+TXT+'" font-size="10.5" text-anchor="end">'+bars[n-1].d+'</text>';
+    g+='<text x="'+padL+'" y="'+(top-18)+'" fill="'+ccol+'" font-size="12.5" font-weight="700">近'+n+'日 '+(chg>=0?'+':'')+chg.toFixed(2)+'% · 最新 '+last+'</text>';
+    g+='<text x="'+padL+'" y="'+(volT-6)+'" fill="'+TXT+'" font-size="9.5">成交量</text>';
+    return '<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet"><rect x="0" y="0" width="'+W+'" height="'+H+'" fill="transparent"/>'+g+'</svg>';
+  }
+
+  function openModal(el){
+    var name=el.getAttribute('data-name')||el.textContent.trim().slice(0,8);
+    var code=el.getAttribute('data-code')||'';
+    var src=el.getAttribute('data-src')||'tx';
+    var ref=el.getAttribute('data-ref')||'';
+    var bk=el.getAttribute('data-bk')||'';
+    mTitle.textContent=name+' · 近60日K线';
+    mRef.textContent='加载中…';
+    mBody.innerHTML='<div class="kloading"><div class="kspin"></div><br>K线加载中…</div>';
+    mask.classList.add('show'); document.body.style.overflow='hidden';
+    function show(bars, srcTxt){
+      if(bars){ mRef.innerHTML=srcTxt; mBody.innerHTML=drawK(bars); }
+      else mBody.innerHTML='<div class="kfail">⚠ K线数据获取失败，请稍后重试</div>';
+    }
+    function tryTx(){
+      var vn='kq'+Date.now()+Math.floor(Math.random()*1e5);
+      loadScript('https://proxy.finance.qq.com/ifzqgtimg/appstock/app/newfqkline/get?_var='+vn+'&param='+encodeURIComponent(code)+',day,,,60,qfq', vn, function(raw){
+        show(parseTx(raw, code), (ref?('参考指数 <b>'+ref+'</b> · '):'')+'腾讯行情 · 仅供参考');
+      });
+    }
+    function trySina(){
+      var vn='kq'+Date.now()+Math.floor(Math.random()*1e5);
+      loadScript('https://stock2.finance.sina.com.cn/futures/api/jsonp.php/var%20'+vn+'=/GlobalFuturesService.getGlobalFuturesDailyKLine?symbol='+encodeURIComponent(code), vn, function(raw){
+        show(parseSina(raw), '新浪期货 · 仅供参考');
+      });
+    }
+    if(bk){
+      loadEM(EM_KLINE+encodeURIComponent('90.'+bk)+'&cb=__CB__', function(d){
+        var bars=parseEM(d);
+        if(bars) show(bars, '东方财富 · '+name+'板块K线 · 实时');
+        else tryTx();
+      });
+    } else if(src==='sina'){ trySina(); } else { tryTx(); }
+  }
+
+  function loadMainFlow(){
+    var e5=document.querySelector('.mf-d5'), e20=document.querySelector('.mf-d20');
+    if(!e5 && !e20) return;
+    loadEM(EM_FFLOW, function(d){
+      if(!d || !d.data || !d.data.klines || d.data.klines.length<5) return;
+      var arr=d.data.klines.map(function(s){ return parseFloat(s.split(',')[1])||0; });
+      function set(el, v){ if(!el) return; el.textContent=(v>=0?'+':'')+(v/1e8).toFixed(1)+'亿'; el.style.color=v>=0?UP:DOWN; }
+      set(e5, arr.slice(-5).reduce(function(a,b){return a+b;},0));
+      if(arr.length>=20) set(e20, arr.slice(-20).reduce(function(a,b){return a+b;},0));
+    }, 6000);
+  }
+
+  function bindK(){ document.querySelectorAll('.klk,.klk-row').forEach(function(el){ if(!el._kbound){ el._kbound=1; el.addEventListener('click', function(){ openModal(el); }); } }); }
+  function onReady(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', fn); else fn(); }
+  onReady(bindK); onReady(loadMainFlow);
+})();
+"""
 
     kpi_block = (
         '<div class="kpi-grid">'
@@ -522,7 +686,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
 <div id="update-toast" style="display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:linear-gradient(90deg,#4f8cff,#8b5cf6);color:#fff;text-align:center;padding:11px;font-size:13px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.4)">🔄 检测到云端已更新数据，点击此处或稍候自动刷新…</div>
 <div class="wrap">
   <div class="topbar">
-    <div class="brand"><div class="logo">涨</div><div><div class="brand-t"><span class="brand-cn">可飞牧场</span><span class="brand-en">CofiRanch</span></div><div class="brand-s">流水不争先·争的是滔滔不绝</div></div></div>
+    <div class="brand"><div class="logo">涨</div><div><div class="brand-t"><span class="brand-cn">可飞牧场</span><span class="brand-en">CofiRanch</span></div><div class="brand-s">流水不争先 · 争的是滔滔不绝</div></div></div>
     <div class="update"><span class="dot"></span>{esc(lastUpdate)}</div>
   </div>
   <div class="nav">
@@ -544,8 +708,19 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
     </div>
     <div class="grid g3" style="margin-bottom:18px">
       <div class="card"><div class="card-title">两市资金</div><div class="flow-grid">
-        <div class="flow-card"><div class="flow-label">两融余额</div><div class="flow-value">{esc(margin.get("balance",""))}</div><div class="flow-sub">{esc(margin.get("date",""))}</div></div>
-        <div class="flow-card"><div class="flow-label">主力净流入</div><div class="flow-value down">{esc(mainflow.get("value",""))}</div><div class="flow-sub">{esc(mainflow.get("change",""))}</div></div>
+        <div class="flow-card">
+          <div class="flow-label">两融余额</div>
+          <div class="flow-value {updown(margin.get('direction',''))}">{esc(margin.get("balance",""))}</div>
+          <div class="rzrq-line"><span class="rzrq-k">融资</span><span class="rzrq-v num">{esc(margin.get("rzBalance","—"))}</span><span class="rzrq-c num {updown(margin.get('rzDirection',''))}">{fmt_change(margin.get("rzChange",""))}</span></div>
+          <div class="rzrq-line"><span class="rzrq-k">融券</span><span class="rzrq-v num">{esc(margin.get("rqBalance","—"))}</span><span class="rzrq-c num {updown(margin.get('rqDirection',''))}">{fmt_change(margin.get("rqChange",""))}</span></div>
+          <div class="flow-sub">{esc(margin.get("date",""))}</div>
+        </div>
+        <div class="flow-card">
+          <div class="flow-label">主力净流入</div>
+          <div class="flow-value {updown(mainflow.get('direction',''))}">{esc(str(mainflow.get("value","")).replace("两市",""))}</div>
+          <div class="flow-sub2">近5日 <b class="num mf-d5">{esc(mainflow.get("d5","—"))}</b> · 近20日 <b class="num mf-d20">{esc(mainflow.get("d20","—"))}</b></div>
+          <div class="flow-sub">{esc(mainflow.get("date","今日"))}</div>
+        </div>
       </div></div>
       <div class="card" style="grid-column:span 2"><div class="card-title">宏观要闻 <span class="sub">货币政策 · 海外</span></div>{macro_list(macro)}</div>
     </div>
@@ -620,6 +795,7 @@ document.querySelectorAll('.nav-btn').forEach(function(b){{
 }});
   var __CURRENT_UPDATE__ = {json.dumps(lastUpdate)};
   {auto_refresh_js}
+  {KLINE_JS}
 </script>
 </body>
 </html>

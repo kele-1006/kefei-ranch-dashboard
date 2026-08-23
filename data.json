@@ -6,25 +6,37 @@
         "name": "上证指数",
         "value": "3903.72",
         "change": "+0.24%",
-        "direction": "up"
+        "direction": "up",
+        "kcode": "sh000001",
+        "ksrc": "tx",
+        "ref": ""
       },
       {
         "name": "深证成指",
         "value": "13972.78",
         "change": "+0.59%",
-        "direction": "up"
+        "direction": "up",
+        "kcode": "sz399001",
+        "ksrc": "tx",
+        "ref": ""
       },
       {
         "name": "创业板指",
         "value": "3495.59",
         "change": "+0.64%",
-        "direction": "up"
+        "direction": "up",
+        "kcode": "sz399006",
+        "ksrc": "tx",
+        "ref": ""
       },
       {
         "name": "科创50",
         "value": "1652.97",
         "change": "-0.87%",
-        "direction": "down"
+        "direction": "down",
+        "kcode": "sh000688",
+        "ksrc": "tx",
+        "ref": ""
       }
     ],
     "usMarkets": [
@@ -35,10 +47,14 @@
         "direction": "up"
       },
       {
-        "name": "纳斯达克",
-        "value": "26331.09",
-        "change": "-1.46%",
-        "direction": "down"
+        "name": "纳斯达克100",
+        "value": "29308.86",
+        "change": "+0.33%",
+        "direction": "up",
+        "kcode": "usNDX",
+        "ksrc": "tx",
+        "ref": "",
+        "short": "纳指100"
       },
       {
         "name": "标普500",
@@ -149,74 +165,119 @@
       }
     ],
     "marginBalance": {
-      "balance": "16839.06亿",
-      "change": "+12.72亿",
-      "date": "截至8月18日",
-      "direction": "up"
+      "balance": "26663.56亿",
+      "change": "-12.48亿",
+      "direction": "down",
+      "date": "截至8月20日",
+      "rzBalance": "26395.22亿",
+      "rzChange": "-0.06%",
+      "rzDirection": "down",
+      "rqBalance": "268.35亿",
+      "rqChange": "+1.44%",
+      "rqDirection": "up"
     },
     "mainFlow": {
-      "value": "两市-229.59亿",
+      "value": "-229.59亿",
       "change": "上证-70.48亿 深证-159.11亿",
-      "direction": "down"
+      "direction": "down",
+      "d5": "—",
+      "d20": "—"
     },
     "hotSectorsToday": [
       {
         "name": "医疗服务",
         "change": 4.24,
-        "inflow": "38.72亿"
+        "inflow": "38.72亿",
+        "kcode": "sz399989",
+        "ksrc": "tx",
+        "ref": "中证医疗 399989",
+        "bk": "BK0727"
       },
       {
         "name": "生物制品",
         "change": 7.85,
-        "inflow": "33.05亿"
+        "inflow": "33.05亿",
+        "kcode": "sh000037",
+        "ksrc": "tx",
+        "ref": "上证医药 000037",
+        "bk": "BK1044"
       },
       {
         "name": "化学制药",
         "change": 2.55,
-        "inflow": "27.71亿"
+        "inflow": "27.71亿",
+        "kcode": "sh000037",
+        "ksrc": "tx",
+        "ref": "上证医药 000037",
+        "bk": "BK0465"
       }
     ],
     "hotSectors5d": [
       {
         "name": "贵金属",
         "change": 11.52,
-        "inflow": "5日强势"
+        "inflow": "5日强势",
+        "kcode": "sh000819",
+        "ksrc": "tx",
+        "ref": "中证有色 000819",
+        "bk": "BK0732"
       },
       {
         "name": "种植业",
         "change": 11.05,
-        "inflow": "5日强势"
+        "inflow": "5日强势",
+        "kcode": "sh000849",
+        "ksrc": "tx",
+        "ref": "中证农业 000849",
+        "bk": "BK1261"
       },
       {
         "name": "农产品加工",
         "change": 7.55,
-        "inflow": "5日强势"
+        "inflow": "5日强势",
+        "kcode": "sh000849",
+        "ksrc": "tx",
+        "ref": "中证农业 000849",
+        "bk": "BK1256"
       }
     ],
     "globalMarkets": [
       {
-        "name": "纳斯达克",
+        "name": "纳斯达克100",
         "value": "26331.09",
         "change": "-1.46%",
-        "direction": "down"
+        "direction": "down",
+        "kcode": "usNDX",
+        "ksrc": "tx",
+        "ref": "",
+        "short": "纳指100"
       },
       {
         "name": "富时A50",
         "value": "14821.60",
         "change": "+1.12%",
-        "direction": "up"
+        "direction": "up",
+        "kcode": "CHA50CFD",
+        "ksrc": "sina",
+        "ref": ""
       },
       {
         "name": "伦敦金现",
         "value": "4597.84",
         "change": "+1.75%",
-        "direction": "up"
+        "direction": "up",
+        "kcode": "XAU",
+        "ksrc": "sina",
+        "ref": ""
       },
       {
         "name": "布伦特原油",
         "value": "91.57",
         "change": "+0.32%",
-        "direction": "up"
+        "direction": "up",
+        "kcode": "OIL",
+        "ksrc": "sina",
+        "ref": ""
       }
     ]
   },
