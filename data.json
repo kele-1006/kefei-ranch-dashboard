@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-23 20:05 · 周末选股扫描",
+  "lastUpdate": "2026-08-23 20:40 · 周末要闻更新",
   "hotspot": {
     "indices": [
       {
@@ -42,8 +42,8 @@
     "usMarkets": [
       {
         "name": "道琼斯",
-        "value": "53463.05",
-        "change": "+0.02%",
+        "value": "53277.01",
+        "change": "+0.98%",
         "direction": "up"
       },
       {
@@ -58,51 +58,83 @@
       },
       {
         "name": "标普500",
-        "value": "7707.98",
-        "change": "-0.59%",
-        "direction": "down"
+        "value": "7674.37",
+        "change": "+0.43%",
+        "direction": "up"
       }
     ],
     "news": [
       {
-        "time": "09:10",
-        "phase": "盘前",
-        "title": "美联储7月FOMC纪要偏鹰：3人主张加息25bp，9月加息概率降至约33%",
+        "time": "08-23",
+        "phase": "周末",
+        "title": "美联储主席沃什8/28晚22点发表杰克逊霍尔年会首场演讲：其拒绝前瞻指引已推升长期美债收益率至二十年高位，市场聚焦抗通胀立场",
+        "sentiment": "neutral",
         "related": "美联储 · 政策",
+        "url": "https://www.gelonghui.com/live/2627001"
+      },
+      {
+        "time": "08-23",
+        "phase": "周末",
+        "title": "华尔街警告杰克逊霍尔风险大于英伟达财报：沃什讲话或改变全球风险资产贴现率，属'系统性定价锚'；明鹰暗鸽的模糊表态或遭市场惩罚",
         "sentiment": "down",
-        "url": ""
+        "related": "美联储 · 美债",
+        "url": "http://www.zhitongcaijing.com/content/detail/1483804.html"
       },
       {
-        "time": "09:10",
-        "phase": "盘前",
-        "title": "头部券商研判A股配置从'AI赛道押注'转向多元均衡，创新药/有色进入增配视野",
+        "time": "08-23",
+        "phase": "周末",
+        "title": "英伟达下周四清晨发布财报：市值5.2万亿美元成全球AI资本开支风向标；拼多多、哔哩哔哩等中概股同周披露",
+        "sentiment": "neutral",
+        "related": "英伟达 · AI",
+        "url": "https://www.cls.cn/detail/2461506"
+      },
+      {
+        "time": "08-22",
+        "phase": "周末",
+        "title": "美股周五集体收涨：道指+0.98%、纳指+0.43%、标普+0.43%；但周线纳指-2.05%终结三周连涨，30年期美债收益率一度飙至5.3%上方",
+        "sentiment": "neutral",
+        "related": "美股 · 美债",
+        "url": "https://www.cls.cn/detail/2461291"
+      },
+      {
+        "time": "08-22",
+        "phase": "周末",
+        "title": "现货黄金4604.53美元/盎司创三个月新高，本周累涨逾5%；LME锌价3823美元/吨创四年新高",
+        "sentiment": "up",
+        "related": "贵金属 · 有色",
+        "url": "https://www.cls.cn/detail/2461291"
+      },
+      {
+        "time": "08-22",
+        "phase": "周末",
+        "title": "国际油价六连涨创7月底以来新高：美对伊朗转向'经济战'，中东局势僵持，贝森特周二发布会将披露制裁细节",
+        "sentiment": "neutral",
+        "related": "原油 · 地缘",
+        "url": "https://www.cls.cn/detail/2461291"
+      },
+      {
+        "time": "08-22",
+        "phase": "周末",
+        "title": "比特币单周累涨23%创2023年3月以来最大周涨幅，最高约78500美元",
+        "sentiment": "up",
+        "related": "加密资产",
+        "url": "https://www.cls.cn/detail/2461291"
+      },
+      {
+        "time": "08-23",
+        "phase": "周末",
+        "title": "银河证券：A股中报披露即将收官，或成个股α密集释放窗口；建议关注半导体/通信设备/有色/电网/人形机器人等景气验证主线",
+        "sentiment": "up",
         "related": "券商 · 策略",
+        "url": "https://m.21jingji.com/timeline/9af875f35b123b489089b897dcb54865.html"
+      },
+      {
+        "time": "08-22",
+        "phase": "周末",
+        "title": "Anthropic聘请谷歌定制芯片项目创始人Amir Salek筹备自研半导体；苹果Siri/Vision Pro团队裁员超200职位",
         "sentiment": "neutral",
-        "url": ""
-      },
-      {
-        "time": "09:10",
-        "phase": "盘前",
-        "title": "8月LPR连续15个月持平（1年期3.0%/5年期3.5%），央行逆回购零操作净回笼3274亿",
-        "related": "央行 · 流动性",
-        "sentiment": "neutral",
-        "url": ""
-      },
-      {
-        "time": "09:10",
-        "phase": "盘前",
-        "title": "上海出台楼市优化政策，中信证券认为有望推动真实居住需求入市",
-        "related": "房地产 · 政策",
-        "sentiment": "up",
-        "url": ""
-      },
-      {
-        "time": "09:10",
-        "phase": "盘前",
-        "title": "世界机器人大会8/20开幕，第二届世界人形机器人运动会8/22-26举办",
-        "related": "机器人 · 产业",
-        "sentiment": "up",
-        "url": ""
+        "related": "AI · 半导体",
+        "url": "https://www.cls.cn/detail/2461291"
       },
       {
         "time": "08-20",
@@ -162,6 +194,11 @@
         "tag": "美国宏观",
         "type": "neutral",
         "text": "美财政部扩大长债回购规模至40亿美元，但周四10Y/30Y收益率反弹约6bp；初请失业金降至20.6万低于预期"
+      },
+      {
+        "type": "neutral",
+        "tag": "国内宏观",
+        "text": "7月工业增加值同比+4.5%、社零同比+0.6%内需仍偏弱；政治局会议强调'充分发挥存量政策效能，及时谋划出台务实管用的增量政策'"
       }
     ],
     "marginBalance": {
@@ -245,9 +282,9 @@
     "globalMarkets": [
       {
         "name": "纳斯达克100",
-        "value": "26331.09",
-        "change": "-1.46%",
-        "direction": "down",
+        "value": "29308.86",
+        "change": "+0.33%",
+        "direction": "up",
         "kcode": "usNDX",
         "ksrc": "tx",
         "ref": "",
@@ -264,8 +301,8 @@
       },
       {
         "name": "伦敦金现",
-        "value": "4597.84",
-        "change": "+1.75%",
+        "value": "4604.53",
+        "change": "+1.89%",
         "direction": "up",
         "kcode": "XAU",
         "ksrc": "sina",
@@ -273,8 +310,8 @@
       },
       {
         "name": "布伦特原油",
-        "value": "91.57",
-        "change": "+0.32%",
+        "value": "92.30",
+        "change": "+0.36%",
         "direction": "up",
         "kcode": "OIL",
         "ksrc": "sina",
