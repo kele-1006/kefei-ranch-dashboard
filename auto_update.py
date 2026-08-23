@@ -175,13 +175,13 @@ def load_data():
 
 def load_asset(name):
     """读取 assets/ 下的源文件（style.css / kline.js / refresh.js）。
-    本地优先（仓库 clone 场景）；本地没有则从 GitHub raw 下载（单文件沙箱场景）。
-    产物 index.html 仍为自包含单文件（CSS/JS 生成时内联），部署方式不变。"""
+    本地优先（仓库 clone 场景）；本地没有则从 GitHub raw 下载（单文件沙箱场景；
+    raw 被阻断时回退 jsdelivr 镜像——静态资源可容忍镜像缓存，data.json 不行）。"""
     local = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets", name)
     if os.path.exists(local):
         with open(local, encoding="utf-8") as f:
             return f.read()
-    content = download_file(f"assets/{name}")
+    content = download_file(f"assets/{name}", allow_mirror=True)
     if not content:
         raise FileNotFoundError(f"缺少资源文件 assets/{name}")
     return content
