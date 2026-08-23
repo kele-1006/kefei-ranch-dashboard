@@ -532,7 +532,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
 (function(){
   var UP='#ff5470', DOWN='#2fd4a6', GRID='rgba(154,166,201,.14)', TXT='#6b7aa6';
   var EM_KLINE='https://push2his.eastmoney.com/api/qt/stock/kline/get?ut=fa5fd1943c7b386f172d6893dbfba10b&klt=101&fqt=1&lmt=60&end=20500101&fields1=f1,f2,f3&fields2=f51,f52,f53,f54,f55,f56,f57&secid=',
-      EM_FFLOW='https://push2.eastmoney.com/api/qt/stock/fflow/daykline/get?ut=b2884a393a59ad64002292a3e90d46a5&lmt=25&klt=101&secid=1.000001&secid2=0.399001&fields1=f1,f2,f3,f7&fields2=f51,f52&cb=__CB__';
+      EM_FFLOW='https://push2his.eastmoney.com/api/qt/stock/fflow/kline/get?ut=fa5fd1943c7b386f172d6893dbfba10b&secid=1.000001&secid2=0.399001&klt=101&fqt=1&lmt=30&end=20500101&fields1=f1,f2,f3,f7&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63&cb=__CB__';
   var mask=document.createElement('div'); mask.id='kmask';
   mask.innerHTML='<div class="kmodal"><div class="khead"><div><div class="ktitle"></div><div class="kref"></div></div><button class="kclose" title="关闭">✕</button></div><div class="kbody"></div></div>';
   document.body.appendChild(mask);
@@ -645,15 +645,18 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
   }
 
   function loadMainFlow(){
-    var e5=document.querySelector('.mf-d5'), e20=document.querySelector('.mf-d20');
-    if(!e5 && !e20) return;
+    var eVal=document.querySelector('.mf-value'), e5=document.querySelector('.mf-d5'), e20=document.querySelector('.mf-d20');
+    if(!eVal && !e5 && !e20) return;
     loadEM(EM_FFLOW, function(d){
       if(!d || !d.data || !d.data.klines || d.data.klines.length<5) return;
-      var arr=d.data.klines.map(function(s){ return parseFloat(s.split(',')[1])||0; });
-      function set(el, v){ if(!el) return; el.textContent=(v>=0?'+':'')+(v/1e8).toFixed(1)+'亿'; el.style.color=v>=0?UP:DOWN; }
-      set(e5, arr.slice(-5).reduce(function(a,b){return a+b;},0));
-      if(arr.length>=20) set(e20, arr.slice(-20).reduce(function(a,b){return a+b;},0));
-    }, 6000);
+      var rows=d.data.klines.map(function(s){ var a=s.split(','); return {d:a[0], v:parseFloat(a[1])||0}; });
+      var latest=rows[rows.length-1];
+      function fmt(v){ return (v>=0?'+':'')+(v/1e8).toFixed(2)+'亿'; }
+      function setTxt(el, v){ if(!el) return; el.textContent=fmt(v); el.style.color=v>=0?UP:DOWN; }
+      if(eVal) setTxt(eVal, latest.v);
+      if(e5) setTxt(e5, rows.slice(-5).reduce(function(a,b){return a+b.v;},0));
+      if(e20 && rows.length>=20) setTxt(e20, rows.slice(-20).reduce(function(a,b){return a+b.v;},0));
+    }, 8000);
   }
 
   function bindK(){ document.querySelectorAll('.klk,.klk-row').forEach(function(el){ if(!el._kbound){ el._kbound=1; el.addEventListener('click', function(){ openModal(el); }); } }); }
@@ -717,9 +720,9 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
         </div>
         <div class="flow-card">
           <div class="flow-label">主力净流入</div>
-          <div class="flow-value {updown(mainflow.get('direction',''))}">{esc(str(mainflow.get("value","")).replace("两市",""))}</div>
+          <div class="flow-value mf-value {updown(mainflow.get('direction',''))}">{esc(str(mainflow.get("value","")).replace("两市",""))}</div>
           <div class="flow-sub2">近5日 <b class="num mf-d5">{esc(mainflow.get("d5","—"))}</b> · 近20日 <b class="num mf-d20">{esc(mainflow.get("d20","—"))}</b></div>
-          <div class="flow-sub">{esc(mainflow.get("date","今日"))}</div>
+          <div class="flow-sub mf-change">{esc(mainflow.get("change","今日"))}</div>
         </div>
       </div></div>
       <div class="card" style="grid-column:span 2"><div class="card-title">宏观要闻 <span class="sub">货币政策 · 海外</span></div>{macro_list(macro)}</div>

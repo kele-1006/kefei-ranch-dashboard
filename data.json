@@ -177,11 +177,12 @@
       "rqDirection": "up"
     },
     "mainFlow": {
-      "value": "-229.59亿",
-      "change": "上证-70.48亿 深证-159.11亿",
-      "direction": "down",
-      "d5": "—",
-      "d20": "—"
+      "value": "+167.16亿",
+      "change": "上证 +23.58亿 · 深证 +143.58亿",
+      "direction": "up",
+      "date": "8月21日",
+      "d5": "-1991.60亿",
+      "d20": "-2946.71亿"
     },
     "hotSectorsToday": [
       {

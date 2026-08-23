@@ -143,9 +143,9 @@ table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;colo
         </div>
         <div class="flow-card">
           <div class="flow-label">主力净流入</div>
-          <div class="flow-value down">-229.59亿</div>
-          <div class="flow-sub2">近5日 <b class="num mf-d5">—</b> · 近20日 <b class="num mf-d20">—</b></div>
-          <div class="flow-sub">今日</div>
+          <div class="flow-value mf-value up">+167.16亿</div>
+          <div class="flow-sub2">近5日 <b class="num mf-d5">-1991.60亿</b> · 近20日 <b class="num mf-d20">-2946.71亿</b></div>
+          <div class="flow-sub mf-change">上证 +23.58亿 · 深证 +143.58亿</div>
         </div>
       </div></div>
       <div class="card" style="grid-column:span 2"><div class="card-title">宏观要闻 <span class="sub">货币政策 · 海外</span></div><div class="macro-item"><div class="macro-tag"><span class="tag tag-neutral">中性</span><span class="macro-key">国内宏观</span></div><div class="macro-text">8月LPR连续15个月持平（1年期3.0%/5年期3.5%），央行逆回购零操作单日净回笼3274亿；7月CPI同比+0.5%通胀温和回落</div></div><div class="macro-item"><div class="macro-tag"><span class="tag tag-neutral">中性</span><span class="macro-key">国内宏观</span></div><div class="macro-text">7月M2同比+7.7%约355.5万亿，社融人民币贷款-5896亿，信贷需求偏弱；多家铜企半年报净利翻倍</div></div><div class="macro-item"><div class="macro-tag"><span class="tag tag-up">利多</span><span class="macro-key">券商观点</span></div><div class="macro-text">中信/中金/华泰研判A股配置从'AI赛道押注'转向多元均衡，创新药、有色金属等非科技方向进入增配视野</div></div><div class="macro-item"><div class="macro-tag"><span class="tag tag-down">利空</span><span class="macro-key">美国宏观</span></div><div class="macro-text">美联储7月FOMC纪要偏鹰，3人主张加息25bp，9月加息概率降至约33%；30年期美债收益率5.25%</div></div><div class="macro-item"><div class="macro-tag"><span class="tag tag-neutral">中性</span><span class="macro-key">美国宏观</span></div><div class="macro-text">美财政部扩大长债回购规模至40亿美元，但周四10Y/30Y收益率反弹约6bp；初请失业金降至20.6万低于预期</div></div></div>
@@ -225,7 +225,7 @@ document.querySelectorAll('.nav-btn').forEach(function(b){
 (function(){
   var UP='#ff5470', DOWN='#2fd4a6', GRID='rgba(154,166,201,.14)', TXT='#6b7aa6';
   var EM_KLINE='https://push2his.eastmoney.com/api/qt/stock/kline/get?ut=fa5fd1943c7b386f172d6893dbfba10b&klt=101&fqt=1&lmt=60&end=20500101&fields1=f1,f2,f3&fields2=f51,f52,f53,f54,f55,f56,f57&secid=',
-      EM_FFLOW='https://push2.eastmoney.com/api/qt/stock/fflow/daykline/get?ut=b2884a393a59ad64002292a3e90d46a5&lmt=25&klt=101&secid=1.000001&secid2=0.399001&fields1=f1,f2,f3,f7&fields2=f51,f52&cb=__CB__';
+      EM_FFLOW='https://push2his.eastmoney.com/api/qt/stock/fflow/kline/get?ut=fa5fd1943c7b386f172d6893dbfba10b&secid=1.000001&secid2=0.399001&klt=101&fqt=1&lmt=30&end=20500101&fields1=f1,f2,f3,f7&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63&cb=__CB__';
   var mask=document.createElement('div'); mask.id='kmask';
   mask.innerHTML='<div class="kmodal"><div class="khead"><div><div class="ktitle"></div><div class="kref"></div></div><button class="kclose" title="关闭">✕</button></div><div class="kbody"></div></div>';
   document.body.appendChild(mask);
@@ -338,15 +338,18 @@ document.querySelectorAll('.nav-btn').forEach(function(b){
   }
 
   function loadMainFlow(){
-    var e5=document.querySelector('.mf-d5'), e20=document.querySelector('.mf-d20');
-    if(!e5 && !e20) return;
+    var eVal=document.querySelector('.mf-value'), e5=document.querySelector('.mf-d5'), e20=document.querySelector('.mf-d20');
+    if(!eVal && !e5 && !e20) return;
     loadEM(EM_FFLOW, function(d){
       if(!d || !d.data || !d.data.klines || d.data.klines.length<5) return;
-      var arr=d.data.klines.map(function(s){ return parseFloat(s.split(',')[1])||0; });
-      function set(el, v){ if(!el) return; el.textContent=(v>=0?'+':'')+(v/1e8).toFixed(1)+'亿'; el.style.color=v>=0?UP:DOWN; }
-      set(e5, arr.slice(-5).reduce(function(a,b){return a+b;},0));
-      if(arr.length>=20) set(e20, arr.slice(-20).reduce(function(a,b){return a+b;},0));
-    }, 6000);
+      var rows=d.data.klines.map(function(s){ var a=s.split(','); return {d:a[0], v:parseFloat(a[1])||0}; });
+      var latest=rows[rows.length-1];
+      function fmt(v){ return (v>=0?'+':'')+(v/1e8).toFixed(2)+'亿'; }
+      function setTxt(el, v){ if(!el) return; el.textContent=fmt(v); el.style.color=v>=0?UP:DOWN; }
+      if(eVal) setTxt(eVal, latest.v);
+      if(e5) setTxt(e5, rows.slice(-5).reduce(function(a,b){return a+b.v;},0));
+      if(e20 && rows.length>=20) setTxt(e20, rows.slice(-20).reduce(function(a,b){return a+b.v;},0));
+    }, 8000);
   }
 
   function bindK(){ document.querySelectorAll('.klk,.klk-row').forEach(function(el){ if(!el._kbound){ el._kbound=1; el.addEventListener('click', function(){ openModal(el); }); } }); }
