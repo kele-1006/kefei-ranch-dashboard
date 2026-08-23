@@ -7,8 +7,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title>可飞牧场 · 投资工作台</title>
-<style>
-:root{--bg0:#070b16;--bg1:#0a1226;--bg2:#0d1833;--card:rgba(17,26,51,.72);--card2:rgba(23,35,66,.6);--line:rgba(90,130,255,.14);--line2:rgba(255,255,255,.06);--txt:#e9eefb;--txt2:#9aa6c9;--txt3:#6b7aa6;--up:#ff5470;--down:#2fd4a6;--accent:#4f8cff;--gold:#f5c451;--grad:linear-gradient(160deg,#4f8cff 0%,#8b5cf6 100%);--shadow:0 20px 60px rgba(0,0,0,.5)}
+<style>:root{--bg0:#070b16;--bg1:#0a1226;--bg2:#0d1833;--card:rgba(17,26,51,.72);--card2:rgba(23,35,66,.6);--line:rgba(90,130,255,.14);--line2:rgba(255,255,255,.06);--txt:#e9eefb;--txt2:#9aa6c9;--txt3:#6b7aa6;--up:#ff5470;--down:#2fd4a6;--accent:#4f8cff;--gold:#f5c451;--grad:linear-gradient(160deg,#4f8cff 0%,#8b5cf6 100%);--shadow:0 20px 60px rgba(0,0,0,.5)}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
 body{font-family:"Inter","PingFang SC","HarmonyOS Sans SC","Microsoft YaHei",system-ui,sans-serif;color:var(--txt);background:radial-gradient(1200px 600px at 15% -10%,#12234d 0%,transparent 60%),radial-gradient(1000px 500px at 110% 10%,#1b1a3a 0%,transparent 55%),radial-gradient(800px 600px at 50% 120%,#0f1f4a 0%,transparent 60%),linear-gradient(160deg,var(--bg0) 0%,var(--bg1) 45%,var(--bg2) 100%);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 .wrap{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:28px 26px 60px}
@@ -223,9 +222,22 @@ document.querySelectorAll('.nav-btn').forEach(function(b){
   });
 });
   var __CURRENT_UPDATE__ = "2026-08-23 20:40 \u00b7 \u5468\u672b\u8981\u95fb\u66f4\u65b0";
-  (function(){  function checkUpdate(){    fetch('data.json?_='+Date.now(),{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){      var latest=d.lastUpdate||'';      if(latest && latest!==__CURRENT_UPDATE__){        var t=document.getElementById('update-toast');        if(t){t.style.display='block';t.onclick=function(){location.reload(true);};setTimeout(function(){location.reload(true);},4000);}      }    }).catch(function(e){});  }  checkUpdate();setInterval(checkUpdate,60000);})();
-  
+  /* 自动检测服务端新数据并提示/刷新（解决浏览器缓存导致看不到更新的问题）
+   __CURRENT_UPDATE__ 为运行时注入的 JS 变量（见 auto_update.py 的 html_doc 模板） */
 (function(){
+  function checkUpdate(){
+    fetch('data.json?_='+Date.now(),{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+      var latest=d.lastUpdate||'';
+      if(latest && latest!==__CURRENT_UPDATE__){
+        var t=document.getElementById('update-toast');
+        if(t){t.style.display='block';t.onclick=function(){location.reload(true);};setTimeout(function(){location.reload(true);},4000);}
+      }
+    }).catch(function(e){});
+  }
+  checkUpdate();setInterval(checkUpdate,60000);
+})();
+
+  (function(){
   var UP='#ff5470', DOWN='#2fd4a6', GRID='rgba(154,166,201,.14)', TXT='#6b7aa6';
   var EM_KLINE='https://push2his.eastmoney.com/api/qt/stock/kline/get?ut=fa5fd1943c7b386f172d6893dbfba10b&klt=101&fqt=1&lmt=60&end=20500101&fields1=f1,f2,f3&fields2=f51,f52,f53,f54,f55,f56,f57&secid=',
       EM_FFLOW='https://push2his.eastmoney.com/api/qt/stock/fflow/kline/get?ut=fa5fd1943c7b386f172d6893dbfba10b&secid=1.000001&secid2=0.399001&klt=101&fqt=1&lmt=30&end=20500101&fields1=f1,f2,f3,f7&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63&cb=__CB__';
