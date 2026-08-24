@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-23 20:40 · 周末要闻更新",
+  "lastUpdate": "2026-08-24 09:10 · 盘前速递",
   "hotspot": {
     "indices": [
       {
@@ -65,76 +65,52 @@
     ],
     "news": [
       {
-        "time": "08-23",
-        "phase": "周末",
-        "title": "美联储主席沃什8/28晚22点发表杰克逊霍尔年会首场演讲：其拒绝前瞻指引已推升长期美债收益率至二十年高位，市场聚焦抗通胀立场",
-        "sentiment": "neutral",
-        "related": "美联储 · 政策",
-        "url": "https://www.gelonghui.com/live/2627001"
-      },
-      {
-        "time": "08-23",
-        "phase": "周末",
-        "title": "华尔街警告杰克逊霍尔风险大于英伟达财报：沃什讲话或改变全球风险资产贴现率，属'系统性定价锚'；明鹰暗鸽的模糊表态或遭市场惩罚",
-        "sentiment": "down",
-        "related": "美联储 · 美债",
-        "url": "http://www.zhitongcaijing.com/content/detail/1483804.html"
-      },
-      {
-        "time": "08-23",
-        "phase": "周末",
-        "title": "英伟达下周四清晨发布财报：市值5.2万亿美元成全球AI资本开支风向标；拼多多、哔哩哔哩等中概股同周披露",
-        "sentiment": "neutral",
-        "related": "英伟达 · AI",
-        "url": "https://www.cls.cn/detail/2461506"
-      },
-      {
-        "time": "08-22",
-        "phase": "周末",
-        "title": "美股周五集体收涨：道指+0.98%、纳指+0.43%、标普+0.43%；但周线纳指-2.05%终结三周连涨，30年期美债收益率一度飙至5.3%上方",
-        "sentiment": "neutral",
-        "related": "美股 · 美债",
-        "url": "https://www.cls.cn/detail/2461291"
-      },
-      {
-        "time": "08-22",
-        "phase": "周末",
-        "title": "现货黄金4604.53美元/盎司创三个月新高，本周累涨逾5%；LME锌价3823美元/吨创四年新高",
+        "time": "08-24",
+        "phase": "盘前",
+        "title": "存量博弈等待方向选择：算力硬件为最强主线，阿里拟配售800亿港元加码AI基建，英伟达高端AI服务器涨价超15%；中际旭创半年报净利136.51亿同比增242%",
         "sentiment": "up",
-        "related": "贵金属 · 有色",
-        "url": "https://www.cls.cn/detail/2461291"
+        "related": "算力硬件 · AI",
+        "url": "https://www.cls.cn/detail/2461912"
       },
       {
-        "time": "08-22",
-        "phase": "周末",
-        "title": "国际油价六连涨创7月底以来新高：美对伊朗转向'经济战'，中东局势僵持，贝森特周二发布会将披露制裁细节",
-        "sentiment": "neutral",
-        "related": "原油 · 地缘",
-        "url": "https://www.cls.cn/detail/2461291"
-      },
-      {
-        "time": "08-22",
-        "phase": "周末",
-        "title": "比特币单周累涨23%创2023年3月以来最大周涨幅，最高约78500美元",
+        "time": "08-24",
+        "phase": "盘前",
+        "title": "医药生物轮动分歧后迎催化：日本名古屋大学与富士胶片开发新型LNP，环状RNA递送活性提升10倍；海外Moderna反弹，板块有望阶段性修复",
         "sentiment": "up",
-        "related": "加密资产",
-        "url": "https://www.cls.cn/detail/2461291"
+        "related": "医药生物 · 创新药",
+        "url": "https://www.cls.cn/detail/2461912"
       },
       {
-        "time": "08-23",
-        "phase": "周末",
-        "title": "银河证券：A股中报披露即将收官，或成个股α密集释放窗口；建议关注半导体/通信设备/有色/电网/人形机器人等景气验证主线",
-        "sentiment": "up",
-        "related": "券商 · 策略",
-        "url": "https://m.21jingji.com/timeline/9af875f35b123b489089b897dcb54865.html"
-      },
-      {
-        "time": "08-22",
-        "phase": "周末",
-        "title": "Anthropic聘请谷歌定制芯片项目创始人Amir Salek筹备自研半导体；苹果Siri/Vision Pro团队裁员超200职位",
+        "time": "08-24",
+        "phase": "盘前",
+        "title": "ETF资金延续'避险为王'：8月21日宽基指数ETF净流出95.37亿、跨境ETF净流出10.15亿；货币/信用债/商品ETF分别净流入21.09亿、18.37亿、17.97亿",
         "sentiment": "neutral",
-        "related": "AI · 半导体",
-        "url": "https://www.cls.cn/detail/2461291"
+        "related": "ETF · 资金流向",
+        "url": "https://www.gelonghui.com/live/2627894"
+      },
+      {
+        "time": "08-24",
+        "phase": "盘前",
+        "title": "招商证券：长端美债利率上行反映AI融资挤出等结构性问题，短期A股波动或加大，沿科技创新、制造出海、低估值政策发力三条线索均衡布局",
+        "sentiment": "neutral",
+        "related": "券商观点 · 策略",
+        "url": "https://www.gelonghui.com/live/2627853"
+      },
+      {
+        "time": "08-24",
+        "phase": "盘前",
+        "title": "券商晨会：华泰看'盈利与筹码的配置差'、兴业看拥挤度'高低易位'、中信看AI三大关键叙事；上周五沪指+0.04%深成+0.87%创业板+1.43%，成交1.88万亿",
+        "sentiment": "neutral",
+        "related": "券商策略 · 复盘",
+        "url": "https://www.cls.cn/detail/2461839"
+      },
+      {
+        "time": "08-24",
+        "phase": "盘前",
+        "title": "融资余额占流通市值比例超10%个股共80只，福建水泥(19.14%)、信凯科技(17.37%)、天马科技(16.82%)居前；8月21日两融余额26333.15亿",
+        "sentiment": "neutral",
+        "related": "两融 · 杠杆资金",
+        "url": "https://www.stcn.com/article/detail/4104978.html"
       },
       {
         "time": "08-20",
@@ -292,17 +268,17 @@
       },
       {
         "name": "富时A50",
-        "value": "14821.60",
-        "change": "+1.12%",
-        "direction": "up",
+        "value": "14804.50",
+        "change": "-0.26%",
+        "direction": "down",
         "kcode": "CHA50CFD",
         "ksrc": "sina",
         "ref": ""
       },
       {
         "name": "伦敦金现",
-        "value": "4604.53",
-        "change": "+1.89%",
+        "value": "4618.51",
+        "change": "+0.30%",
         "direction": "up",
         "kcode": "XAU",
         "ksrc": "sina",
@@ -310,9 +286,9 @@
       },
       {
         "name": "布伦特原油",
-        "value": "92.30",
-        "change": "+0.36%",
-        "direction": "up",
+        "value": "90.54",
+        "change": "-2.29%",
+        "direction": "down",
         "kcode": "OIL",
         "ksrc": "sina",
         "ref": ""
