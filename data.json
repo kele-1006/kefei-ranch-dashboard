@@ -1,42 +1,24 @@
 {
-  "lastUpdate": "2026-08-25 19:10 · 盘后复盘",
+  "lastUpdate": "2026-08-26 09:10 · 盘前速递",
   "hotspot": {
     "indices": [
       {
         "name": "上证指数",
-        "value": "3889.44",
-        "change": "+0.19%",
-        "direction": "up",
-        "kcode": "sh000001",
-        "ksrc": "tx",
-        "ref": ""
+        "value": "3881.74",
+        "change": "-0.20%",
+        "direction": "down"
       },
       {
         "name": "深证成指",
-        "value": "13745.87",
-        "change": "-0.35%",
-        "direction": "down",
-        "kcode": "sz399001",
-        "ksrc": "tx",
-        "ref": ""
+        "value": "13761.36",
+        "change": "+0.11%",
+        "direction": "up"
       },
       {
         "name": "创业板指",
-        "value": "3397.52",
-        "change": "-1.00%",
-        "direction": "down",
-        "kcode": "sz399006",
-        "ksrc": "tx",
-        "ref": ""
-      },
-      {
-        "name": "科创50",
-        "value": "1602.34",
-        "change": "0.00%",
-        "direction": "up",
-        "kcode": "sh000688",
-        "ksrc": "tx",
-        "ref": ""
+        "value": "3409.28",
+        "change": "+0.35%",
+        "direction": "up"
       }
     ],
     "usMarkets": [
@@ -65,60 +47,68 @@
     ],
     "news": [
       {
-        "time": "08-25",
-        "phase": "盘后",
-        "title": "收评：沪指涨0.19%报3889.44，深成指跌0.35%，创业板指跌1%；种业/粮食/跨境支付/医药走强，全市场成交额逾1.8万亿缩量",
+        "time": "08-26",
+        "phase": "盘前",
+        "title": "隔夜美股三大指数集体收涨：道指+0.30%三连涨、纳指+0.66%、标普500+0.32%；英伟达+2.19%终结七连跌，费城半导体指数+1.44%",
+        "sentiment": "up",
+        "related": "美股 · 芯片",
+        "url": "https://t.10jqka.com.cn/pid_682275340.shtml"
+      },
+      {
+        "time": "08-26",
+        "phase": "盘前",
+        "title": "美债收益率全线回落：10年期跌7.13bp报4.625%、2年期跌6.39bp报4.170%，全球科技股估值压力缓解",
+        "sentiment": "up",
+        "related": "美债 · 外围",
+        "url": "https://www.cls.cn/detail/2464209"
+      },
+      {
+        "time": "08-26",
+        "phase": "盘前",
+        "title": "证监会召开头部机构投资者座谈会，引导社保/险资/银行理财等中长期资金入市，释放稳市场信号",
+        "sentiment": "up",
+        "related": "长钱入市 · 政策",
+        "url": "https://k.sina.com.cn/article_7879996580_1d5af34a402001ud1y.html"
+      },
+      {
+        "time": "08-26",
+        "phase": "盘前",
+        "title": "央行组合拳呵护月末流动性：25日开展5000亿1年期MLF，8/27-9/1每日开展不超6000亿隔夜逆回购",
         "sentiment": "neutral",
-        "related": "大盘 · 收评",
-        "url": "https://www.stcn.com/article/detail/4115790.html"
+        "related": "流动性 · 央行",
+        "url": "https://www.cls.cn/detail/2464209"
       },
       {
-        "time": "08-25",
-        "phase": "盘后",
-        "title": "两市主力资金全天净流入119.72亿元，机械设备净流入66.63亿居首、医药生物34.86亿；有色金属净流出46.83亿居首",
+        "time": "08-26",
+        "phase": "盘前",
+        "title": "国际油价大跌：布伦特原油跌超3%跌破90美元，美伊停火谈判传进展、霍尔木兹海峡局势缓和",
+        "sentiment": "down",
+        "related": "原油 · 地缘",
+        "url": "https://www.163.com/dy/article/L586OTNM05198NMR.html"
+      },
+      {
+        "time": "08-26",
+        "phase": "盘前",
+        "title": "国际金价创近三个月新高：COMEX黄金+0.39%报4715.90美元，现货黄金盘中突破4680美元，避险+弱美元共振",
         "sentiment": "up",
-        "related": "资金面",
-        "url": "https://www.stcn.com/article/detail/4116025.html"
+        "related": "黄金 · 有色",
+        "url": "https://www.toutiao.com/article/7678131856289661446/"
       },
       {
-        "time": "08-25",
-        "phase": "盘后",
-        "title": "沪深京三市成交总额18445亿元，较前一交易日缩量约1769亿元，再次跌破两万亿",
-        "sentiment": "down",
-        "related": "成交量",
-        "url": "https://m.cnfin.com/gs-lb//zixun/20260825/4460087_1.html"
+        "time": "08-26",
+        "phase": "盘前",
+        "title": "工信部：上半年数字产业收入20.71万亿元同比+13.6%，利润1.79万亿元同比+19.3%，AI需求拉动明显",
+        "sentiment": "up",
+        "related": "数字经济 · 宏观",
+        "url": "https://www.toutiao.com/article/7678139293629415988"
       },
       {
-        "time": "08-25",
-        "phase": "盘后",
-        "title": "30年期美债收益率盘中冲至5.334%创2007年以来新高，10年期升至4.75%附近，美联储主席沃什杰克逊霍尔首秀（8月28日）引关注",
-        "sentiment": "down",
-        "related": "美债 · 美联储",
-        "url": "https://new.qq.com/rain/a/20260825A06RDG00"
-      },
-      {
-        "time": "08-25",
-        "phase": "盘后",
-        "title": "CME美联储观察：9月维持利率不变概率58.6%，加息25基点概率41.4%；市场利率预期在财政部回购与官员表态后分化",
+        "time": "08-26",
+        "phase": "盘前",
+        "title": "今日关注：20:30美国7月PCE物价指数；明晨英伟达Q2财报落地（AI硬件交易关键验证点）；本周杰克逊霍尔年会首秀",
         "sentiment": "neutral",
-        "related": "美联储",
-        "url": "https://new.qq.com/rain/a/20260825A06RDG00"
-      },
-      {
-        "time": "08-25",
-        "phase": "盘后",
-        "title": "美国财政部或动用近万亿TGA账户为扩大国债回购提供资金，长端收益率小幅回落、美股期指跌幅收窄，现货黄金维持4650美元涨势",
-        "sentiment": "up",
-        "related": "美股 · 黄金",
-        "url": "https://view.inews.qq.com/a/20260824A0BVZN00"
-      },
-      {
-        "time": "08-25",
-        "phase": "盘后",
-        "title": "美容护理板块涨3.66%居申万一级行业首位，农林牧渔涨2.23%、医药生物涨2.08%；有色金属跌2.48%、电力设备跌1.07%领跌",
-        "sentiment": "up",
-        "related": "板块",
-        "url": "https://finance.sina.cn/2026-08-25/detail-inipprnq5459175.d.html"
+        "related": "日程 · 风险事件",
+        "url": "https://caifuhao.eastmoney.com/news/20260826072651185224680"
       },
       {
         "time": "08-20",
@@ -154,6 +144,26 @@
       }
     ],
     "macro": [
+      {
+        "tag": "国内宏观",
+        "type": "up",
+        "text": "证监会召开头部机构投资者座谈会，引导中长期资金入市，推进长钱长投配套政策落地"
+      },
+      {
+        "tag": "国内宏观",
+        "type": "neutral",
+        "text": "央行25日开展5000亿1年期MLF，8/27-9/1每日开展不超6000亿隔夜逆回购，组合拳呵护月末流动性"
+      },
+      {
+        "tag": "国内宏观",
+        "type": "neutral",
+        "text": "工信部：上半年数字产业收入20.71万亿同比+13.6%，利润1.79万亿同比+19.3%"
+      },
+      {
+        "tag": "美国宏观",
+        "type": "up",
+        "text": "美债收益率全线回落，10年期跌7.13bp报4.625%，长端利率压力暂缓"
+      },
       {
         "tag": "国内宏观",
         "type": "neutral",
@@ -215,29 +225,29 @@
     },
     "hotSectorsToday": [
       {
-        "name": "美容护理",
-        "change": 3.66,
-        "inflow": "涨幅居首，青岛金王涨停"
+        "name": "疫苗",
+        "change": 2.1,
+        "inflow": "涨幅居首"
       },
       {
-        "name": "农林牧渔/种业",
-        "change": 2.23,
-        "inflow": "万向德农/登海种业/金健米业涨停"
+        "name": "白银",
+        "change": 1.79,
+        "inflow": "贵金属走强"
       },
       {
-        "name": "医药生物",
-        "change": 2.08,
-        "inflow": "凯莱英/海南海药涨停，净流入34.86亿"
+        "name": "诊断服务",
+        "change": 1.52,
+        "inflow": "医药活跃"
       },
       {
-        "name": "机械设备",
+        "name": "卫浴制品",
         "change": 1.36,
-        "inflow": "主力净流入66.63亿居首，机器人/算力活跃"
+        "inflow": "消费建材"
       },
       {
-        "name": "跨境支付",
-        "change": 3.8,
-        "inflow": "楚天龙/青岛金王涨停"
+        "name": "光伏加工设备",
+        "change": 1.33,
+        "inflow": "光伏反弹"
       }
     ],
     "hotSectors5d": [
@@ -272,40 +282,21 @@
     "globalMarkets": [
       {
         "name": "纳斯达克100",
-        "value": "29023.18",
-        "change": "-0.97%",
-        "direction": "down",
-        "kcode": "usNDX",
-        "ksrc": "tx",
-        "ref": "",
-        "short": "纳指100"
-      },
-      {
-        "name": "富时A50",
-        "value": "14583.37",
-        "change": "-0.47%",
-        "direction": "down",
-        "kcode": "CHA50CFD",
-        "ksrc": "sina",
-        "ref": ""
+        "value": "29209.23",
+        "change": "+0.64%",
+        "direction": "up"
       },
       {
         "name": "伦敦金现",
-        "value": "4640.04",
-        "change": "-0.25%",
-        "direction": "down",
-        "kcode": "XAU",
-        "ksrc": "sina",
-        "ref": ""
+        "value": "4646.62",
+        "change": "-0.26%",
+        "direction": "down"
       },
       {
         "name": "布伦特原油",
-        "value": "88.21",
-        "change": "-2.57%",
-        "direction": "down",
-        "kcode": "OIL",
-        "ksrc": "sina",
-        "ref": ""
+        "value": "85.33",
+        "change": "-2.22%",
+        "direction": "down"
       }
     ]
   },
