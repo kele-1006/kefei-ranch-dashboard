@@ -66,91 +66,51 @@
     "news": [
       {
         "time": "08-27",
-        "phase": "盘前",
-        "title": "英伟达Q2营收962亿美元同比+106%、调整后EPS 2.22美元同比+120%，Q3指引1080亿美元超预期，盘后涨超5%",
+        "phase": "盘后",
+        "title": "A股放量上攻：成交2.13万亿较前日放量3172亿，芯片/PCB掀涨停潮，超3300股上涨",
         "sentiment": "up",
-        "related": "美股 · AI算力",
-        "url": "https://www.cls.cn/detail/2465705"
+        "related": "大盘",
+        "url": "https://www.163.com/dy/article/L5BO3TVP0512B07B.html"
       },
       {
         "time": "08-27",
-        "phase": "盘前",
-        "title": "隔夜美股三大指数小幅收跌：道指-0.21%、纳指-0.08%、标普500-0.02%；科技七巨头涨跌互现",
-        "sentiment": "neutral",
-        "related": "隔夜外盘",
-        "url": "https://data.tdx.com.cn/tdxfiles/"
-      },
-      {
-        "time": "08-27",
-        "phase": "盘前",
-        "title": "有色金属行情逻辑切换至新能源+AI新增需求，筹码拥挤度下降，有望反复轮动走强",
+        "phase": "盘后",
+        "title": "主力资金全天净流入589.23亿连续3日，电子行业+398.53亿居首，通信+107.09亿次之",
         "sentiment": "up",
-        "related": "有色金属",
-        "url": "https://www.cls.cn/detail/2465705"
-      },
-      {
-        "time": "08-27",
-        "phase": "盘前",
-        "title": "ETF资金防御性明显：8月26日权益类ETF净流出超146亿，货币/债券ETF获增持，黄金品种获利了结",
-        "sentiment": "down",
         "related": "资金面",
-        "url": "https://www.gelonghui.com/news/5297282"
+        "url": "https://www.stcn.com/article/detail/4138886.html"
       },
       {
         "time": "08-27",
-        "phase": "盘前",
-        "title": "现货黄金隔夜跌1.38%报4594.49美元/盎司，国际油价小幅下跌，布伦特收87.84美元/桶",
-        "sentiment": "down",
-        "related": "大宗商品 · 贵金属",
-        "url": "https://data.tdx.com.cn/tdxfiles/"
-      },
-      {
-        "time": "08-27",
-        "phase": "盘前",
-        "title": "上海印发战略性新兴产业十五五规划：推进固态电池对比测试基地、提升集成电路能级、加快创新药培育",
+        "phase": "盘后",
+        "title": "特大单净流入554.28亿：生益科技24.41亿居首、长飞光纤19.36亿次之，宁德时代净流出10.21亿",
         "sentiment": "up",
-        "related": "政策 · 产业",
-        "url": "https://data.tdx.com.cn/tdxfiles/"
+        "related": "资金面",
+        "url": "https://stcn.com/article/detail/4138932.html"
       },
       {
         "time": "08-27",
-        "phase": "盘前",
-        "title": "MiniMax 8月ARR破8亿美元、Q2收入环比+81.8%；智谱开源GLM-5.3-Flash原生多模态模型",
+        "phase": "盘后",
+        "title": "英伟达Q2营收962亿美元(+106%)大超预期，A股算力链HBM/存储/PCB/CPO全线走强",
+        "sentiment": "up",
+        "related": "AI算力",
+        "url": "https://www.163.com/dy/article/L5BO3TVP0512B07B.html"
+      },
+      {
+        "time": "08-27",
+        "phase": "盘后",
+        "title": "阿里巴巴完成800亿港元港股配售，中金公司担任联席整体协调人",
         "sentiment": "neutral",
-        "related": "AI大模型",
-        "url": "https://m.21jingji.com/article/20260827/herald/a6c2d8bc1502f49d405f26a278634c1c.html"
+        "related": "中概股",
+        "url": "http://www.dongtaibao.cn/#/releaseDetail?id=1847247"
       },
       {
-        "time": "08-20",
-        "phase": "持仓",
-        "title": "铜陵有色：控股子公司HVLP5代高速铜箔突破关键指标，已开发固态电池适用铜箔；半年报净利同比翻倍",
-        "related": "铜陵有色",
-        "sentiment": "up",
-        "url": "https://www.163.com/dy/article/L4Q6EAUP0519QIKK.html"
-      },
-      {
-        "time": "08-21",
-        "phase": "持仓",
-        "title": "海正药业：公告参股子公司赞生药业9600万担保逾期已解除",
-        "related": "海正药业",
-        "sentiment": "up",
-        "url": "https://finance.sina.com.cn/roll/2026-08-21/doc-ininzaze1690873.shtml.md"
-      },
-      {
-        "time": "08-20",
-        "phase": "持仓",
-        "title": "供销大集：完成收购国投农产品60%股权并纳入合并报表；与浙商银行签9000万综合授信",
-        "related": "供销大集",
-        "sentiment": "up",
-        "url": "https://paper.cnstock.com/html/2026-08/20/content_2256935.htm"
-      },
-      {
-        "time": "08-20",
-        "phase": "持仓",
-        "title": "福莱特：融资余额3.45亿元，光伏行业整体波动致上半年预亏3-4亿元",
-        "related": "福莱特",
+        "time": "08-27",
+        "phase": "盘后",
+        "title": "高盛复盘世界人形机器人运动会：行业竞争从运动展示转向真实应用与自主能力",
         "sentiment": "neutral",
-        "url": ""
+        "related": "机器人",
+        "url": "https://www.cls.cn/detail/2466606"
       }
     ],
     "macro": [
