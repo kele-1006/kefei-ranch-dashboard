@@ -1,24 +1,24 @@
 {
-  "lastUpdate": "2026-08-26 21:45 · 盘后复盘",
+  "lastUpdate": "2026-08-27 09:10 · 盘前速递",
   "hotspot": {
     "indices": [
       {
         "name": "上证指数",
-        "value": "3912.52",
-        "change": "+0.59%",
-        "direction": "up"
+        "value": "3912.49",
+        "change": "+0.00%",
+        "direction": "down"
       },
       {
         "name": "深证成指",
         "value": "13841.33",
-        "change": "+0.69%",
-        "direction": "up"
+        "change": "+0.00%",
+        "direction": "flat"
       },
       {
         "name": "创业板指",
         "value": "3414.88",
-        "change": "+0.51%",
-        "direction": "up"
+        "change": "+0.00%",
+        "direction": "flat"
       }
     ],
     "usMarkets": [
@@ -47,68 +47,60 @@
     ],
     "news": [
       {
-        "time": "08-26",
-        "phase": "盘后",
-        "title": "A股收盘：三大指数集体上涨，上证+0.59%报3912.52、深成指+0.69%、创业板+0.51%，超2900股上涨，全市场成交约1.82万亿元",
+        "time": "08-27",
+        "phase": "盘前",
+        "title": "英伟达Q2营收962亿美元同比+106%、调整后EPS 2.22美元同比+120%，Q3指引1080亿美元超预期，盘后涨超5%",
         "sentiment": "up",
-        "related": "A股 · 收盘",
-        "url": "https://www.cls.cn/detail/2465284"
+        "related": "美股 · AI算力",
+        "url": "https://www.cls.cn/detail/2465705"
       },
       {
-        "time": "08-26",
-        "phase": "盘后",
-        "title": "主力资金全天净流入184.87亿元：有色金属59.33亿居首、非银金融58.03亿、电子37.28亿；洛阳钼业获抢筹22.98亿",
+        "time": "08-27",
+        "phase": "盘前",
+        "title": "隔夜美股三大指数小幅收跌：道指-0.21%、纳指-0.08%、标普500-0.02%；科技七巨头涨跌互现",
+        "sentiment": "neutral",
+        "related": "隔夜外盘",
+        "url": "https://data.tdx.com.cn/tdxfiles/"
+      },
+      {
+        "time": "08-27",
+        "phase": "盘前",
+        "title": "有色金属行情逻辑切换至新能源+AI新增需求，筹码拥挤度下降，有望反复轮动走强",
         "sentiment": "up",
+        "related": "有色金属",
+        "url": "https://www.cls.cn/detail/2465705"
+      },
+      {
+        "time": "08-27",
+        "phase": "盘前",
+        "title": "ETF资金防御性明显：8月26日权益类ETF净流出超146亿，货币/债券ETF获增持，黄金品种获利了结",
+        "sentiment": "down",
         "related": "资金面",
-        "url": "https://www.stcn.com/article/detail/4127157.html"
+        "url": "https://www.gelonghui.com/news/5297282"
       },
       {
-        "time": "08-26",
-        "phase": "盘后",
-        "title": "板块：黄金概念、证券、造纸涨幅居前（非银金融+2.47%、有色金属+1.84%）；医疗服务、电机跌幅居前",
-        "sentiment": "up",
-        "related": "板块",
-        "url": "https://www.cls.cn/detail/2465284"
-      },
-      {
-        "time": "08-26",
-        "phase": "盘后",
-        "title": "英伟达Q2财报今夜出炉（北京时间明晨）：市场预计营收922亿美元、EPS 2.09美元，Q3指引预期已升至1037亿美元",
-        "sentiment": "neutral",
-        "related": "美股 · 财报",
-        "url": "https://www.cls.cn/detail/2465282"
-      },
-      {
-        "time": "08-26",
-        "phase": "盘后",
-        "title": "三星电子与SK海力士拟下半年增加对英伟达8层HBM4内存供应量，8层产品有望成为HBM4E旗舰",
-        "sentiment": "up",
-        "related": "半导体 · 存储",
-        "url": "https://www.cls.cn/detail/2465282"
-      },
-      {
-        "time": "08-26",
-        "phase": "盘后",
-        "title": "国际油价延续跌势：WTI原油-2.46%报80.34美元/桶，布伦特-2.12%报85.42美元/桶",
+        "time": "08-27",
+        "phase": "盘前",
+        "title": "现货黄金隔夜跌1.38%报4594.49美元/盎司，国际油价小幅下跌，布伦特收87.84美元/桶",
         "sentiment": "down",
-        "related": "大宗商品",
-        "url": "https://www.cls.cn/detail/2465282"
+        "related": "大宗商品 · 贵金属",
+        "url": "https://data.tdx.com.cn/tdxfiles/"
       },
       {
-        "time": "08-26",
-        "phase": "盘后",
-        "title": "现货黄金回落0.72%报4625.02美元/盎司（隔夜曾创新高后获利回吐），白银微涨0.09%报68.70美元",
-        "sentiment": "down",
-        "related": "贵金属",
-        "url": "https://www.cls.cn/detail/2465282"
+        "time": "08-27",
+        "phase": "盘前",
+        "title": "上海印发战略性新兴产业十五五规划：推进固态电池对比测试基地、提升集成电路能级、加快创新药培育",
+        "sentiment": "up",
+        "related": "政策 · 产业",
+        "url": "https://data.tdx.com.cn/tdxfiles/"
       },
       {
-        "time": "08-26",
-        "phase": "盘后",
-        "title": "央行今日开展2395亿元7天期逆回购操作，利率1.40%与此前持平，延续呵护月末流动性",
+        "time": "08-27",
+        "phase": "盘前",
+        "title": "MiniMax 8月ARR破8亿美元、Q2收入环比+81.8%；智谱开源GLM-5.3-Flash原生多模态模型",
         "sentiment": "neutral",
-        "related": "国内宏观",
-        "url": "https://www.cls.cn/detail/2464293"
+        "related": "AI大模型",
+        "url": "https://m.21jingji.com/article/20260827/herald/a6c2d8bc1502f49d405f26a278634c1c.html"
       },
       {
         "time": "08-20",
@@ -281,22 +273,22 @@
     ],
     "globalMarkets": [
       {
-        "name": "纳斯达克100",
-        "value": "29209.23",
-        "change": "+0.64%",
-        "direction": "up"
+        "name": "布伦特原油",
+        "value": "86.83",
+        "change": "-0.13%",
+        "direction": "down"
       },
       {
         "name": "伦敦金现",
-        "value": "4646.62",
-        "change": "-0.26%",
-        "direction": "down"
+        "value": "4619.17",
+        "change": "+0.54%",
+        "direction": "up"
       },
       {
-        "name": "布伦特原油",
-        "value": "85.33",
-        "change": "-2.22%",
-        "direction": "down"
+        "name": "纳斯达克100",
+        "value": "29224.52",
+        "change": "+0.05%",
+        "direction": "up"
       }
     ]
   },
