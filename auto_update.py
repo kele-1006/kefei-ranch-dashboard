@@ -232,7 +232,17 @@ def git_fallback_all(token, update):
 
 # ---------------- 数据加载 ----------------
 def load_data():
-    """优先 GitHub 上的 data.json，否则空模板。"""
+    """数据基线：本地优先（git clone 场景，clone 即最新），否则 GitHub raw。
+    本地优先的理由：任务沙箱网络对 raw/jsdelivr 存在动态 SNI 阻断（2026-08-27
+    实测 raw 域名+IP+jsdelivr 三路同时被掐），clone 场景下本地 data.json 就是
+    线上最新，无需再走网络；单文件运行场景才回退下载。"""
+    local = os.path.join(os.path.dirname(os.path.abspath(__file__)), DATA_FILE)
+    if os.path.exists(local):
+        try:
+            with open(local, encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"⚠️ 解析本地 data.json 失败（改为网络下载）: {e}")
     content = download_file(DATA_FILE)
     if content:
         try:
@@ -521,7 +531,7 @@ def build_html(d):
     colors = ["#4f8cff", "#38d9c2", "#f5a623", "#ff6b81", "#a78bfa", "#f472b6"]
     angle = 0.0
     for i, p in enumerate(positions):
-        pct = weight_val(p["weight"])
+        pct = weight_val(p.get("weight", ""))
         color = colors[i % len(colors)]
         segments.append({"name": p["name"], "pct": pct, "color": color, "start": angle, "end": angle + pct*3.6})
         angle += pct*3.6
@@ -884,6 +894,9 @@ def main():
     with open(HTML_FILE, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"✅ 已生成 {HTML_FILE} ({len(html)} 字节)")
+    # 合并结果同步写回本地 data.json（保持本地基线新鲜，供下次本地优先读取）
+    with open(DATA_FILE, "w", encoding="utf-8") as f:
+        json.dump(d, f, ensure_ascii=False, indent=2)
 
     msg = update.get("lastUpdate", "auto-update dashboard")
     data_str = json.dumps(d, ensure_ascii=False, indent=2)
