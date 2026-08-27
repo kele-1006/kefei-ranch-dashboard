@@ -1,35 +1,35 @@
 {
-  "lastUpdate": "2026-08-27 09:10 · 盘前速递",
+  "lastUpdate": "2026-08-27 20:05 · 盘后复盘",
   "hotspot": {
     "indices": [
       {
         "name": "上证指数",
-        "value": "3912.49",
-        "change": "+0.00%",
-        "direction": "down",
+        "value": "3956.57",
+        "change": "+1.13%",
+        "direction": "up",
         "ksrc": "tx",
         "kcode": "sh000001"
       },
       {
         "name": "深证成指",
-        "value": "13841.33",
-        "change": "+0.00%",
-        "direction": "flat",
+        "value": "14048.88",
+        "change": "+1.50%",
+        "direction": "up",
         "ksrc": "tx",
         "kcode": "sz399001"
       },
       {
         "name": "创业板指",
-        "value": "3414.88",
-        "change": "+0.00%",
-        "direction": "flat",
+        "value": "3473.35",
+        "change": "+1.71%",
+        "direction": "up",
         "ksrc": "tx",
         "kcode": "sz399006"
       },
       {
         "name": "科创50",
-        "value": "1688.38",
-        "change": "+3.45%",
+        "value": "1693.48",
+        "change": "+3.77%",
         "direction": "up",
         "ksrc": "tx",
         "kcode": "sh000688"
@@ -228,41 +228,35 @@
       "rqDirection": "up"
     },
     "mainFlow": {
-      "value": "+184.87亿",
-      "change": "创业板 +29.67亿 · 科创板 +38.01亿",
+      "value": "+589.23亿",
+      "change": "创业板 +129.88亿 · 科创板 +120.90亿",
       "direction": "up",
-      "date": "8月26日"
+      "date": "8月27日"
     },
     "hotSectorsToday": [
       {
-        "name": "证券(非银)",
-        "change": 2.47,
-        "inflow": "净流入58.03亿",
-        "bk": "BK0473"
+        "name": "电子",
+        "change": 4.31,
+        "inflow": "净流入398.53亿居首",
+        "bk": "BK1201"
       },
       {
-        "name": "有色金属",
-        "change": 1.84,
-        "inflow": "净流入59.33亿居首",
-        "bk": "BK0478"
-      },
-      {
-        "name": "公用事业",
-        "change": 0.94,
-        "inflow": "净流入13.58亿",
-        "bk": "BK0427"
+        "name": "通信服务",
+        "change": 3.39,
+        "inflow": "净流入107.09亿",
+        "bk": "BK0736"
       },
       {
         "name": "电力设备",
-        "change": 0.82,
-        "inflow": "净流入25.96亿",
+        "change": -0.71,
+        "inflow": "净流出33.97亿居首",
         "bk": "BK1200"
       },
       {
-        "name": "电子",
-        "change": 0.65,
-        "inflow": "净流入37.28亿",
-        "bk": "BK1201"
+        "name": "公用事业",
+        "change": -0.19,
+        "inflow": "净流出14.10亿",
+        "bk": "BK0427"
       }
     ],
     "hotSectors5d": [
@@ -479,818 +473,73 @@
     ]
   },
   "journal": {
-    "positionSummary": {
-      "total": "35%",
-      "cash": "65%",
-      "dailyPnl": "+0.64%"
-    },
     "positions": [
       {
         "name": "铜陵有色",
         "code": "000630",
-        "price": "6.75",
+        "price": "6.76",
         "cost": "6.9",
-        "pnl": "-2.17%",
+        "pnl": "-2.03%",
         "weight": "10%",
         "strategy": "情绪流",
         "zhanfa": "情绪流",
-        "status": "🟢 大涨脱离止损区",
+        "status": "🟢 微涨企稳，脱离止损区",
         "sector": "有色-铜"
       },
       {
         "name": "福莱特",
         "code": "601865",
-        "price": "10.11",
+        "price": "9.94",
         "cost": "11.06",
-        "pnl": "-8.59%",
+        "pnl": "-10.13%",
         "weight": "15%",
         "strategy": "极点战法",
         "zhanfa": "极点战法",
-        "status": "🔴 续破-7%止损线",
+        "status": "🔴 光伏走弱，深度破-7%纪律线",
         "sector": "光伏-光伏玻璃"
       },
       {
         "name": "供销大集",
         "code": "000564",
-        "price": "1.47",
+        "price": "1.52",
         "cost": "1.46",
-        "pnl": "+0.68%",
+        "pnl": "+4.11%",
         "weight": "10%",
         "strategy": "依依不舍",
         "zhanfa": "依依不舍",
-        "status": "🟢 站上成本转正",
+        "status": "🟢 放量上涨，浮盈扩大",
         "sector": "零售-商业百货"
       }
     ],
-    "alerts": [
-      {
-        "code": "sz000630",
-        "name": "铜陵有色",
-        "type": "🟢 大涨脱离止损区",
-        "detail": "8/26收6.75（+4.98%）有色板块共振（行业+1.84%、主力净流入59.33亿居首），浮亏大幅收窄至-2.17%，重返6.75上方"
-      },
-      {
-        "code": "sh601865",
-        "name": "福莱特",
-        "type": "🔴 续破止损线",
-        "detail": "8/26收10.11（-0.88%）浮亏扩大至-8.59%续破-7%止损线，光伏玻璃弱市，按纪律评估减仓或设定硬止损"
-      },
-      {
-        "code": "sz000564",
-        "name": "供销大集",
-        "type": "🟢 转正",
-        "detail": "8/26收1.47（+1.38%）重新站上成本1.46转+0.68%，缩量温和反弹，关注量能持续性"
-      }
-    ],
-    "riskRules": [
-      "短线个股浮盈/浮亏达 ±7% 触发重点提示",
-      "单只个股仓位不超过总资金 25%",
-      "总仓位上限 80%，单日回撤超 5% 减半仓"
-    ],
-    "history": {
-      "stats": {
-        "totalTrades": 56,
-        "wins": 35,
-        "losses": 20,
-        "evens": 1,
-        "winRate": 62.5,
-        "avgWin": 6.46,
-        "avgLoss": -9.23,
-        "profitLossRatio": 0.7,
-        "strategyStats": {
-          "情绪流": {
-            "trades": 39,
-            "wins": 22,
-            "losses": 16,
-            "evens": 1,
-            "winRate": 56.4
-          },
-          "极点战法": {
-            "trades": 9,
-            "wins": 6,
-            "losses": 3,
-            "evens": 0,
-            "winRate": 66.7
-          },
-          "骐骥一跃": {
-            "trades": 1,
-            "wins": 1,
-            "losses": 0,
-            "evens": 0,
-            "winRate": 100.0
-          },
-          "依依不舍": {
-            "trades": 7,
-            "wins": 6,
-            "losses": 1,
-            "evens": 0,
-            "winRate": 85.7
-          }
-        }
-      },
-      "list": [
-        {
-          "name": "多氟多",
-          "code": "002407",
-          "sector": "锂电池-电解液",
-          "buyDate": "20260521",
-          "buyPrice": "42.3",
-          "sellDate": "20260708",
-          "sellPrice": "49",
-          "return": "+15.84%",
-          "returnNum": 15.84,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "协鑫能科",
-          "code": "002015",
-          "sector": "电力-算电协同",
-          "buyDate": "20260521",
-          "buyPrice": "20.3",
-          "sellDate": "20260522",
-          "sellPrice": "21.5",
-          "return": "+5.91%",
-          "returnNum": 5.91,
-          "strategy": "极点战法"
-        },
-        {
-          "name": "蓝思科技",
-          "code": "300433",
-          "sector": "消费电子-苹果概念",
-          "buyDate": "20260522",
-          "buyPrice": "36.39",
-          "sellDate": "20260605",
-          "sellPrice": "44",
-          "return": "+20.91%",
-          "returnNum": 20.91,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "美格智能",
-          "code": "002881",
-          "sector": "算力-物理AI",
-          "buyDate": "20260522",
-          "buyPrice": "46.2",
-          "sellDate": "20260528",
-          "sellPrice": "49.09",
-          "return": "+6.26%",
-          "returnNum": 6.26,
-          "strategy": "极点战法"
-        },
-        {
-          "name": "声讯股份",
-          "code": "003004",
-          "sector": "计算机-军工信息",
-          "buyDate": "20260526",
-          "buyPrice": "49.9",
-          "sellDate": "20260527",
-          "sellPrice": "52.8",
-          "return": "+5.81%",
-          "returnNum": 5.81,
-          "strategy": "骐骥一跃"
-        },
-        {
-          "name": "长高电新",
-          "code": "002452",
-          "sector": "电网-特高压",
-          "buyDate": "20260527",
-          "buyPrice": "12.34",
-          "sellDate": "20260603",
-          "sellPrice": "11.4",
-          "return": "-7.62%",
-          "returnNum": -7.62,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "捷捷微电",
-          "code": "300623",
-          "sector": "半导体-功率半导体",
-          "buyDate": "20260528",
-          "buyPrice": "37.05",
-          "sellDate": "20260602",
-          "sellPrice": "32.67",
-          "return": "-11.82%",
-          "returnNum": -11.82,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "圣阳股份",
-          "code": "002580",
-          "sector": "电池-储能",
-          "buyDate": "20260529",
-          "buyPrice": "24.1",
-          "sellDate": "20260602",
-          "sellPrice": "26.5",
-          "return": "+9.96%",
-          "returnNum": 9.96,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "银禧科技",
-          "code": "300221",
-          "sector": "化工-电子树脂",
-          "buyDate": "20260602",
-          "buyPrice": "14.1",
-          "sellDate": "20260603",
-          "sellPrice": "14.49",
-          "return": "+2.77%",
-          "returnNum": 2.77,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "金利华电",
-          "code": "300069",
-          "sector": "电网-特高压",
-          "buyDate": "20260603",
-          "buyPrice": "50.66",
-          "sellDate": "20260604",
-          "sellPrice": "52",
-          "return": "+2.65%",
-          "returnNum": 2.65,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "华电能源",
-          "code": "600726",
-          "sector": "电力-火力发电",
-          "buyDate": "20260603",
-          "buyPrice": "9.4",
-          "sellDate": "20260604",
-          "sellPrice": "10.4",
-          "return": "+10.64%",
-          "returnNum": 10.64,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "大唐发电",
-          "code": "601991",
-          "sector": "电力-绿色电力",
-          "buyDate": "20260604",
-          "buyPrice": "8.8",
-          "sellDate": "20260610",
-          "sellPrice": "7.85",
-          "return": "-10.8%",
-          "returnNum": -10.8,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "天创时尚",
-          "code": "603608",
-          "sector": "消费-新零售",
-          "buyDate": "20260604",
-          "buyPrice": "20.23",
-          "sellDate": "20260605",
-          "sellPrice": "20.37",
-          "return": "+0.69%",
-          "returnNum": 0.69,
-          "strategy": "依依不舍"
-        },
-        {
-          "name": "健麾信息",
-          "code": "605186",
-          "sector": "机械设备-AI医疗",
-          "buyDate": "20260608",
-          "buyPrice": "28.6",
-          "sellDate": "20260615",
-          "sellPrice": "32",
-          "return": "+11.89%",
-          "returnNum": 11.89,
-          "strategy": "依依不舍"
-        },
-        {
-          "name": "湘潭电化",
-          "code": "002125",
-          "sector": "锂电池-二氧化锰",
-          "buyDate": "20260610",
-          "buyPrice": "16.97",
-          "sellDate": "20260611",
-          "sellPrice": "18.21",
-          "return": "+7.31%",
-          "returnNum": 7.31,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "中百集团",
-          "code": "000759",
-          "sector": "消费-新零售",
-          "buyDate": "20260610",
-          "buyPrice": "5.92",
-          "sellDate": "20260612",
-          "sellPrice": "5.2",
-          "return": "-12.16%",
-          "returnNum": -12.16,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "神剑股份",
-          "code": "002361",
-          "sector": "化工-合成树脂",
-          "buyDate": "20260610",
-          "buyPrice": "18.7",
-          "sellDate": "20260611",
-          "sellPrice": "17.23",
-          "return": "-7.86%",
-          "returnNum": -7.86,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "苏大维格",
-          "code": "300331",
-          "sector": "半导体-光刻机",
-          "buyDate": "20260611",
-          "buyPrice": "63.9",
-          "sellDate": "20260612",
-          "sellPrice": "65.91",
-          "return": "+3.15%",
-          "returnNum": 3.15,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "时代新材",
-          "code": "600458",
-          "sector": "新能源-风电",
-          "buyDate": "20260615",
-          "buyPrice": "16.22",
-          "sellDate": "20260616",
-          "sellPrice": "17.49",
-          "return": "+7.83%",
-          "returnNum": 7.83,
-          "strategy": "依依不舍"
-        },
-        {
-          "name": "银禧科技",
-          "code": "300221",
-          "sector": "化工-电子树脂",
-          "buyDate": "20260615",
-          "buyPrice": "16.71",
-          "sellDate": "20260616",
-          "sellPrice": "17.39",
-          "return": "+4.07%",
-          "returnNum": 4.07,
-          "strategy": "依依不舍"
-        },
-        {
-          "name": "隆化科技",
-          "code": "300263",
-          "sector": "半导体-半导体材料",
-          "buyDate": "20260615",
-          "buyPrice": "15.7",
-          "sellDate": "20260622",
-          "sellPrice": "16.22",
-          "return": "+3.31%",
-          "returnNum": 3.31,
-          "strategy": "依依不舍"
-        },
-        {
-          "name": "苏大维格",
-          "code": "300331",
-          "sector": "半导体-光刻机",
-          "buyDate": "20260616",
-          "buyPrice": "69.4",
-          "sellDate": "20260621",
-          "sellPrice": "68.4",
-          "return": "-1.44%",
-          "returnNum": -1.44,
-          "strategy": "依依不舍"
-        },
-        {
-          "name": "四川长虹",
-          "code": "600839",
-          "sector": "算力-华为算力",
-          "buyDate": "20260616",
-          "buyPrice": "7.09",
-          "sellDate": "20260624",
-          "sellPrice": "6.59",
-          "return": "-7.05%",
-          "returnNum": -7.05,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "巨化股份",
-          "code": "600160",
-          "sector": "化工-制冷剂",
-          "buyDate": "20260617",
-          "buyPrice": "46.4",
-          "sellDate": "20260708",
-          "sellPrice": "48.53",
-          "return": "+4.59%",
-          "returnNum": 4.59,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "大族数控",
-          "code": "301200",
-          "sector": "半导体-PCB设备",
-          "buyDate": "20260618",
-          "buyPrice": "335",
-          "sellDate": "20260622",
-          "sellPrice": "340",
-          "return": "+1.49%",
-          "returnNum": 1.49,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "麦捷科技",
-          "code": "300319",
-          "sector": "消费电子-电感",
-          "buyDate": "20260623",
-          "buyPrice": "32.09",
-          "sellDate": "20260711",
-          "sellPrice": "21",
-          "return": "-34.56%",
-          "returnNum": -34.56,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "特发信息",
-          "code": "000070",
-          "sector": "光通信-光纤",
-          "buyDate": "20260623",
-          "buyPrice": "25.08",
-          "sellDate": "20260624",
-          "sellPrice": "25.11",
-          "return": "+0.12%",
-          "returnNum": 0.12,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "仕佳光子",
-          "code": "688313",
-          "sector": "光通信-光芯片",
-          "buyDate": "20260624",
-          "buyPrice": "203.33",
-          "sellDate": "20260708",
-          "sellPrice": "145",
-          "return": "-28.69%",
-          "returnNum": -28.69,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "立昂微",
-          "code": "605358",
-          "sector": "半导体-功率半导体",
-          "buyDate": "20260624",
-          "buyPrice": "67.17",
-          "sellDate": "20260702",
-          "sellPrice": "73.81",
-          "return": "+9.89%",
-          "returnNum": 9.89,
-          "strategy": "依依不舍"
-        },
-        {
-          "name": "江钨装备",
-          "code": "600397",
-          "sector": "有色-算力金属",
-          "buyDate": "20260624",
-          "buyPrice": "26.85",
-          "sellDate": "20260628",
-          "sellPrice": "27.84",
-          "return": "+3.69%",
-          "returnNum": 3.69,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "木林森",
-          "code": "002745",
-          "sector": "LED-MiniLED",
-          "buyDate": "20260625",
-          "buyPrice": "12.6",
-          "sellDate": "20260627",
-          "sellPrice": "13.5",
-          "return": "+7.14%",
-          "returnNum": 7.14,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "昊志机电",
-          "code": "300503",
-          "sector": "人形机器人-减速器",
-          "buyDate": "20260703",
-          "buyPrice": "97.8",
-          "sellDate": "20260707",
-          "sellPrice": "108",
-          "return": "+10.43%",
-          "returnNum": 10.43,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "士兰微",
-          "code": "600460",
-          "sector": "半导体-功率半导体",
-          "buyDate": "20260709",
-          "buyPrice": "47.9",
-          "sellDate": "20260710",
-          "sellPrice": "45.2",
-          "return": "-5.64%",
-          "returnNum": -5.64,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "依依股份",
-          "code": "001206",
-          "sector": "宠物经济-宠物尿垫",
-          "buyDate": "20260714",
-          "buyPrice": "20.26",
-          "sellDate": "20260720",
-          "sellPrice": "23.5",
-          "return": "+15.99%",
-          "returnNum": 15.99,
-          "strategy": "极点战法"
-        },
-        {
-          "name": "特一药业",
-          "code": "002728",
-          "sector": "医药-中药",
-          "buyDate": "20260716",
-          "buyPrice": "10.13",
-          "sellDate": "20260717",
-          "sellPrice": "10.14",
-          "return": "+0.1%",
-          "returnNum": 0.1,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "拉芳家化",
-          "code": "603630",
-          "sector": "化工-洗护用品",
-          "buyDate": "20260720",
-          "buyPrice": "14.45",
-          "sellDate": "20260724",
-          "sellPrice": "13.35",
-          "return": "-7.61%",
-          "returnNum": -7.61,
-          "strategy": "极点战法"
-        },
-        {
-          "name": "人民网",
-          "code": "603000",
-          "sector": "传媒-数据确权",
-          "buyDate": "20260720",
-          "buyPrice": "15.76",
-          "sellDate": "20260724",
-          "sellPrice": "15.31",
-          "return": "-2.86%",
-          "returnNum": -2.86,
-          "strategy": "极点战法"
-        },
-        {
-          "name": "木林森",
-          "code": "002745",
-          "sector": "LED-MiniLED",
-          "buyDate": "20260720",
-          "buyPrice": "9.93",
-          "sellDate": "20260722",
-          "sellPrice": "11.08",
-          "return": "+11.58%",
-          "returnNum": 11.58,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "昭衍新药",
-          "code": "603127",
-          "sector": "医药-CXO",
-          "buyDate": "20260722",
-          "buyPrice": "50.4",
-          "sellDate": "20260724",
-          "sellPrice": "45.8",
-          "return": "-9.13%",
-          "returnNum": -9.13,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "协鑫能科",
-          "code": "002015",
-          "sector": "电力-算电协同",
-          "buyDate": "20260727",
-          "buyPrice": "14.63",
-          "sellDate": "20260807",
-          "sellPrice": "16",
-          "return": "+9.36%",
-          "returnNum": 9.36,
-          "strategy": "极点战法"
-        },
-        {
-          "name": "华电辽能",
-          "code": "600396",
-          "sector": "电力-火电",
-          "buyDate": "20260728",
-          "buyPrice": "15.5",
-          "sellDate": "20260730",
-          "sellPrice": "17.2",
-          "return": "+10.97%",
-          "returnNum": 10.97,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "群兴玩具",
-          "code": "002575",
-          "sector": "算力-算力租赁",
-          "buyDate": "20260729",
-          "buyPrice": "4.93",
-          "sellDate": "20260807",
-          "sellPrice": "5.13",
-          "return": "+4.06%",
-          "returnNum": 4.06,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "中国西电",
-          "code": "601179",
-          "sector": "电网-特高压",
-          "buyDate": "20260729",
-          "buyPrice": "13.8",
-          "sellDate": "20260810",
-          "sellPrice": "14.15",
-          "return": "+2.54%",
-          "returnNum": 2.54,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "木林森",
-          "code": "002745",
-          "sector": "LED-MiniLED",
-          "buyDate": "20260729",
-          "buyPrice": "10.5",
-          "sellDate": "20260804",
-          "sellPrice": "10.2",
-          "return": "-2.86%",
-          "returnNum": -2.86,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "天地在线",
-          "code": "002995",
-          "sector": "AI应用-AI营销",
-          "buyDate": "20260803",
-          "buyPrice": "17.53",
-          "sellDate": "20260804",
-          "sellPrice": "17.65",
-          "return": "+0.68%",
-          "returnNum": 0.68,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "粤传媒",
-          "code": "002181",
-          "sector": "AI应用-短剧游戏",
-          "buyDate": "20260804",
-          "buyPrice": "8.98",
-          "sellDate": "20260805",
-          "sellPrice": "9.68",
-          "return": "+7.8%",
-          "returnNum": 7.8,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "圣阳股份",
-          "code": "002580",
-          "sector": "电池-储能",
-          "buyDate": "20260805",
-          "buyPrice": "19.3",
-          "sellDate": "20260806",
-          "sellPrice": "19.49",
-          "return": "+0.98%",
-          "returnNum": 0.98,
-          "strategy": "极点战法"
-        },
-        {
-          "name": "利欧股份",
-          "code": "002131",
-          "sector": "AI应用-AI营销",
-          "buyDate": "20260805",
-          "buyPrice": "5.54",
-          "sellDate": "20260806",
-          "sellPrice": "5.54",
-          "return": "0.0%",
-          "returnNum": 0.0,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "深桑达A",
-          "code": "000032",
-          "sector": "算力-国资云",
-          "buyDate": "20260807",
-          "buyPrice": "14.7",
-          "sellDate": "20260811",
-          "sellPrice": "14.8",
-          "return": "+0.68%",
-          "returnNum": 0.68,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "达实智能",
-          "code": "002421",
-          "sector": "算力-液冷",
-          "buyDate": "20260810",
-          "buyPrice": "3.48",
-          "sellDate": "20260811",
-          "sellPrice": "3.65",
-          "return": "+4.89%",
-          "returnNum": 4.89,
-          "strategy": "极点战法"
-        },
-        {
-          "name": "博纳影业",
-          "code": "001330",
-          "sector": "传媒-影视院线",
-          "buyDate": "20260811",
-          "buyPrice": "5.4",
-          "sellDate": "20260813",
-          "sellPrice": "5.37",
-          "return": "-0.56%",
-          "returnNum": -0.56,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "豫能控股",
-          "code": "001896",
-          "sector": "电力-虚拟电厂",
-          "buyDate": "20260812",
-          "buyPrice": "13.6",
-          "sellDate": "20260819",
-          "sellPrice": "12.2",
-          "return": "-10.29%",
-          "returnNum": -10.29,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "华天科技",
-          "code": "002185",
-          "sector": "半导体-先进封装",
-          "buyDate": "20260817",
-          "buyPrice": "18.45",
-          "sellDate": "20260819",
-          "sellPrice": "17.95",
-          "return": "-2.71%",
-          "returnNum": -2.71,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "远东股份",
-          "code": "600869",
-          "sector": "电网-线缆",
-          "buyDate": "20260817",
-          "buyPrice": "16.94",
-          "sellDate": "20260819",
-          "sellPrice": "16.4",
-          "return": "-3.19%",
-          "returnNum": -3.19,
-          "strategy": "情绪流"
-        },
-        {
-          "name": "珍宝岛",
-          "code": "603567",
-          "sector": "医药-中药",
-          "buyDate": "20260810",
-          "buyPrice": "6.99",
-          "sellDate": "20260820",
-          "sellPrice": "6.24",
-          "return": "-10.73%",
-          "returnNum": -10.73,
-          "strategy": "极点战法"
-        },
-        {
-          "name": "海正药业",
-          "code": "600267",
-          "sector": "医药-化学制药",
-          "buyDate": "20260821",
-          "buyPrice": "14.13",
-          "sellDate": "20260821",
-          "sellPrice": "13.15",
-          "return": "-6.94%",
-          "returnNum": -6.94,
-          "strategy": "情绪流"
-        }
-      ]
+    "positionSummary": {
+      "total": "35%",
+      "cash": "65%",
+      "dailyPnl": "+0.22%"
     }
   },
   "review": {
-    "date": "2026-08-26（周三）· 盘后复盘",
-    "summary": "周三三大指数集体收涨：上证+0.59%报3912.52、深成指+0.69%报13841.33、创业板指+0.51%报3414.88，全市场成交约1.82万亿元，超2900股上涨。主力资金全天净流入184.87亿（有色金属59.33亿居首、非银金融58.03亿，创业板+29.67亿/科创板+38.01亿）。黄金概念/证券/造纸领涨，医疗服务/电机领跌。持仓3只：铜陵有色+4.98%报6.75（有色板块共振，浮亏大幅收窄至-2.17%），福莱特-0.88%报10.11（浮亏扩大至-8.59%续破止损线），供销大集+1.38%报1.47（站上成本转正+0.68%）。",
+    "date": "2026-08-27（周四）· 盘后复盘",
+    "summary": "三大指数集体收涨：沪指+1.13%报3956.57、深成+1.50%、创业板+1.71%、科创50大涨3.8%。两市成交2.13万亿（较前日放量3172亿），超3300股上涨。主力资金全天净流入589.23亿（连续3日），电子行业+398.53亿居首。英伟达Q2超预期引爆算力硬件链，HBM/存储芯片/PCB/CPO涨停潮；银行、电力设备调整。",
     "points": [
       {
         "type": "up",
-        "text": "三大指数集体收涨，上证+0.59%报3912.52收复3900，超2900股上涨，成交1.82万亿量能平稳"
+        "text": "沪指放量上攻收复3950，成交2.13万亿+3172亿，量价齐升"
       },
       {
         "type": "up",
-        "text": "主力资金全天净流入184.87亿：有色59.33亿居首、非银58.03亿、电子37.28亿；洛阳钼业获22.98亿抢筹、立讯精密14.39亿"
+        "text": "主力净流入589.23亿连续3日，电子+398.53亿为最强吸金方向"
       },
       {
         "type": "up",
-        "text": "黄金概念/证券/造纸领涨（非银+2.47%、有色+1.84%），港股同步收涨"
-      },
-      {
-        "type": "down",
-        "text": "通信板块净流出11.45亿居首，新易盛/天孚通信/长鑫科技遭主力出逃；医疗服务/电机领跌"
+        "text": "英伟达财报引爆算力硬件：HBM/存储/PCB/CPO涨停潮，科创50大涨3.8%领跑"
       },
       {
         "type": "neutral",
-        "text": "今夜焦点：英伟达Q2财报（预计营收922亿美元、Q3指引预期1037亿美元），AI硬件链关键验证点，关注明日算力链开盘"
+        "text": "结构分化：银行-1.04%/电力设备-0.71%调整，资金高低切换"
       },
       {
         "type": "down",
-        "text": "国际油价延续跌势：WTI-2.46%报80.34美元、布伦特-2.12%报85.42美元；现货黄金回落0.72%报4625美元"
+        "text": "持仓福莱特-1.68%报9.94，浮亏-10.13%深度破-7%纪律线，按纪律评估"
       }
     ]
   },
