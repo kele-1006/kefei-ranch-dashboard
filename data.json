@@ -6,19 +6,33 @@
         "name": "上证指数",
         "value": "3912.49",
         "change": "+0.00%",
-        "direction": "down"
+        "direction": "down",
+        "ksrc": "tx",
+        "kcode": "sh000001"
       },
       {
         "name": "深证成指",
         "value": "13841.33",
         "change": "+0.00%",
-        "direction": "flat"
+        "direction": "flat",
+        "ksrc": "tx",
+        "kcode": "sz399001"
       },
       {
         "name": "创业板指",
         "value": "3414.88",
         "change": "+0.00%",
-        "direction": "flat"
+        "direction": "flat",
+        "ksrc": "tx",
+        "kcode": "sz399006"
+      },
+      {
+        "name": "科创50",
+        "value": "1688.38",
+        "change": "+3.45%",
+        "direction": "up",
+        "ksrc": "tx",
+        "kcode": "sh000688"
       }
     ],
     "usMarkets": [
@@ -26,7 +40,9 @@
         "name": "道琼斯",
         "value": "53277.01",
         "change": "+0.98%",
-        "direction": "up"
+        "direction": "up",
+        "ksrc": "tx",
+        "kcode": "usDJI"
       },
       {
         "name": "纳斯达克100",
@@ -42,7 +58,9 @@
         "name": "标普500",
         "value": "7674.37",
         "change": "+0.43%",
-        "direction": "up"
+        "direction": "up",
+        "ksrc": "tx",
+        "kcode": "usSPX"
       }
     ],
     "news": [
@@ -219,27 +237,32 @@
       {
         "name": "证券(非银)",
         "change": 2.47,
-        "inflow": "净流入58.03亿"
+        "inflow": "净流入58.03亿",
+        "bk": "BK0473"
       },
       {
         "name": "有色金属",
         "change": 1.84,
-        "inflow": "净流入59.33亿居首"
+        "inflow": "净流入59.33亿居首",
+        "bk": "BK0478"
       },
       {
         "name": "公用事业",
         "change": 0.94,
-        "inflow": "净流入13.58亿"
+        "inflow": "净流入13.58亿",
+        "bk": "BK0427"
       },
       {
         "name": "电力设备",
         "change": 0.82,
-        "inflow": "净流入25.96亿"
+        "inflow": "净流入25.96亿",
+        "bk": "BK1200"
       },
       {
         "name": "电子",
         "change": 0.65,
-        "inflow": "净流入37.28亿"
+        "inflow": "净流入37.28亿",
+        "bk": "BK1201"
       }
     ],
     "hotSectors5d": [
@@ -276,19 +299,33 @@
         "name": "布伦特原油",
         "value": "86.83",
         "change": "-0.13%",
-        "direction": "down"
+        "direction": "down",
+        "ksrc": "sina",
+        "kcode": "OIL"
       },
       {
         "name": "伦敦金现",
         "value": "4619.17",
         "change": "+0.54%",
-        "direction": "up"
+        "direction": "up",
+        "ksrc": "sina",
+        "kcode": "XAU"
       },
       {
         "name": "纳斯达克100",
         "value": "29224.52",
         "change": "+0.05%",
-        "direction": "up"
+        "direction": "up",
+        "ksrc": "tx",
+        "kcode": "usNDX"
+      },
+      {
+        "name": "富时A50",
+        "value": "14695.50",
+        "change": "+0.19%",
+        "direction": "up",
+        "ksrc": "sina",
+        "kcode": "CHA50CFD"
       }
     ]
   },

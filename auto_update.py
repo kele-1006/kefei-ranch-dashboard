@@ -62,6 +62,35 @@ HTML_FILE = "index.html"
 # 可完全绕过（已实测 2026-08-23）。多个 IP 轮流尝试。
 GITHUB_IPS = ["140.82.112.3", "140.82.113.3", "20.205.243.166"]
 
+# ---------------- K线数据源映射（防字段被定时任务覆盖丢失）----------------
+# 指数/外盘：名称 → (ksrc, kcode)。merge_update 时自动补缺失的 ksrc/kcode。
+KLINE_MAP = {
+    "上证指数": ("tx", "sh000001"), "深证成指": ("tx", "sz399001"),
+    "创业板指": ("tx", "sz399006"), "科创50": ("tx", "sh000688"),
+    "沪深300": ("tx", "sh000300"), "中证500": ("tx", "sh000905"),
+    "恒生指数": ("tx", "hkHSI"), "道琼斯": ("tx", "usDJI"), "标普500": ("tx", "usSPX"),
+    "纳斯达克": ("tx", "usNDX"), "纳斯达克100": ("tx", "usNDX"),
+    "富时A50": ("sina", "CHA50CFD"), "伦敦金现": ("sina", "XAU"), "布伦特原油": ("sina", "OIL"),
+}
+
+# 板块：名称 → 东财BK代码（板块K线弹窗数据源）。
+SECTOR_BK_MAP = {
+    "证券Ⅱ": "BK0473", "证券": "BK0473", "证券(非银)": "BK0473", "非银金融": "BK1203", "券商概念": "BK0711",
+    "银行Ⅱ": "BK0475", "银行": "BK0475", "保险Ⅱ": "BK0474", "保险": "BK0474", "房地产": "BK1202",
+    "有色金属": "BK0478", "贵金属": "BK0732", "钢铁": "BK0479", "煤炭": "BK0437", "石油石化": "BK0464",
+    "半导体": "BK1036", "存储芯片": "BK1137", "半导体设备": "BK1326", "软件开发": "BK0737",
+    "计算机": "BK1207", "通信服务": "BK0736", "消费电子": "BK1037", "元件": "BK0459",
+    "电池": "BK1033", "光伏设备": "BK1031", "算力概念": "BK1134", "机器人": "BK1408", "新能源": "BK0493",
+    "化学制药": "BK0465", "生物制品": "BK1044", "医疗服务": "BK0727", "中药Ⅱ": "BK1040", "中药": "BK1040",
+    "医疗器械": "BK1041", "白酒": "BK0896", "食品饮料": "BK0438", "家用电器": "BK0456",
+    "农林牧渔": "BK0433", "种植业": "BK1261", "农产品加工": "BK1256", "纺织服饰": "BK0436",
+    "旅游酒店": "BK0485", "游戏Ⅱ": "BK1046", "游戏": "BK1046", "传媒": "BK0486",
+    "电力设备": "BK1200", "军工": "BK0490", "航天航空": "BK0480", "汽车": "BK1211",
+    "建筑节能": "BK1076", "水泥": "BK0424", "仪器仪表": "BK0458", "公用事业": "BK0427",
+    "电力": "BK0428", "燃气Ⅱ": "BK1028", "燃气": "BK1028", "物流": "BK0422",
+    "环保": "BK0728", "贸易Ⅱ": "BK0484", "专业服务": "BK1043", "电子": "BK1201",
+}
+
 
 # ---------------- GitHub HTTP ----------------
 def http(method, url, token=None, body=None):
@@ -262,10 +291,11 @@ def build_html(d):
             pos = it["change"] >= 0
             kcode = it.get("kcode", "")
             bk = it.get("bk", "")
+            clickable = bool(kcode or bk)
             attrs = (f' data-src="{esc(it.get("ksrc","tx"))}" data-code="{esc(kcode)}"'
                      f' data-ref="{esc(it.get("ref",""))}" data-name="{esc(it.get("name",""))}"'
-                     + (f' data-bk="{esc(bk)}"' if bk else "")) if kcode else ""
-            cls = "sector-row klk-row" if kcode else "sector-row"
+                     + (f' data-bk="{esc(bk)}"' if bk else "")) if clickable else ""
+            cls = "sector-row klk-row" if clickable else "sector-row"
             bars.append(
                 f'<div class="{cls}"{attrs}><div class="sector-name">{esc(it.get("name",""))}</div>'
                 f'<div class="sector-track"><div class="sector-fill {"pos" if pos else "neg"}" style="width:{w}%"></div></div>'
@@ -656,6 +686,73 @@ document.querySelectorAll('.nav-btn').forEach(function(b){{
     return html_doc
 
 
+# ---------------- K线字段自动补齐 ----------------
+def _quote_tx(kcode, name):
+    """腾讯实时行情 → {name,value,change,direction}，失败返回 None。"""
+    try:
+        req = urllib.request.Request(f"https://qt.gtimg.cn/q={kcode}",
+                                     headers={"User-Agent": "Mozilla/5.0"})
+        raw = urllib.request.urlopen(req, timeout=8).read().decode("gbk", "ignore")
+        f = raw.split('="', 1)[1].rstrip('";\n ').split("~")
+        price, pct = float(f[3]), float(f[32])
+        return {"name": name, "value": f"{price:.2f}",
+                "change": f"{'+' if pct >= 0 else ''}{pct:.2f}%",
+                "direction": "up" if pct >= 0 else "down"}
+    except Exception:
+        return None
+
+
+def _quote_sina_future(kcode, name):
+    """新浪外盘期货实时行情（hf_ 前缀）→ dict，失败返回 None。"""
+    try:
+        req = urllib.request.Request(f"https://hq.sinajs.cn/list=hf_{kcode}",
+                                     headers={"User-Agent": "Mozilla/5.0",
+                                              "Referer": "https://finance.sina.com.cn"})
+        raw = urllib.request.urlopen(req, timeout=8).read().decode("gbk", "ignore")
+        f = raw.split('="', 1)[1].rstrip('";\n ').split(",")
+        price, prev = float(f[0]), float(f[7])
+        pct = (price - prev) / prev * 100 if prev else 0.0
+        return {"name": name, "value": f"{price:.2f}",
+                "change": f"{'+' if pct >= 0 else ''}{pct:.2f}%",
+                "direction": "up" if pct >= 0 else "down"}
+    except Exception:
+        return None
+
+
+# 内置必展示项：update 未提供时实时拉取（网络失败静默跳过，不阻塞更新）
+ESSENTIAL_QUERIES = [
+    ("indices", "科创50", lambda: _quote_tx("sh000688", "科创50")),
+    ("globalMarkets", "富时A50", lambda: _quote_sina_future("CHA50CFD", "富时A50")),
+]
+
+
+def _enrich_klines(hotspot):
+    """补齐K线字段：指数/外盘补 ksrc/kcode，板块补 bk。已有则不覆盖，幂等。"""
+    for key in ("indices", "globalMarkets", "usMarkets"):
+        for it in hotspot.get(key) or []:
+            if isinstance(it, dict) and not it.get("kcode"):
+                m = KLINE_MAP.get(it.get("name", ""))
+                if m:
+                    it["ksrc"], it["kcode"] = m
+    for key in ("hotSectorsToday", "hotSectors5d", "hotScoresToday", "hotScores5d"):
+        for it in hotspot.get(key) or []:
+            if isinstance(it, dict) and not it.get("bk"):
+                bk = SECTOR_BK_MAP.get(it.get("name", ""))
+                if bk:
+                    it["bk"] = bk
+
+
+def _ensure_essential(hotspot):
+    """确保关键指数在场（科创50/富时A50）：缺失时实时拉取补入。"""
+    for key, name, fn in ESSENTIAL_QUERIES:
+        lst = hotspot.get(key) or []
+        if not any(isinstance(x, dict) and x.get("name") == name for x in lst):
+            q = fn()
+            if q:
+                lst.append(q)
+                hotspot[key] = lst
+
+
 # ---------------- 合并更新 ----------------
 def merge_update(d, update):
     """把本次取数结果合并进数据字典。"""
@@ -683,6 +780,9 @@ def merge_update(d, update):
         d["review"] = update["review"]
     if "fate" in update:
         d["fate"] = update["fate"]
+    # K线字段自动补齐 + 内置关键项实时补充（防定时任务漏传/覆盖丢失）
+    _ensure_essential(hotspot)
+    _enrich_klines(hotspot)
     return d
 
 
