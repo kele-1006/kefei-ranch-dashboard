@@ -1,10 +1,10 @@
 {
-  "lastUpdate": "2026-08-27 20:05 · 盘后复盘",
+  "lastUpdate": "2026-08-28 09:10 · 盘前速递",
   "hotspot": {
     "indices": [
       {
         "name": "上证指数",
-        "value": "3956.57",
+        "value": "3956.53",
         "change": "+1.13%",
         "direction": "up",
         "ksrc": "tx",
@@ -29,7 +29,7 @@
       {
         "name": "科创50",
         "value": "1693.48",
-        "change": "+3.77%",
+        "change": "+0.00%",
         "direction": "up",
         "ksrc": "tx",
         "kcode": "sh000688"
@@ -64,6 +64,54 @@
       }
     ],
     "news": [
+      {
+        "time": "08-28",
+        "phase": "盘前",
+        "title": "英伟达大涨8.7%、市值增4420亿美元，上海智算光网项目申报，光通信迎双重催化",
+        "sentiment": "up",
+        "related": "AI算力",
+        "url": "https://m.21jingji.com/article/20260828/herald/3c442a264deb5795c160f2dbe5612a27.html"
+      },
+      {
+        "time": "08-28",
+        "phase": "盘前",
+        "title": "隔夜美股三大指数收涨：纳指+1.57%、标普500+0.72%、道指+0.20%，英伟达涨8.7%",
+        "sentiment": "up",
+        "related": "外盘",
+        "url": "https://data.tdx.com.cn/tdxfiles/"
+      },
+      {
+        "time": "08-28",
+        "phase": "盘前",
+        "title": "摩根士丹利看好A股后续表现：AI超级周期动能重聚、大型IPO流动性紧张逐步消化",
+        "sentiment": "up",
+        "related": "大盘",
+        "url": "https://www.gelonghui.com/live/2637705"
+      },
+      {
+        "time": "08-28",
+        "phase": "盘前",
+        "title": "券商晨会：AI Coding后下一潜力市场、人形机器人真实交付、AI先进封装新材料",
+        "sentiment": "neutral",
+        "related": "主题",
+        "url": "https://www.cls.cn/detail/2467002"
+      },
+      {
+        "time": "08-28",
+        "phase": "盘前",
+        "title": "SK海力士CEO：未见内存下行信号，预计内存短缺持续至2030年底",
+        "sentiment": "up",
+        "related": "存储芯片",
+        "url": "https://data.tdx.com.cn/tdxfiles/"
+      },
+      {
+        "time": "08-28",
+        "phase": "盘前",
+        "title": "中芯国际上半年净利44.67亿(+94.2%)，胜宏科技净利28.57亿(+33.3%)",
+        "sentiment": "up",
+        "related": "半导体",
+        "url": "https://data.tdx.com.cn/tdxfiles/"
+      },
       {
         "time": "08-27",
         "phase": "盘后",
@@ -250,28 +298,28 @@
     ],
     "globalMarkets": [
       {
-        "name": "布伦特原油",
-        "value": "86.83",
-        "change": "-0.13%",
-        "direction": "down",
-        "ksrc": "sina",
-        "kcode": "OIL"
+        "name": "纳斯达克100",
+        "value": "29641.56",
+        "change": "+1.43%",
+        "direction": "up",
+        "ksrc": "tx",
+        "kcode": "usNDX"
       },
       {
         "name": "伦敦金现",
-        "value": "4619.17",
-        "change": "+0.54%",
-        "direction": "up",
+        "value": "4596.86",
+        "change": "-0.10%",
+        "direction": "down",
         "ksrc": "sina",
         "kcode": "XAU"
       },
       {
-        "name": "纳斯达克100",
-        "value": "29224.52",
-        "change": "+0.05%",
-        "direction": "up",
-        "ksrc": "tx",
-        "kcode": "usNDX"
+        "name": "布伦特原油",
+        "value": "88.41",
+        "change": "-0.12%",
+        "direction": "down",
+        "ksrc": "sina",
+        "kcode": "OIL"
       },
       {
         "name": "富时A50",
