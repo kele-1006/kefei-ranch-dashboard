@@ -1,36 +1,36 @@
 {
-  "lastUpdate": "2026-08-28 09:10 · 盘前速递",
+  "lastUpdate": "2026-08-28 19:10 · 盘后复盘",
   "hotspot": {
     "indices": [
       {
         "name": "上证指数",
-        "value": "3956.53",
-        "change": "+1.13%",
-        "direction": "up",
+        "value": "3952.18",
+        "change": "-0.11%",
+        "direction": "down",
         "ksrc": "tx",
         "kcode": "sh000001"
       },
       {
         "name": "深证成指",
-        "value": "14048.88",
-        "change": "+1.50%",
-        "direction": "up",
+        "value": "13953.07",
+        "change": "-0.68%",
+        "direction": "down",
         "ksrc": "tx",
         "kcode": "sz399001"
       },
       {
         "name": "创业板指",
-        "value": "3473.35",
-        "change": "+1.71%",
-        "direction": "up",
+        "value": "3424.40",
+        "change": "-1.41%",
+        "direction": "down",
         "ksrc": "tx",
         "kcode": "sz399006"
       },
       {
         "name": "科创50",
-        "value": "1693.48",
-        "change": "+0.00%",
-        "direction": "up",
+        "value": "1662.15",
+        "change": "-1.85%",
+        "direction": "down",
         "ksrc": "tx",
         "kcode": "sh000688"
       }
@@ -66,99 +66,59 @@
     "news": [
       {
         "time": "08-28",
-        "phase": "盘前",
-        "title": "英伟达大涨8.7%、市值增4420亿美元，上海智算光网项目申报，光通信迎双重催化",
-        "sentiment": "up",
-        "related": "AI算力",
-        "url": "https://m.21jingji.com/article/20260828/herald/3c442a264deb5795c160f2dbe5612a27.html"
+        "phase": "盘后",
+        "title": "沪指冲高回落收跌0.11%报3952.18，深成-0.68%、创业板-1.41%、科创50-1.85%",
+        "sentiment": "down",
+        "related": "大盘",
+        "url": "https://www.gelonghui.com/live/2638606"
       },
       {
         "time": "08-28",
-        "phase": "盘前",
-        "title": "隔夜美股三大指数收涨：纳指+1.57%、标普500+0.72%、道指+0.20%，英伟达涨8.7%",
+        "phase": "盘后",
+        "title": "两市成交2.1万亿缩量232亿，超3000股上涨，种植业/地产/大消费领涨",
+        "sentiment": "neutral",
+        "related": "大盘",
+        "url": "https://www.gelonghui.com/live/2638606"
+      },
+      {
+        "time": "08-28",
+        "phase": "盘后",
+        "title": "主力资金净流出253.31亿：电子-157.43亿居首，基础化工+32.11亿领流入",
+        "sentiment": "down",
+        "related": "资金面",
+        "url": "https://www.stcn.com/article/detail/4150230.html"
+      },
+      {
+        "time": "08-28",
+        "phase": "盘后",
+        "title": "半导体/医疗服务回调：电子-1.61%、通信-1.43%领跌，超纯应材跌超8%",
+        "sentiment": "down",
+        "related": "半导体",
+        "url": "https://www.gelonghui.com/live/2638607"
+      },
+      {
+        "time": "08-28",
+        "phase": "盘后",
+        "title": "杰克逊霍尔央行年会开幕，市场预期美联储年底加息概率超70%，沃什今晚讲话",
+        "sentiment": "neutral",
+        "related": "外盘",
+        "url": "https://www.gelonghui.com/live/2638379"
+      },
+      {
+        "time": "08-28",
+        "phase": "盘后",
+        "title": "隔夜美股三大指数收涨：纳指+1.57%、标普+0.72%、道指+0.20%，英伟达涨8.7%",
         "sentiment": "up",
         "related": "外盘",
-        "url": "https://data.tdx.com.cn/tdxfiles/"
+        "url": "https://m.21jingji.com/timeline/7a46e56e596983c326415986d993565d.html"
       },
       {
         "time": "08-28",
-        "phase": "盘前",
-        "title": "摩根士丹利看好A股后续表现：AI超级周期动能重聚、大型IPO流动性紧张逐步消化",
-        "sentiment": "up",
-        "related": "大盘",
-        "url": "https://www.gelonghui.com/live/2637705"
-      },
-      {
-        "time": "08-28",
-        "phase": "盘前",
-        "title": "券商晨会：AI Coding后下一潜力市场、人形机器人真实交付、AI先进封装新材料",
+        "phase": "盘后",
+        "title": "化肥概念+3.02%、供销社+3.05%领涨概念，CRO/光刻机/存储芯片回调",
         "sentiment": "neutral",
         "related": "主题",
-        "url": "https://www.cls.cn/detail/2467002"
-      },
-      {
-        "time": "08-28",
-        "phase": "盘前",
-        "title": "SK海力士CEO：未见内存下行信号，预计内存短缺持续至2030年底",
-        "sentiment": "up",
-        "related": "存储芯片",
-        "url": "https://data.tdx.com.cn/tdxfiles/"
-      },
-      {
-        "time": "08-28",
-        "phase": "盘前",
-        "title": "中芯国际上半年净利44.67亿(+94.2%)，胜宏科技净利28.57亿(+33.3%)",
-        "sentiment": "up",
-        "related": "半导体",
-        "url": "https://data.tdx.com.cn/tdxfiles/"
-      },
-      {
-        "time": "08-27",
-        "phase": "盘后",
-        "title": "A股放量上攻：成交2.13万亿较前日放量3172亿，芯片/PCB掀涨停潮，超3300股上涨",
-        "sentiment": "up",
-        "related": "大盘",
-        "url": "https://www.163.com/dy/article/L5BO3TVP0512B07B.html"
-      },
-      {
-        "time": "08-27",
-        "phase": "盘后",
-        "title": "主力资金全天净流入589.23亿连续3日，电子行业+398.53亿居首，通信+107.09亿次之",
-        "sentiment": "up",
-        "related": "资金面",
-        "url": "https://www.stcn.com/article/detail/4138886.html"
-      },
-      {
-        "time": "08-27",
-        "phase": "盘后",
-        "title": "特大单净流入554.28亿：生益科技24.41亿居首、长飞光纤19.36亿次之，宁德时代净流出10.21亿",
-        "sentiment": "up",
-        "related": "资金面",
-        "url": "https://stcn.com/article/detail/4138932.html"
-      },
-      {
-        "time": "08-27",
-        "phase": "盘后",
-        "title": "英伟达Q2营收962亿美元(+106%)大超预期，A股算力链HBM/存储/PCB/CPO全线走强",
-        "sentiment": "up",
-        "related": "AI算力",
-        "url": "https://www.163.com/dy/article/L5BO3TVP0512B07B.html"
-      },
-      {
-        "time": "08-27",
-        "phase": "盘后",
-        "title": "阿里巴巴完成800亿港元港股配售，中金公司担任联席整体协调人",
-        "sentiment": "neutral",
-        "related": "中概股",
-        "url": "http://www.dongtaibao.cn/#/releaseDetail?id=1847247"
-      },
-      {
-        "time": "08-27",
-        "phase": "盘后",
-        "title": "高盛复盘世界人形机器人运动会：行业竞争从运动展示转向真实应用与自主能力",
-        "sentiment": "neutral",
-        "related": "机器人",
-        "url": "https://www.cls.cn/detail/2466606"
+        "url": "https://ggb.stcn.com/article/detail/4150208.html"
       }
     ],
     "macro": [
@@ -236,35 +196,41 @@
       "rqDirection": "up"
     },
     "mainFlow": {
-      "value": "+589.23亿",
-      "change": "创业板 +129.88亿 · 科创板 +120.90亿",
-      "direction": "up",
-      "date": "8月27日"
+      "value": "-253.31亿",
+      "change": "电子 -157.43亿 · 基础化工 +32.11亿",
+      "direction": "down",
+      "date": "8月28日"
     },
     "hotSectorsToday": [
       {
-        "name": "电子",
-        "change": 4.31,
-        "inflow": "净流入398.53亿居首",
+        "name": "石油石化",
+        "change": 2.16,
+        "inflow": "净流入",
         "bk": "BK1201"
       },
       {
-        "name": "通信服务",
-        "change": 3.39,
-        "inflow": "净流入107.09亿",
-        "bk": "BK0736"
+        "name": "基础化工",
+        "change": 1.66,
+        "inflow": "净流入32.11亿居首",
+        "bk": "BK1201"
       },
       {
-        "name": "电力设备",
-        "change": -0.71,
-        "inflow": "净流出33.97亿居首",
+        "name": "种植业",
+        "change": 2.24,
+        "inflow": "净流入",
+        "bk": "BK1261"
+      },
+      {
+        "name": "电子",
+        "change": -1.61,
+        "inflow": "净流出157.43亿居首",
         "bk": "BK1200"
       },
       {
-        "name": "公用事业",
-        "change": -0.19,
-        "inflow": "净流出14.10亿",
-        "bk": "BK0427"
+        "name": "通信",
+        "change": -1.43,
+        "inflow": "净流出50.53亿",
+        "bk": "BK0736"
       }
     ],
     "hotSectors5d": [
@@ -307,17 +273,17 @@
       },
       {
         "name": "伦敦金现",
-        "value": "4596.86",
-        "change": "-0.10%",
+        "value": "4595.85",
+        "change": "-0.12%",
         "direction": "down",
         "ksrc": "sina",
         "kcode": "XAU"
       },
       {
         "name": "布伦特原油",
-        "value": "88.41",
-        "change": "-0.12%",
-        "direction": "down",
+        "value": "88.40",
+        "change": "+0.06%",
+        "direction": "up",
         "ksrc": "sina",
         "kcode": "OIL"
       },
@@ -491,63 +457,63 @@
         "weight": "10%",
         "strategy": "情绪流",
         "zhanfa": "情绪流",
-        "status": "🟢 微涨企稳，脱离止损区",
+        "status": "🟢 微跌企稳，浮亏收窄",
         "sector": "有色-铜"
       },
       {
         "name": "福莱特",
         "code": "601865",
-        "price": "9.94",
+        "price": "10.14",
         "cost": "11.06",
-        "pnl": "-10.13%",
+        "pnl": "-8.32%",
         "weight": "15%",
         "strategy": "极点战法",
         "zhanfa": "极点战法",
-        "status": "🔴 光伏走弱，深度破-7%纪律线",
+        "status": "🟢 光伏反弹+2.01%，浮亏收窄至-8.32%",
         "sector": "光伏-光伏玻璃"
       },
       {
         "name": "供销大集",
         "code": "000564",
-        "price": "1.52",
+        "price": "1.56",
         "cost": "1.46",
-        "pnl": "+4.11%",
+        "pnl": "+6.85%",
         "weight": "10%",
         "strategy": "依依不舍",
         "zhanfa": "依依不舍",
-        "status": "🟢 放量上涨，浮盈扩大",
+        "status": "🟢 放量上涨，浮盈扩大至+6.85%",
         "sector": "零售-商业百货"
       }
     ],
     "positionSummary": {
       "total": "35%",
       "cash": "65%",
-      "dailyPnl": "+0.22%"
+      "dailyPnl": "+0.54%"
     }
   },
   "review": {
-    "date": "2026-08-27（周四）· 盘后复盘",
-    "summary": "三大指数集体收涨：沪指+1.13%报3956.57、深成+1.50%、创业板+1.71%、科创50大涨3.8%。两市成交2.13万亿（较前日放量3172亿），超3300股上涨。主力资金全天净流入589.23亿（连续3日），电子行业+398.53亿居首。英伟达Q2超预期引爆算力硬件链，HBM/存储芯片/PCB/CPO涨停潮；银行、电力设备调整。",
+    "date": "2026-08-28（周五）· 盘后复盘",
+    "summary": "三大指数冲高回落集体收跌：沪指-0.11%报3952.18、深成-0.68%、创业板-1.41%、科创50-1.85%。两市成交2.10万亿（三市21177亿缩量232亿），超3000股上涨。主力资金全天净流出253.31亿，电子-157.43亿居首，基础化工+32.11亿领流入。种植业/地产/大消费领涨，半导体/医疗服务回调；隔夜英伟达涨8.7%但A股算力链高开低走。",
     "points": [
       {
-        "type": "up",
-        "text": "沪指放量上攻收复3950，成交2.13万亿+3172亿，量价齐升"
-      },
-      {
-        "type": "up",
-        "text": "主力净流入589.23亿连续3日，电子+398.53亿为最强吸金方向"
-      },
-      {
-        "type": "up",
-        "text": "英伟达财报引爆算力硬件：HBM/存储/PCB/CPO涨停潮，科创50大涨3.8%领跑"
-      },
-      {
-        "type": "neutral",
-        "text": "结构分化：银行-1.04%/电力设备-0.71%调整，资金高低切换"
+        "type": "down",
+        "text": "沪指冲高回落-0.11%，创业板-1.41%领跌，科创50-1.85%高开低走"
       },
       {
         "type": "down",
-        "text": "持仓福莱特-1.68%报9.94，浮亏-10.13%深度破-7%纪律线，按纪律评估"
+        "text": "主力净流出253.31亿，电子-157.43亿居首，半导体算力链获利回吐"
+      },
+      {
+        "type": "up",
+        "text": "超3000股上涨，种植业/地产/大消费领涨，资金高低切换至防御方向"
+      },
+      {
+        "type": "up",
+        "text": "隔夜英伟达+8.7%市值增4420亿，美股三大指数收涨"
+      },
+      {
+        "type": "neutral",
+        "text": "杰克逊霍尔年会开幕，市场预期美联储年底加息概率超70%，沃什今晚讲话"
       }
     ]
   },
