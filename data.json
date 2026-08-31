@@ -1,36 +1,36 @@
 {
-  "lastUpdate": "2026-08-31 09:10 · 盘前速递",
+  "lastUpdate": "2026-08-31 19:10 · 盘后复盘",
   "hotspot": {
     "indices": [
       {
         "name": "上证指数",
-        "value": "3952.12",
-        "change": "-0.11%",
-        "direction": "down",
+        "value": "3986.30",
+        "change": "+0.86%",
+        "direction": "up",
         "ksrc": "tx",
         "kcode": "sh000001"
       },
       {
         "name": "深证成指",
-        "value": "13953.07",
-        "change": "-0.68%",
-        "direction": "down",
+        "value": "14015.00",
+        "change": "+0.44%",
+        "direction": "up",
         "ksrc": "tx",
         "kcode": "sz399001"
       },
       {
         "name": "创业板指",
-        "value": "3424.40",
-        "change": "-1.41%",
-        "direction": "down",
+        "value": "3438.68",
+        "change": "+0.42%",
+        "direction": "up",
         "ksrc": "tx",
         "kcode": "sz399006"
       },
       {
         "name": "科创50",
-        "value": "1662.15",
-        "change": "-1.85%",
-        "direction": "down",
+        "value": "1684.39",
+        "change": "+1.34%",
+        "direction": "up",
         "ksrc": "tx",
         "kcode": "sh000688"
       }
@@ -66,59 +66,59 @@
     "news": [
       {
         "time": "08-31",
-        "phase": "盘前",
-        "title": "今日公布中国8月官方PMI，3400亿7天期逆回购到期，A股中报披露截止日",
+        "phase": "盘后",
+        "title": "8月官方制造业PMI今日公布，经济修复斜率受关注",
         "sentiment": "neutral",
         "related": "宏观",
         "url": "https://www.cls.cn/detail/2469038"
       },
       {
         "time": "08-31",
-        "phase": "盘前",
-        "title": "美联储主席沃什重申抗通胀立场偏鹰，市场加息预期升温，隔夜美股三大指数收跌",
+        "phase": "盘后",
+        "title": "央行开展50亿7天期逆回购+4470亿隔夜，本周14215亿到期",
+        "sentiment": "neutral",
+        "related": "宏观",
+        "url": "https://www.gelonghui.com/live/2641501"
+      },
+      {
+        "time": "08-31",
+        "phase": "盘后",
+        "title": "巴克莱预计美联储9月/12月各加息25基点，沃什放鹰加息概率升至57%",
         "sentiment": "down",
-        "related": "外盘",
-        "url": "https://www.cls.cn/detail/2469036"
+        "related": "美联储",
+        "url": "https://www.cls.cn/detail/2469213"
       },
       {
         "time": "08-31",
-        "phase": "盘前",
-        "title": "券商晨会：华泰建议沿盈利与筹码'配置差'再平衡，关注通信设备/半导体材料/船舶等",
-        "sentiment": "neutral",
-        "related": "策略",
-        "url": "https://www.cls.cn/detail/2469002"
+        "phase": "盘后",
+        "title": "隔夜美股三大指数集体收跌，纳指期货跌0.7%",
+        "sentiment": "down",
+        "related": "美股",
+        "url": "https://tongbicapital.com/article/detail?id=1321025"
       },
       {
         "time": "08-31",
-        "phase": "盘前",
-        "title": "MSCI中国指数新纳入智谱等33只股票，调整今日收盘后生效",
+        "phase": "盘后",
+        "title": "A股三大指数悉数翻红，创业板指一度跌近2%后翻红",
+        "sentiment": "up",
+        "related": "A股",
+        "url": "https://m.21jingji.com/timeline/32a3d3b55e61a1964d75c320e805db51.html"
+      },
+      {
+        "time": "08-31",
+        "phase": "盘后",
+        "title": "MSCI中国指数新纳入智谱等33只股票，今日收盘后生效",
         "sentiment": "neutral",
-        "related": "资金面",
+        "related": "市场",
         "url": "https://www.cls.cn/detail/2469038"
       },
       {
         "time": "08-31",
-        "phase": "盘前",
-        "title": "近5日357家公司获机构调研，中微公司/联影医疗/立讯精密扎堆，立讯近5日主力净流入12.32亿",
+        "phase": "盘后",
+        "title": "华大智造赋能微远基因全球首个mNGS检测试剂盒获批上市",
         "sentiment": "up",
-        "related": "资金面",
-        "url": "https://www.stcn.com/article/detail/4164808.html"
-      },
-      {
-        "time": "08-31",
-        "phase": "盘前",
-        "title": "CSEAC 2026半导体设备材料展今日无锡开幕，集成电路封测产业链论坛同期举办",
-        "sentiment": "up",
-        "related": "半导体",
-        "url": "https://www.cls.cn/detail/2469038"
-      },
-      {
-        "time": "08-31",
-        "phase": "盘前",
-        "title": "多家品牌金饰价格集体下调，伦敦金现回落至4447美元/盎司",
-        "sentiment": "down",
-        "related": "黄金",
-        "url": "https://www.cls.cn/detail/2469036"
+        "related": "医药",
+        "url": "http://www.dongtaibao.cn/#/releaseDetail?id=1854903"
       }
     ],
     "macro": [
@@ -156,41 +156,41 @@
       "rqDirection": "up"
     },
     "mainFlow": {
-      "value": "-253.31亿",
-      "change": "电子 -157.43亿 · 基础化工 +32.11亿",
-      "direction": "down",
-      "date": "8月28日"
+      "value": "资金净流入半导体/算力",
+      "change": "浪潮信息18.07亿 · 寒武纪12.53亿 · 中文在线12.13亿",
+      "direction": "up",
+      "date": "8月31日"
     },
     "hotSectorsToday": [
       {
-        "name": "石油石化",
-        "change": 2.16,
-        "inflow": "净流入",
-        "bk": "BK1201"
+        "name": "半导体",
+        "change": 6.26,
+        "inflow": "寒武纪净流入12.53亿",
+        "bk": "BK1036"
       },
       {
-        "name": "基础化工",
-        "change": 1.66,
-        "inflow": "净流入32.11亿居首",
-        "bk": "BK1201"
+        "name": "算力概念",
+        "change": 9.99,
+        "inflow": "浪潮信息净流入18.07亿",
+        "bk": "BK1134"
       },
       {
-        "name": "种植业",
-        "change": 2.24,
-        "inflow": "净流入",
-        "bk": "BK1261"
+        "name": "AI应用",
+        "change": 20.02,
+        "inflow": "中文在线净流入12.13亿",
+        "bk": "BK0493"
       },
       {
-        "name": "电子",
-        "change": -1.61,
-        "inflow": "净流出157.43亿居首",
-        "bk": "BK1200"
+        "name": "存储芯片",
+        "change": 2.31,
+        "inflow": "兆易创新净流入9.83亿",
+        "bk": "BK1137"
       },
       {
-        "name": "通信",
-        "change": -1.43,
-        "inflow": "净流出50.53亿",
-        "bk": "BK0736"
+        "name": "传媒",
+        "change": 20.0,
+        "inflow": "芒果超媒净流入",
+        "bk": "BK0486"
       }
     ],
     "hotSectors5d": [
@@ -415,69 +415,69 @@
       {
         "name": "铜陵有色",
         "code": "000630",
-        "price": "6.76",
+        "price": "6.67",
         "cost": "6.9",
-        "pnl": "-2.03%",
+        "pnl": "-3.33%",
         "weight": "10%",
         "strategy": "情绪流",
         "zhanfa": "情绪流",
-        "status": "🟢 微跌企稳，浮亏收窄",
+        "status": "🔴 有色走弱-1.33%，浮亏扩大",
         "sector": "有色-铜"
       },
       {
         "name": "福莱特",
         "code": "601865",
-        "price": "10.14",
+        "price": "10.03",
         "cost": "11.06",
-        "pnl": "-8.32%",
+        "pnl": "-9.31%",
         "weight": "15%",
         "strategy": "极点战法",
         "zhanfa": "极点战法",
-        "status": "🟢 光伏反弹+2.01%，浮亏收窄至-8.32%",
+        "status": "🔴 光伏回落-1.08%，浮亏扩大",
         "sector": "光伏-光伏玻璃"
       },
       {
         "name": "供销大集",
         "code": "000564",
-        "price": "1.56",
+        "price": "1.51",
         "cost": "1.46",
-        "pnl": "+6.85%",
+        "pnl": "+3.42%",
         "weight": "10%",
         "strategy": "依依不舍",
         "zhanfa": "依依不舍",
-        "status": "🟢 放量上涨，浮盈扩大至+6.85%",
+        "status": "🔴 放量回落-3.21%，浮盈收窄",
         "sector": "零售-商业百货"
       }
     ],
     "positionSummary": {
       "total": "35%",
       "cash": "65%",
-      "dailyPnl": "+0.54%"
+      "dailyPnl": "-0.66%"
     }
   },
   "review": {
-    "date": "2026-08-28（周五）· 盘后复盘",
-    "summary": "三大指数冲高回落集体收跌：沪指-0.11%报3952.18、深成-0.68%、创业板-1.41%、科创50-1.85%。两市成交2.10万亿（三市21177亿缩量232亿），超3000股上涨。主力资金全天净流出253.31亿，电子-157.43亿居首，基础化工+32.11亿领流入。种植业/地产/大消费领涨，半导体/医疗服务回调；隔夜英伟达涨8.7%但A股算力链高开低走。",
+    "date": "2026-08-31（周一）· 盘后复盘",
+    "summary": "三大指数全线翻红：沪指+0.86%报3986.30、深成+0.44%、创业板+0.42%低开高走，科创50+1.34%，两市成交2.13万亿。资金主攻半导体/算力/AI链，寒武纪、浪潮信息、中文在线获主力净流入居前。持仓三只集体回落，铜陵有色-1.33%、福莱特-1.08%、供销大集-3.21%，组合当日-0.66%。",
     "points": [
       {
-        "type": "down",
-        "text": "沪指冲高回落-0.11%，创业板-1.41%领跌，科创50-1.85%高开低走"
-      },
-      {
-        "type": "down",
-        "text": "主力净流出253.31亿，电子-157.43亿居首，半导体算力链获利回吐"
+        "type": "up",
+        "text": "沪指+0.86%领涨，三大指数+科创50全线翻红，两市成交2.13万亿温和放量"
       },
       {
         "type": "up",
-        "text": "超3000股上涨，种植业/地产/大消费领涨，资金高低切换至防御方向"
+        "text": "资金主攻半导体/算力/AI，寒武纪净流入12.53亿、浪潮信息18.07亿居前"
       },
       {
         "type": "up",
-        "text": "隔夜英伟达+8.7%市值增4420亿，美股三大指数收涨"
+        "text": "AI应用/传媒涨停潮：中文在线、芒果超媒、海看股份20CM涨停"
       },
       {
-        "type": "neutral",
-        "text": "杰克逊霍尔年会开幕，市场预期美联储年底加息概率超70%，沃什今晚讲话"
+        "type": "down",
+        "text": "美联储沃什放鹰，9月加息概率升至57%，隔夜美股三指收跌"
+      },
+      {
+        "type": "down",
+        "text": "持仓三只集体回落，供销大集-3.21%领跌，组合当日-0.66%"
       }
     ]
   },
