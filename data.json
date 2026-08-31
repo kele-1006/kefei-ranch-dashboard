@@ -1,10 +1,10 @@
 {
-  "lastUpdate": "2026-08-28 19:10 · 盘后复盘",
+  "lastUpdate": "2026-08-31 09:10 · 盘前速递",
   "hotspot": {
     "indices": [
       {
         "name": "上证指数",
-        "value": "3952.18",
+        "value": "3952.12",
         "change": "-0.11%",
         "direction": "down",
         "ksrc": "tx",
@@ -65,122 +65,82 @@
     ],
     "news": [
       {
-        "time": "08-28",
-        "phase": "盘后",
-        "title": "沪指冲高回落收跌0.11%报3952.18，深成-0.68%、创业板-1.41%、科创50-1.85%",
-        "sentiment": "down",
-        "related": "大盘",
-        "url": "https://www.gelonghui.com/live/2638606"
-      },
-      {
-        "time": "08-28",
-        "phase": "盘后",
-        "title": "两市成交2.1万亿缩量232亿，超3000股上涨，种植业/地产/大消费领涨",
+        "time": "08-31",
+        "phase": "盘前",
+        "title": "今日公布中国8月官方PMI，3400亿7天期逆回购到期，A股中报披露截止日",
         "sentiment": "neutral",
-        "related": "大盘",
-        "url": "https://www.gelonghui.com/live/2638606"
+        "related": "宏观",
+        "url": "https://www.cls.cn/detail/2469038"
       },
       {
-        "time": "08-28",
-        "phase": "盘后",
-        "title": "主力资金净流出253.31亿：电子-157.43亿居首，基础化工+32.11亿领流入",
+        "time": "08-31",
+        "phase": "盘前",
+        "title": "美联储主席沃什重申抗通胀立场偏鹰，市场加息预期升温，隔夜美股三大指数收跌",
         "sentiment": "down",
+        "related": "外盘",
+        "url": "https://www.cls.cn/detail/2469036"
+      },
+      {
+        "time": "08-31",
+        "phase": "盘前",
+        "title": "券商晨会：华泰建议沿盈利与筹码'配置差'再平衡，关注通信设备/半导体材料/船舶等",
+        "sentiment": "neutral",
+        "related": "策略",
+        "url": "https://www.cls.cn/detail/2469002"
+      },
+      {
+        "time": "08-31",
+        "phase": "盘前",
+        "title": "MSCI中国指数新纳入智谱等33只股票，调整今日收盘后生效",
+        "sentiment": "neutral",
         "related": "资金面",
-        "url": "https://www.stcn.com/article/detail/4150230.html"
+        "url": "https://www.cls.cn/detail/2469038"
       },
       {
-        "time": "08-28",
-        "phase": "盘后",
-        "title": "半导体/医疗服务回调：电子-1.61%、通信-1.43%领跌，超纯应材跌超8%",
-        "sentiment": "down",
-        "related": "半导体",
-        "url": "https://www.gelonghui.com/live/2638607"
-      },
-      {
-        "time": "08-28",
-        "phase": "盘后",
-        "title": "杰克逊霍尔央行年会开幕，市场预期美联储年底加息概率超70%，沃什今晚讲话",
-        "sentiment": "neutral",
-        "related": "外盘",
-        "url": "https://www.gelonghui.com/live/2638379"
-      },
-      {
-        "time": "08-28",
-        "phase": "盘后",
-        "title": "隔夜美股三大指数收涨：纳指+1.57%、标普+0.72%、道指+0.20%，英伟达涨8.7%",
+        "time": "08-31",
+        "phase": "盘前",
+        "title": "近5日357家公司获机构调研，中微公司/联影医疗/立讯精密扎堆，立讯近5日主力净流入12.32亿",
         "sentiment": "up",
-        "related": "外盘",
-        "url": "https://m.21jingji.com/timeline/7a46e56e596983c326415986d993565d.html"
+        "related": "资金面",
+        "url": "https://www.stcn.com/article/detail/4164808.html"
       },
       {
-        "time": "08-28",
-        "phase": "盘后",
-        "title": "化肥概念+3.02%、供销社+3.05%领涨概念，CRO/光刻机/存储芯片回调",
-        "sentiment": "neutral",
-        "related": "主题",
-        "url": "https://ggb.stcn.com/article/detail/4150208.html"
+        "time": "08-31",
+        "phase": "盘前",
+        "title": "CSEAC 2026半导体设备材料展今日无锡开幕，集成电路封测产业链论坛同期举办",
+        "sentiment": "up",
+        "related": "半导体",
+        "url": "https://www.cls.cn/detail/2469038"
+      },
+      {
+        "time": "08-31",
+        "phase": "盘前",
+        "title": "多家品牌金饰价格集体下调，伦敦金现回落至4447美元/盎司",
+        "sentiment": "down",
+        "related": "黄金",
+        "url": "https://www.cls.cn/detail/2469036"
       }
     ],
     "macro": [
       {
         "tag": "国内宏观",
-        "type": "up",
-        "text": "证监会召开头部机构投资者座谈会，引导中长期资金入市，推进长钱长投配套政策落地"
+        "type": "neutral",
+        "text": "今日公布8月官方制造业PMI，此前7月官方制造业PMI处荣枯线附近，市场关注经济修复斜率"
       },
       {
         "tag": "国内宏观",
         "type": "neutral",
-        "text": "央行25日开展5000亿1年期MLF，8/27-9/1每日开展不超6000亿隔夜逆回购，组合拳呵护月末流动性"
-      },
-      {
-        "tag": "国内宏观",
-        "type": "neutral",
-        "text": "工信部：上半年数字产业收入20.71万亿同比+13.6%，利润1.79万亿同比+19.3%"
-      },
-      {
-        "tag": "美国宏观",
-        "type": "up",
-        "text": "美债收益率全线回落，10年期跌7.13bp报4.625%，长端利率压力暂缓"
-      },
-      {
-        "tag": "国内宏观",
-        "type": "neutral",
-        "text": "8月LPR连续15个月持平（1年期3.0%/5年期3.5%），央行逆回购零操作单日净回笼3274亿；7月CPI同比+0.5%通胀温和回落"
-      },
-      {
-        "tag": "国内宏观",
-        "type": "neutral",
-        "text": "7月M2同比+7.7%约355.5万亿，社融人民币贷款-5896亿，信贷需求偏弱；多家铜企半年报净利翻倍"
-      },
-      {
-        "tag": "券商观点",
-        "type": "up",
-        "text": "中信/中金/华泰研判A股配置从'AI赛道押注'转向多元均衡，创新药、有色金属等非科技方向进入增配视野"
+        "text": "今日3400亿7天期逆回购到期，央行延续月末流动性呵护，关注公开市场续作力度"
       },
       {
         "tag": "美国宏观",
         "type": "down",
-        "text": "美联储7月FOMC纪要偏鹰，3人主张加息25bp，9月加息概率降至约33%；30年期美债收益率5.25%"
+        "text": "美联储主席沃什重申抗通胀立场，市场对未来加息预期升温，美债利率上行压力再现"
       },
       {
-        "tag": "美国宏观",
+        "tag": "券商观点",
         "type": "neutral",
-        "text": "美财政部扩大长债回购规模至40亿美元，但周四10Y/30Y收益率反弹约6bp；初请失业金降至20.6万低于预期"
-      },
-      {
-        "type": "neutral",
-        "tag": "国内宏观",
-        "text": "7月工业增加值同比+4.5%、社零同比+0.6%内需仍偏弱；政治局会议强调'充分发挥存量政策效能，及时谋划出台务实管用的增量政策'"
-      },
-      {
-        "tag": "国内宏观",
-        "type": "neutral",
-        "text": "国常会部署新一代通信网建设，统筹推进基础网络/空间网络/国际网络/融合网络；国家发改委就《对外投资管理办法(修订)》公开征求意见"
-      },
-      {
-        "tag": "国内宏观",
-        "type": "neutral",
-        "text": "长存控股科创板IPO获受理拟融资330亿；财政部数据显示1-7月证券交易印花税1864亿元同比增99.2%"
+        "text": "华泰证券建议沿盈利与筹码'配置差'再平衡，关注AI电力/半导体材料/船舶/工程机械等景气改善方向"
       }
     ],
     "marginBalance": {
@@ -265,35 +225,39 @@
     "globalMarkets": [
       {
         "name": "纳斯达克100",
-        "value": "29641.56",
-        "change": "+1.43%",
-        "direction": "up",
-        "ksrc": "tx",
-        "kcode": "usNDX"
-      },
-      {
-        "name": "伦敦金现",
-        "value": "4595.85",
-        "change": "-0.12%",
+        "value": "29433.43",
+        "change": "-0.70%",
         "direction": "down",
-        "ksrc": "sina",
-        "kcode": "XAU"
-      },
-      {
-        "name": "布伦特原油",
-        "value": "88.40",
-        "change": "+0.06%",
-        "direction": "up",
-        "ksrc": "sina",
-        "kcode": "OIL"
+        "kcode": "usNDX",
+        "ksrc": "tx",
+        "short": "纳指100"
       },
       {
         "name": "富时A50",
-        "value": "14695.50",
-        "change": "+0.19%",
-        "direction": "up",
+        "value": "14553.80",
+        "change": "-1.06%",
+        "direction": "down",
+        "kcode": "CHA50CFD",
         "ksrc": "sina",
-        "kcode": "CHA50CFD"
+        "short": "A50"
+      },
+      {
+        "name": "伦敦金现",
+        "value": "4447.65",
+        "change": "-0.15%",
+        "direction": "down",
+        "kcode": "hf_XAU",
+        "ksrc": "sina",
+        "short": "黄金"
+      },
+      {
+        "name": "布伦特原油",
+        "value": "90.08",
+        "change": "+2.25%",
+        "direction": "up",
+        "kcode": "hf_OIL",
+        "ksrc": "sina",
+        "short": "布油"
       }
     ]
   },
