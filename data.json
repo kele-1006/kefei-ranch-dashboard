@@ -1,5 +1,5 @@
 {
-  "lastUpdate": "2026-08-31 19:10 · 盘后复盘",
+  "lastUpdate": "2026-09-01 09:10 · 盘前速递",
   "hotspot": {
     "indices": [
       {
@@ -65,60 +65,68 @@
     ],
     "news": [
       {
-        "time": "08-31",
-        "phase": "盘后",
-        "title": "8月官方制造业PMI今日公布，经济修复斜率受关注",
+        "time": "09-01",
+        "phase": "盘前",
+        "title": "存量博弈热点快速轮动，聚焦AI应用商业化与液冷硬件高景气",
         "sentiment": "neutral",
-        "related": "宏观",
-        "url": "https://www.cls.cn/detail/2469038"
+        "related": "AI应用/液冷",
+        "url": "https://www.cls.cn/detail/2470307"
       },
       {
-        "time": "08-31",
-        "phase": "盘后",
-        "title": "央行开展50亿7天期逆回购+4470亿隔夜，本周14215亿到期",
-        "sentiment": "neutral",
-        "related": "宏观",
-        "url": "https://www.gelonghui.com/live/2641501"
-      },
-      {
-        "time": "08-31",
-        "phase": "盘后",
-        "title": "巴克莱预计美联储9月/12月各加息25基点，沃什放鹰加息概率升至57%",
+        "time": "09-01",
+        "phase": "盘前",
+        "title": "美联储主席沃什鹰派讲话后，摩根大通交易员放弃短期看涨美股",
         "sentiment": "down",
         "related": "美联储",
-        "url": "https://www.cls.cn/detail/2469213"
+        "url": "https://www.gelonghui.com/live/2643576"
       },
       {
-        "time": "08-31",
-        "phase": "盘后",
-        "title": "隔夜美股三大指数集体收跌，纳指期货跌0.7%",
+        "time": "09-01",
+        "phase": "盘前",
+        "title": "隔夜美股三指集体收跌，道指跌0.7%本月累涨1.34%，纳指跌0.12%",
         "sentiment": "down",
         "related": "美股",
-        "url": "https://tongbicapital.com/article/detail?id=1321025"
+        "url": "https://data.tdx.com.cn/tdxfiles/"
       },
       {
-        "time": "08-31",
-        "phase": "盘后",
-        "title": "A股三大指数悉数翻红，创业板指一度跌近2%后翻红",
+        "time": "09-01",
+        "phase": "盘前",
+        "title": "美伊局势升温，布油收90.49美元涨2.71%，WTI涨2.83%",
         "sentiment": "up",
-        "related": "A股",
-        "url": "https://m.21jingji.com/timeline/32a3d3b55e61a1964d75c320e805db51.html"
+        "related": "原油",
+        "url": "https://data.tdx.com.cn/tdxfiles/"
       },
       {
-        "time": "08-31",
-        "phase": "盘后",
-        "title": "MSCI中国指数新纳入智谱等33只股票，今日收盘后生效",
+        "time": "09-01",
+        "phase": "盘前",
+        "title": "国常会研究促进招商引资高质量发展，建设全国统一大市场",
         "sentiment": "neutral",
-        "related": "市场",
-        "url": "https://www.cls.cn/detail/2469038"
+        "related": "宏观",
+        "url": "https://data.tdx.com.cn/tdxfiles/"
       },
       {
-        "time": "08-31",
-        "phase": "盘后",
-        "title": "华大智造赋能微远基因全球首个mNGS检测试剂盒获批上市",
+        "time": "09-01",
+        "phase": "盘前",
+        "title": "工信部开展AI应用服务商培育专项行动，加大大模型/智能体Token采购",
         "sentiment": "up",
-        "related": "医药",
-        "url": "http://www.dongtaibao.cn/#/releaseDetail?id=1854903"
+        "related": "AI",
+        "url": "https://data.tdx.com.cn/tdxfiles/"
+      },
+      {
+        "time": "09-01",
+        "phase": "盘前",
+        "title": "1-7月国企利润总额25089.9亿元同比增0.6%，营收464466.4亿降2.4%",
+        "sentiment": "neutral",
+        "related": "宏观",
+        "url": "https://data.tdx.com.cn/tdxfiles/"
+      },
+      {
+        "time": "09-01",
+        "phase": "盘前",
+        "title": "中际旭创拟40-80亿元回购股份，华为上半年营收4678亿研发创新高",
+        "sentiment": "up",
+        "related": "光通信",
+        "url": "https://data.tdx.com.cn/tdxfiles/"
       }
     ],
     "macro": [
@@ -140,7 +148,22 @@
       {
         "tag": "券商观点",
         "type": "neutral",
-        "text": "华泰证券建议沿盈利与筹码'配置差'再平衡，关注AI电力/半导体材料/船舶/工程机械等景气改善方向"
+        "text": "华泰证券建议沿盈利与筹码配置差再平衡，关注AI电力/半导体材料/船舶/工程机械等景气改善方向"
+      },
+      {
+        "tag": "国内宏观",
+        "type": "neutral",
+        "text": "国务院常务会议研究促进招商引资高质量发展，明确鼓励与禁止行为，规范招商引资建设全国统一大市场"
+      },
+      {
+        "tag": "国内宏观",
+        "type": "neutral",
+        "text": "工信部开展AI应用服务商培育专项行动，通过首购首用、风险补偿等加大大模型/智能体/Token采购力度"
+      },
+      {
+        "tag": "国内宏观",
+        "type": "neutral",
+        "text": "财政部：1-7月国企营收464466.4亿元同比降2.4%，利润总额25089.9亿元同比增0.6%"
       }
     ],
     "marginBalance": {
@@ -225,26 +248,17 @@
     "globalMarkets": [
       {
         "name": "纳斯达克100",
-        "value": "29433.43",
-        "change": "-0.70%",
-        "direction": "down",
+        "value": "29456.97",
+        "change": "+0.08%",
+        "direction": "up",
         "kcode": "usNDX",
         "ksrc": "tx",
         "short": "纳指100"
       },
       {
-        "name": "富时A50",
-        "value": "14553.80",
-        "change": "-1.06%",
-        "direction": "down",
-        "kcode": "CHA50CFD",
-        "ksrc": "sina",
-        "short": "A50"
-      },
-      {
         "name": "伦敦金现",
-        "value": "4447.65",
-        "change": "-0.15%",
+        "value": "4445.98",
+        "change": "-0.07%",
         "direction": "down",
         "kcode": "hf_XAU",
         "ksrc": "sina",
@@ -252,12 +266,20 @@
       },
       {
         "name": "布伦特原油",
-        "value": "90.08",
-        "change": "+2.25%",
+        "value": "91.12",
+        "change": "+0.69%",
         "direction": "up",
         "kcode": "hf_OIL",
         "ksrc": "sina",
         "short": "布油"
+      },
+      {
+        "name": "富时A50",
+        "value": "14709.28",
+        "change": "+0.05%",
+        "direction": "up",
+        "ksrc": "sina",
+        "kcode": "CHA50CFD"
       }
     ]
   },
